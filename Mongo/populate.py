@@ -1,1 +1,18 @@
 #populate from data
+import csv
+import requests
+
+BASE_URL = "http://localhost:8000"
+
+def main():
+    with open("data.csv") as fd:
+        books_csv = csv.DictReader(fd)
+        for book in books_csv:
+            del book["bookID"]
+            book["authors"] = book["authors"].split("/")
+            x = requests.post(BASE_URL+"/books", json=book)
+            if not x.ok:
+                print(f"Failed to post book {x} - {book}")
+
+if __name__ == "__main__":
+    main()
