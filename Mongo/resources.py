@@ -28,3 +28,23 @@ course_types = {
   "lessons":str,
   "created_at":str
 }
+
+lesson_types = {
+    "lesson_id":str,
+    "course_id":str,
+    "title":str,
+    "content":str,
+    "duration":int,
+    "resources":str
+}
+
+teacher_types = {
+    "teacher_id":str,
+    "name":str,
+    "email":str
+    "password":str
+    "courses_list":str
+    "course_rating":float
+    "created_at":str
+}
+
