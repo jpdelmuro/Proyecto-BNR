@@ -6,13 +6,13 @@ BASE_URL = "http://localhost:8000"
 
 def main():
     with open("data.csv") as fd:
-        books_csv = csv.DictReader(fd)
-        for book in books_csv:
-            del book["bookID"]
-            book["authors"] = book["authors"].split("/")
-            x = requests.post(BASE_URL+"/books", json=book)
+        users_csv = csv.DictReader(fd)
+        for user in users_csv:
+            del user["userID"]
+            user["name"] = user["name"].split("/")
+            x = requests.post(BASE_URL+"/users", json=user)
             if not x.ok:
-                print(f"Failed to post book {x} - {book}")
+                print(f"Failed to post the user {x} - {user}")
 
 if __name__ == "__main__":
     main()
