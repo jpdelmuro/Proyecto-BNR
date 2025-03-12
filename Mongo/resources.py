@@ -5,30 +5,30 @@ class student_resource:
     def __init__(self, db):
         self.db = db
 
-    async def on_get(self, req, resp, book_id):
-        """Handles GET requests to retrieve a single user"""
-        user = self.db.users.find_one({'_id': ObjectId(user_id)})
-        if user:
-            user['_id'] = str(user['_id'])
-            resp.media = user
+    async def on_get(self, req, resp, student_id):
+        """Handles GET requests to retrieve a student"""
+        user = self.db.users.find_one({'_id': ObjectId(student_id)})
+        if student:
+            student['_id'] = str(student['_id'])
+            resp.media = student
             resp.status = falcon.HTTP_200
         else:
             resp.status = falcon.HTTP_404
 
-    async def on_put(self, req, resp, user_id):
-        """Handles PUT requests to update a single user"""
+    async def on_put(self, req, resp, student_id):
+        """Handles PUT requests to update a single student"""
         pass
 
-    async def on_delete(self, req, resp, user_id):
-        """Handles DELETE requests to delete a single user"""
+    async def on_delete(self, req, resp, student_id):
+        """Handles DELETE requests to delete a single student"""
         pass
 
 class course_resource:
     def __init__(self, db):
         self.db = db
 
-    async def on_get(self, req, resp, book_id):
-        """Handles GET requests to retrieve a single user"""
+    async def on_get(self, req, resp, course_id):
+        """Handles GET requests to retrieve a course"""
         course = self.db.courses.find_one({'_id': ObjectId(course_id)})
         if course:
             course['_id'] = str(course['_id'])
@@ -38,19 +38,19 @@ class course_resource:
             resp.status = falcon.HTTP_404
 
     async def on_put(self, req, resp, course_id):
-        """Handles PUT requests to update a single user"""
+        """Handles PUT requests to update a single course"""
         pass
 
     async def on_delete(self, req, resp, course_id):
-        """Handles DELETE requests to delete a single user"""
+        """Handles DELETE requests to delete a single course"""
         pass
 
 class lesson_resource:
     def __init__(self, db):
         self.db = db
 
-    async def on_get(self, req, resp, book_id):
-        """Handles GET requests to retrieve a single user"""
+    async def on_get(self, req, resp, lesson_id):
+        """Handles GET requests to retrieve a lesson"""
         lesson = self.db.lessons.find_one({'_id': ObjectId(lesson_id)})
         if lesson:
             lesson['_id'] = str(lesson['_id'])
@@ -60,11 +60,11 @@ class lesson_resource:
             resp.status = falcon.HTTP_404
 
     async def on_put(self, req, resp, lesson_id):
-        """Handles PUT requests to update a single user"""
+        """Handles PUT requests to update a single lesson"""
         pass
 
     async def on_delete(self, req, resp, lesson_id):
-        """Handles DELETE requests to delete a single user"""
+        """Handles DELETE requests to delete a single lesson"""
         pass
     
 
@@ -72,8 +72,8 @@ class instructor_resource:
     def __init__(self, db):
         self.db = db
 
-    async def on_get(self, req, resp, book_id):
-        """Handles GET requests to retrieve a single user"""
+    async def on_get(self, req, resp, instructor_id):
+        """Handles GET requests to retrieve a instructor"""
         instructor = self.db.instructors.find_one({'_id': ObjectId(instructor_id)})
         if instructor:
             instructor['_id'] = str(instructor['_id'])
@@ -83,16 +83,16 @@ class instructor_resource:
             resp.status = falcon.HTTP_404
 
     async def on_put(self, req, resp, instructor_id):
-        """Handles PUT requests to update a single user"""
+        """Handles PUT requests to update a single instructor"""
         pass
 
     async def on_delete(self, req, resp, instructor_id):
-        """Handles DELETE requests to delete a single user"""
+        """Handles DELETE requests to delete a single instructor"""
         pass
 
 
 student_types = {
-    "user_id": str,
+    "student_id": str,
     "name": str,
     "email": str,
     "password": str,
@@ -141,5 +141,5 @@ def validate_data(data):
             except ValueError:
                 raise falcon.HTTPBadRequest(f"Invalid data: {property} must be {book_types[property]}.")
     return data
-    """
+"""
 
