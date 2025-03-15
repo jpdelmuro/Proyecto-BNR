@@ -1,23 +1,25 @@
-#!/usr/bin/env python3
-import datetime
 import logging
 import random
 import uuid
+from datetime import datetime
+from cassandra.cluster import Cluster
 
-import time_uuid
-from cassandra.query import BatchStatement
+# Configurar logging
+logging.basicConfig(level=logging.INFO)
+log = logging.getLogger(__name__)
 
-# Set logger
-log = logging.getLogger()
+# Configuración de Keyspace
+KEYSPACE = "plataforma_online"
+REPLICATION_FACTOR = 1
 
-CREATE_KEYSPACE = """
-        CREATE KEYSPACE IF NOT EXISTS {}
-        WITH replication = {{ 'class': 'SimpleStrategy', 'replication_factor': {} }}
+CREATE_KEYSPACE = f"""
+    CREATE KEYSPACE IF NOT EXISTS {KEYSPACE}
+    WITH replication = {{ 'class': 'SimpleStrategy', 'replication_factor': {REPLICATION_FACTOR} }};
 """
-# CREACION DE LAS TABLAS (ESTAS SON PROVISIONALES)
 
+# Creación de Tablas
 CREATE_STUDENTS_ACTIVITY = """
-    CREATE TABLE student_activity (
+    CREATE TABLE IF NOT EXISTS student_activity (
         student_id UUID,
         course_id UUID,
         activity_id UUID,
@@ -29,18 +31,18 @@ CREATE_STUDENTS_ACTIVITY = """
 """
 
 STUDENT_PROGRESS = """
-    CREATE TABLE student_progress (
+    CREATE TABLE IF NOT EXISTS student_progress (
         student_id UUID,
         course_id UUID,
         progress_id UUID,
         porcentaje_completado FLOAT,
         calificaciones INT,
         PRIMARY KEY ((student_id, course_id), progress_id)
-    );
+    ) WITH CLUSTERING ORDER BY (progress_id DESC);
 """
 
 SYSTEM_NOTIFICATIONS = """
-    CREATE TABLE system_notifications (
+    CREATE TABLE IF NOT EXISTS system_notifications (
         user_id UUID,
         notification_id UUID,
         course_id UUID,
@@ -51,22 +53,20 @@ SYSTEM_NOTIFICATIONS = """
     ) WITH CLUSTERING ORDER BY (notification_timestamp DESC);
 """
 
-
 USER_SESSIONS = """
-    CREATE TABLE user_sessions (
+    CREATE TABLE IF NOT EXISTS user_sessions (
         user_id UUID,
         session_id UUID,
         start_time TIMESTAMP,
         last_activity TIMESTAMP,
         device_info TEXT,
         active_status BOOLEAN,
-        PRIMARY KEY (user_id, session_id)
+        PRIMARY KEY ((user_id), last_activity, session_id)
     ) WITH CLUSTERING ORDER BY (last_activity DESC);
 """
 
-
 STUDENT_CERTIFICATES = """
-    CREATE TABLE student_certificates (
+    CREATE TABLE IF NOT EXISTS student_certificates (
         student_id UUID,
         course_id UUID,
         certificate_id UUID,
@@ -78,188 +78,111 @@ STUDENT_CERTIFICATES = """
     );
 """
 
-
-
-# EJEMPLOS DE LOS QUERYS
-# Variable Q1
-SELECT_USER_ACCOUNTS = """
-    SELECT username, account_number, name, cash_balance
-    FROM accounts_by_user
-    WHERE username = ?
-"""
-
-# Variable Q2
-POSITIONS_BY_ACCOUNT = """
-    SELECT symbol, quantity
-    FROM positions_by_account
-    WHERE account = ?
-"""
-
-
-
-USERS = [
+# Datos de prueba
+STUDENTS = [
     ('mike', 'Michael Jones'),
     ('stacy', 'Stacy Malibu'),
     ('john', 'John Doe'),
     ('marie', 'Marie Condo'),
     ('tom', 'Tomas Train')
 ]
-INSTRUMENTS = [
-    'ETSY', 'PINS', 'SE', 'SHOP', 'SQ', 'MELI', 'ISRG', 'DIS', 'BRK.A', 'AMZN',
-    'VOO', 'VEA', 'VGT', 'VIG', 'MBB', 'QQQ', 'SPY', 'BSV', 'BND', 'MUB',
-    'VSMPX', 'VFIAX', 'FXAIX', 'VTSAX', 'SPAXX', 'VMFXX', 'FDRXX', 'FGXX'
-]
 
-def execute_batch(session, stmt, data):
-    batch_size = 10
-    for i in range(0, len(data), batch_size):
-        batch = BatchStatement()
-        for item in data[i : i+batch_size]:
-            batch.add(stmt, item)
-        session.execute(batch)
-    session.execute(batch)
+ACTIVITY_TYPE = ['QUIZ', 'FORO', 'TAREA', 'VIDEO', 'EXAMEN']
 
+# Función para poblar las tablas con datos aleatorios
+def populate_data(session):
+    log.info("Insertando datos de prueba...")
 
-def bulk_insert(session):
-    acc_stmt = session.prepare("INSERT INTO accounts_by_user (username, account_number, cash_balance, name) VALUES (?, ?, ?, ?)")
-    pos_stmt = session.prepare("INSERT INTO positions_by_account(account, symbol, quantity) VALUES (?, ?, ?)")
-    tad_stmt = session.prepare("INSERT INTO trades_by_a_d (account, trade_id, type, symbol, shares, price, amount) VALUES(?, ?, ?, ?, ?, ?, ?)")
-    tatd_stmt = session.prepare("INSERT INTO trades_by_a_td (account, trade_id, type, symbol, shares, price, amount) VALUES(?, ?, ?, ?, ?, ?, ?)")
-    tastd_stmt = session.prepare("INSERT INTO trades_by_a_std (account, trade_id, type, symbol, shares, price, amount) VALUES(?, ?, ?, ?, ?, ?, ?)")
-    tasd_stmt = session.prepare("INSERT INTO trades_by_a_sd (account, trade_id, type, symbol, shares, price, amount) VALUES(?, ?, ?, ?, ?, ?, ?)")
-    
-    accounts = []
+    for student_username, student_name in STUDENTS:
+        student_id = uuid.uuid4()
+        course_id = uuid.uuid4()
 
-    accounts_num=10
-    positions_by_account=100
-    trades_by_account=1000
-   
-    # Generate accounts by user
-    data = []
-    for i in range(accounts_num):
-        user = random.choice(USERS)
-        account_number = str(uuid.uuid4())
-        accounts.append(account_number)
-        cash_balance = random.uniform(0.1, 100000.0)
-        data.append((user[0], account_number, cash_balance, user[1]))
-    execute_batch(session, acc_stmt, data)
-    
-   
-    # Genetate possitions by account
-    acc_sym = {}
-    data = []
-    for i in range(positions_by_account):
-        while True:
-            acc = random.choice(accounts)
-            sym = random.choice(INSTRUMENTS)
-            if acc+'_'+sym not in acc_sym:
-                acc_sym[acc+'_'+sym] = True
-                quantity = random.randint(1, 500)
-                data.append((acc, sym, quantity))
-                break
-    execute_batch(session, pos_stmt, data)
+        # Insertar actividad aleatoria
+        for _ in range(3):  # Cada estudiante hace 3 actividades
+            activity_id = uuid.uuid4()
+            tipo_actividad = random.choice(ACTIVITY_TYPE)
+            timestamp = datetime.utcnow()
+            detalles = f"Realizó la actividad {tipo_actividad}"
 
-    # Generate trades by account
-    data = []
-    for i in range(trades_by_account):
-        trade_id = random_date(datetime.datetime(2013, 1, 1), datetime.datetime(2022, 8, 31))
-        acc = random.choice(accounts)
-        sym = random.choice(INSTRUMENTS)
-        trade_type = random.choice(['buy', 'sell'])
-        shares = random.randint(1, 5000)
-        price = random.uniform(0.1, 100000.0)
-        amount = shares * price
-        data.append((acc, trade_id, trade_type, sym, shares, price, amount))
-    execute_batch(session, tad_stmt, data)
-    execute_batch(session, tatd_stmt, data)
-    execute_batch(session, tastd_stmt, data)
-    execute_batch(session, tasd_stmt, data)
+            session.execute("""
+                INSERT INTO student_activity (student_id, course_id, activity_id, tipo_actividad, activity_timestamp, detalles)
+                VALUES (%s, %s, %s, %s, %s, %s)
+            """, (student_id, course_id, activity_id, tipo_actividad, timestamp, detalles))
 
+        # Insertar progreso
+        progress_id = uuid.uuid4()
+        porcentaje_completado = random.uniform(20, 100)  # Progreso entre 20% y 100%
+        calificaciones = random.randint(50, 100)  # Calificación entre 50 y 100
 
-def random_date(start_date, end_date):
-    time_between_dates = end_date - start_date
-    days_between_dates = time_between_dates.days
-    random_number_of_days = random.randrange(days_between_dates)
-    rand_date = start_date + datetime.timedelta(days=random_number_of_days)
-    return time_uuid.TimeUUID.with_timestamp(time_uuid.mkutime(rand_date))
+        session.execute("""
+            INSERT INTO student_progress (student_id, course_id, progress_id, porcentaje_completado, calificaciones)
+            VALUES (%s, %s, %s, %s, %s)
+        """, (student_id, course_id, progress_id, porcentaje_completado, calificaciones))
 
+        # Insertar notificaciones
+        notification_id = uuid.uuid4()
+        tipo_notificacion = random.choice(['Anuncio', 'Recordatorio', 'Calificación'])
+        mensaje = f"{tipo_notificacion} para {student_name}"
+        notification_timestamp = datetime.utcnow()
 
-def create_keyspace(session, keyspace, replication_factor):
-    log.info(f"Creating keyspace: {keyspace} with replication factor {replication_factor}")
-    session.execute(CREATE_KEYSPACE.format(keyspace, replication_factor))
+        session.execute("""
+            INSERT INTO system_notifications (user_id, notification_id, course_id, tipo, notificacion, notification_timestamp)
+            VALUES (%s, %s, %s, %s, %s, %s)
+        """, (student_id, notification_id, course_id, tipo_notificacion, mensaje, notification_timestamp))
 
+        # Insertar sesiones activas
+        session_id = uuid.uuid4()
+        start_time = datetime.utcnow()
+        last_activity = datetime.utcnow()
+        device_info = random.choice(['Windows 10 - Chrome', 'MacBook - Safari', 'Android - Firefox'])
+        active_status = random.choice([True, False])
 
+        session.execute("""
+            INSERT INTO user_sessions (user_id, session_id, start_time, last_activity, device_info, active_status)
+            VALUES (%s, %s, %s, %s, %s, %s)
+        """, (student_id, session_id, start_time, last_activity, device_info, active_status))
+
+        # Insertar certificados para cursos completados
+        certificate_id = uuid.uuid4()
+        completion_date = datetime.utcnow()
+        certificate_url = f"https://certificados.com/{student_username}_curso"
+
+        session.execute("""
+            INSERT INTO student_certificates (student_id, course_id, certificate_id, student_name, course_title, completion_date, certificate_url)
+            VALUES (%s, %s, %s, %s, %s, %s, %s)
+        """, (student_id, course_id, certificate_id, student_name, "Curso de Cassandra", completion_date, certificate_url))
+
+    log.info("Datos de prueba insertados correctamente.")
+
+# Crear esquema de base de datos
 def create_schema(session):
-    log.info("Creating model schema")
-    session.execute(CREATE_USERS_TABLE)
-    session.execute(CREATE_POSSITIONS_BY_ACCOUNT_TABLE)
-    session.execute(CREATE_TRADES_BY_ACCOUNT_DATE_TABLE)
-    session.execute(CREATE_TRADES_BY_A_TD_TABLE)
-    session.execute(CREATE_TRADES_BY_A_STD_TABLE)
-    session.execute(CREATE_TRADES_BY_A_SD_TABLE)
+    log.info("Creando Keyspace...")
+    session.execute(CREATE_KEYSPACE)
 
-# Este es el Q1
-def get_user_accounts(session, username):
-    log.info(f"Retrieving {username} accounts")
-    stmt = session.prepare(SELECT_USER_ACCOUNTS)
-    rows = session.execute(stmt, [username])
-    for row in rows:
-        print(f"=== Account: {row.account_number} ===")
-        print(f"- Cash Balance: {row.cash_balance}")
+    # Usar el Keyspace antes de crear las tablas
+    session.set_keyspace(KEYSPACE)
+    
+    log.info("Creando tablas...")
+    session.execute(CREATE_STUDENTS_ACTIVITY)
+    session.execute(STUDENT_PROGRESS)
+    session.execute(SYSTEM_NOTIFICATIONS)
+    session.execute(USER_SESSIONS)
+    session.execute(STUDENT_CERTIFICATES)
 
-# Este es el Q2
-def get_positions_by_account(session, account):
-    log.info(f"Retrieving positions for account: {account}")
-    stmt = session.prepare(POSITIONS_BY_ACCOUNT)
-    rows = session.execute(stmt, [account])
-    for row in rows:
-        print(f"Symbol: {row.symbol}, Quantity: {row.quantity}")
+    log.info("Esquema creado exitosamente.")
 
-# Este es el Q3.1
-def get_trades_by_account(session, account):
-    log.info(f"Retrieving trades for account: {account}")
-    stmt = session.prepare(TRADES_FOR_ACCOUNT)
-    rows = session.execute(stmt, [account])
-    for row in rows:
-        print(f"Trade Date: {row.trade_date}, Type: {row.type}, Symbol: {row.symbol}")
-        print(f"Shares: {row.shares}, Price: {row.price}, Amount: {row.amount}\n")
+def main():
+    log.info("Conectando a Cassandra...")
+    cluster = Cluster(['127.0.0.1'], protocol_version=5)
+    session = cluster.connect()
 
+    # Crear esquema de base de datos
+    create_schema(session)
 
-# Este es el Q3.2 AAAAAAAAAAAAAAA
-def get_trades_by_account_in_range(session, account, start_date):
-    log.info(f"Retrieving trades for account: {account} from {start_date}")
-    start_timeuuid = time_uuid.TimeUUID.with_timestamp(time_uuid.mkutime(start_date))
-    stmt = session.prepare(TRADES_FOR_ACCOUNT_IN_DATE)
-    rows = session.execute(stmt, [account, start_timeuuid])
-    for row in rows:
-        print(f"Trade Date: {row.trade_date}, Type: {row.type}, Symbol: {row.symbol}")
-        print(f"Shares: {row.shares}, Price: {row.price}, Amount: {row.amount}\n")
+    # Poblar datos de prueba
+    populate_data(session)
 
-# Este es el Q3.3
-def get_trades_by_account_type_and_range(session, account, trade_type, start_date, end_date):
-    log.info(f"Retrieving '{trade_type}' trades for account: {account} from {start_date} to {end_date}")
-    start_timeuuid = time_uuid.TimeUUID.with_timestamp(time_uuid.mkutime(start_date))
-    end_timeuuid = time_uuid.TimeUUID.with_timestamp(time_uuid.mkutime(end_date))
-    stmt = session.prepare(TRADES_FOR_ACCOUNT_IN_DATE_AND_TRANS)
-    rows = session.execute(stmt, [account, trade_type, start_timeuuid, end_timeuuid])
-    for row in rows:
-        print(f"Trade Date: {row.trade_date}, Type: {row.type}, Symbol: {row.symbol}")
-        print(f"Shares: {row.shares}, Price: {row.price}, Amount: {row.amount}\n")
+    log.info("Datos insertados correctamente.")
 
-# Este es el Q3.4
-def get_trades_by_filters(session, account, trade_type, symbol, start_date, end_date):
-    log.info(f"Retrieving '{trade_type}' trades for account: {account}, symbol: {symbol}, from {start_date} to {end_date}")
-    stmt = session.prepare(TRADES_BY_ACCOUNT_W_TYPE_SYMBOL)
-    rows = session.execute(stmt, [account, trade_type, symbol, start_date, end_date])
-    for row in rows:
-        print(f"Trade Date: {row.trade_date}, Type: {row.type}, Symbol: {row.symbol}")
-        print(f"Shares: {row.shares}, Price: {row.price}, Amount: {row.amount}\n")
-
-# Este es el Q3.5
-def get_trades_by_symbol_and_date(session, account, symbol, start_date, end_date):
-    log.info(f"Retrieving trades for account: {account}, symbol: {symbol}, from {start_date} to {end_date}")
-    stmt = session.prepare(queryq5)
-    rows = session.execute(stmt, [account, symbol, start_date, end_date])
-    for row in rows:
-        print(f"Trade Date: {row.trade_date}, Type: {row.type}, Symbol: {row.symbol}")
-        print(f"Shares: {row.shares}, Price: {row.price}, Amount: {row.amount}\n")
+if __name__ == "__main__":
+    main()
