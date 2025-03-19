@@ -1,1 +1,39 @@
+Table: teachers
+teacher_id,name,email,password,courses_list,course_rating,created_at
+T001,Alice Johnson,alice@example.com,pass123,"C001,C002",4.8,2025-03-19
+T002,Bob Smith,bob@example.com,pass456,"C003,C004",4.6,2025-03-19
+T003,Clara Wilson,clara@example.com,pass789,"C005,C006",4.9,2025-03-19
+
+Table: courses
+course_id,title,description,teacher_id,lessons,created_at
+C001,Python Basics,Introduction to Python programming,T001,"L001,L002",2025-03-19
+C002,Data Structures,Learn about data structures in depth,T001,"L003,L004",2025-03-19
+C003,Web Development,"Basics of HTML, CSS, and JavaScript",T002,"L005,L006",2025-03-19
+C004,Databases,Introduction to SQL and NoSQL databases,T002,"L007,L008",2025-03-19
+C005,Machine Learning,Fundamentals of ML algorithms,T003,"L009,L010",2025-03-19
+C006,Cybersecurity Basics,Learn about security principles,T003,"L011,L012",2025-03-19
+
+Table: lessons
+lesson_id,course_id,title,content,duration,resources
+L001,C001,Introduction to Python,Variables and data types,30,python_intro.pdf
+L002,C001,Control Flow,If statements and loops,40,control_flow.pdf
+L003,C002,Arrays and Lists,Understanding lists in Python,35,lists.pdf
+L004,C002,Stacks and Queues,Implementation of stacks and queues,45,stacks_queues.pdf
+L005,C003,HTML Basics,Introduction to HTML,30,html_basics.pdf
+L006,C003,CSS Fundamentals,Styling with CSS,40,css_fundamentals.pdf
+L007,C004,SQL Queries,Basic SQL commands,50,sql_queries.pdf
+L008,C004,NoSQL Databases,Introduction to NoSQL,55,nosql_basics.pdf
+L009,C005,Supervised Learning,Concepts of regression and classification,60,supervised_learning.pdf
+L010,C005,Neural Networks,Basics of deep learning,70,neural_networks.pdf
+L011,C006,Network Security,Introduction to firewalls and encryption,50,network_security.pdf
+L012,C006,Cyber Threats,Understanding common cyber threats,45,cyber_threats.pdf
+
+Table: students
+student_id,name,email,password,courses_enrolled,courses_completed,created_at
+S001,Charlie Brown,charlie@example.com,pass789,"C001,C002",C001,2025-03-19
+S002,Diana Prince,diana@example.com,pass321,"C002,C003",C002,2025-03-19
+S003,Ethan Hunt,ethan@example.com,pass654,"C001,C003",,2025-03-19
+S004,Fiona Davis,fiona@example.com,pass987,"C004,C005",C004,2025-03-19
+S005,George Miller,george@example.com,pass741,"C005,C006",,2025-03-19
+S006,Hannah Lee,hannah@example.com,pass852,"C003,C006",C003,2025-03-19
 
