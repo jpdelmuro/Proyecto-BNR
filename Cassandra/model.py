@@ -30,6 +30,19 @@ CREATE_STUDENTS_ACTIVITY = """
 ) WITH CLUSTERING ORDER BY (timestamp DESC, activity_id Desc);
 """
 
+SELECT_ACTIVITIES_BY_USER_COURSE = """
+    SELECT tipo_actividad, timestamp, activity_id, detalles
+    FROM student_activity
+    WHERE user_email = ? AND course_id = ?
+"""
+
+SELECT_ACTIVITIES_BY_USER = """
+    SELECT course_id, tipo_actividad, timestamp, activity_id, detalles
+    FROM student_activity
+    WHERE user_email = ?
+"""
+
+
 STUDENT_PROGRESS = """
     CREATE TABLE IF NOT EXISTS course_progress (
     user_email text,
@@ -40,6 +53,19 @@ STUDENT_PROGRESS = """
 ) WITH CLUSTERING ORDER BY (progress_percent);
 """
 
+SELECT_PROGRESS_BY_USER_COURSE = """
+    SELECT progress_percent, grade
+    FROM course_progress
+    WHERE user_email = ? AND course_id = ?
+"""
+
+SELECT_PROGRESS_BY_USER = """
+    SELECT course_id, progress_percent, grade
+    FROM course_progress
+    WHERE user_email = ?
+"""
+
+
 SYSTEM_NOTIFICATIONS = """
     CREATE TABLE IF NOT EXISTS system_notifications ( 
     user_email text, 
@@ -49,8 +75,20 @@ SYSTEM_NOTIFICATIONS = """
     notificacion text, 
     timestamp timestamp, 
     PRIMARY KEY ((user_email), timestamp, notification_id)) WITH CLUSTERING ORDER BY (timestamp DESC, notification_id DESC);
-
 """
+
+SELECT_NOTIFICATIONS_BY_USER = """
+    SELECT timestamp, notification_id, course_id, tipo, notificacion
+    FROM system_notifications
+    WHERE user_email = ?
+"""
+
+SELECT_NOTIFICATIONS_BY_USER_COURSE = """
+    SELECT timestamp, notification_id, tipo, notificacion
+    FROM system_notifications
+    WHERE user_email = ? AND course_id = ?
+"""
+
 
 USER_SESSIONS = """
     CREATE TABLE IF NOT EXISTS user_sessions ( 
@@ -60,6 +98,18 @@ USER_SESSIONS = """
     last_activity timestamp,  
     PRIMARY KEY ((user_email), session_id) 
 ) WITH CLUSTERING ORDER BY (last_activity);  
+"""
+
+SELECT_SESSIONS_BY_USER = """
+    SELECT session_id, device_info, last_activity
+    FROM user_sessions
+    WHERE user_email = ?
+"""
+
+SELECT_SESSION_BY_USER_SESSIONID = """
+    SELECT device_info, last_activity
+    FROM user_sessions
+    WHERE user_email = ? AND session_id = ?
 """
 
 STUDENT_CERTIFICATES = """
@@ -73,6 +123,18 @@ STUDENT_CERTIFICATES = """
     certificate_url text, PRIMARY KEY (user_email, completion_date, certificate_id) ) WITH CLUSTERING ORDER BY (certificate_id DESC,completion_date DESC);
 """
 
+SELECT_CERTIFICATES_BY_USER = """
+    SELECT completion_date, certificate_id, course_id, student_name, course_title, certificate_url
+    FROM certificates
+    WHERE user_email = ?
+"""
+
+SELECT_CERTIFICATES_BY_USER_COURSE = """
+    SELECT completion_date, certificate_id, student_name, course_title, certificate_url
+    FROM certificates
+    WHERE user_email = ? AND course_id = ?
+"""
+
 COURSE_PERFORMANCE = """
     CREATE TABLE IF NOT EXISTS course_performance (  
     progress_id uuid,  
@@ -82,6 +144,18 @@ COURSE_PERFORMANCE = """
     calificaciones float, 
     PRIMARY KEY ((user_email), course_id) 
 ); 
+"""
+
+SELECT_PERFORMANCE_BY_USER_COURSE = """
+    SELECT progress_id, progress_percent, calificaciones
+    FROM course_performance
+    WHERE user_email = ? AND course_id = ?
+"""
+
+SELECT_PERFORMANCES_BY_USER = """
+    SELECT course_id, progress_id, progress_percent, calificaciones
+    FROM course_performance
+    WHERE user_email = ?
 """
 
 LOGIN_LOGS = """
@@ -95,6 +169,18 @@ CREATE TABLE IF NOT EXISTS login_logs (
     PRIMARY KEY (user_email, last_activity, session_id) ) WITH CLUSTERING ORDER BY (session_id DESC,last_activity DESC); 
 """
 
+SELECT_LOGIN_LOGS_BY_USER = """
+    SELECT last_activity, session_id, start_time, device_info, active_status
+    FROM login_logs
+    WHERE user_email = ?
+"""
+
+SELECT_LOGIN_LOGS_BY_USER_SESSION = """
+    SELECT start_time, device_info, active_status
+    FROM login_logs
+    WHERE user_email = ? AND session_id = ?
+"""
+
 TASK_REMINDERS = """
 CREATE TABLE IF NOT EXISTS task_reminders (  
     user_email text,  
@@ -103,6 +189,18 @@ CREATE TABLE IF NOT EXISTS task_reminders (
     due_date date,  
     is_completed boolean,  
     PRIMARY KEY (user_email, task_id)); 
+"""
+
+SELECT_TASKS_BY_USER = """
+    SELECT task_id, task_description, due_date, is_completed
+    FROM task_reminders
+    WHERE user_email = ?
+"""
+
+SELECT_TASK_BY_USER_TASKID = """
+    SELECT task_description, due_date, is_completed
+    FROM task_reminders
+    WHERE user_email = ? AND task_id = ?
 """
 
 COURSE_VIEWS = """
@@ -114,6 +212,18 @@ CREATE TABLE IF NOT EXISTS course_viewss (
 );
 """
 
+SELECT_COURSE_VIEWS_BY_COURSE = """
+    SELECT view_date, views
+    FROM course_viewss
+    WHERE course_id = ?
+"""
+
+SELECT_COURSE_VIEWS_BY_COURSE_DATE = """
+    SELECT views
+    FROM course_viewss
+    WHERE course_id = ? AND view_date = ?
+"""
+
 TOP_INSTRUCTORS = """
 CREATE TABLE IF NOT EXISTS top_instructors ( 
     ranking int, 
@@ -122,6 +232,19 @@ CREATE TABLE IF NOT EXISTS top_instructors (
     avg_rating float, 
     total_courses int, 
     PRIMARY KEY (ranking)); """
+
+SELECT_TOP_INSTRUCTORS = """
+    SELECT instructor_email, instructor_name, avg_rating, total_courses
+    FROM top_instructors
+"""
+
+SELECT_INSTRUCTOR_BY_RANKING = """
+    SELECT instructor_email, instructor_name, avg_rating, total_courses
+    FROM top_instructors
+    WHERE ranking = ?
+"""
+
+
 
 # Datos de prueba
 STUDENTS = [
