@@ -3,6 +3,7 @@ import random
 import uuid
 from datetime import datetime
 from cassandra.cluster import Cluster
+import csv
 
 # Configurar logging
 logging.basicConfig(level=logging.INFO)
@@ -30,41 +31,15 @@ CREATE_STUDENTS_ACTIVITY = """
 ) WITH CLUSTERING ORDER BY (timestamp DESC, activity_id Desc);
 """
 
-SELECT_ACTIVITIES_BY_USER_COURSE = """
-    SELECT tipo_actividad, timestamp, activity_id, detalles
-    FROM student_activity
-    WHERE user_email = ? AND course_id = ?
-"""
-
-SELECT_ACTIVITIES_BY_USER = """
-    SELECT course_id, tipo_actividad, timestamp, activity_id, detalles
-    FROM student_activity
-    WHERE user_email = ?
-"""
-
-
-STUDENT_PROGRESS = """
+COURSE_PROGRESS = """
     CREATE TABLE IF NOT EXISTS course_progress (
     user_email text,
     course_id text,
     progress_percent int,
     grade float,
-    PRIMARY KEY (user_email, course_id)
-) WITH CLUSTERING ORDER BY (progress_percent);
+    PRIMARY KEY ((user_email), course_id)
+) WITH CLUSTERING ORDER BY (course_id ASC);
 """
-
-SELECT_PROGRESS_BY_USER_COURSE = """
-    SELECT progress_percent, grade
-    FROM course_progress
-    WHERE user_email = ? AND course_id = ?
-"""
-
-SELECT_PROGRESS_BY_USER = """
-    SELECT course_id, progress_percent, grade
-    FROM course_progress
-    WHERE user_email = ?
-"""
-
 
 SYSTEM_NOTIFICATIONS = """
     CREATE TABLE IF NOT EXISTS system_notifications ( 
@@ -77,19 +52,6 @@ SYSTEM_NOTIFICATIONS = """
     PRIMARY KEY ((user_email), timestamp, notification_id)) WITH CLUSTERING ORDER BY (timestamp DESC, notification_id DESC);
 """
 
-SELECT_NOTIFICATIONS_BY_USER = """
-    SELECT timestamp, notification_id, course_id, tipo, notificacion
-    FROM system_notifications
-    WHERE user_email = ?
-"""
-
-SELECT_NOTIFICATIONS_BY_USER_COURSE = """
-    SELECT timestamp, notification_id, tipo, notificacion
-    FROM system_notifications
-    WHERE user_email = ? AND course_id = ?
-"""
-
-
 USER_SESSIONS = """
     CREATE TABLE IF NOT EXISTS user_sessions ( 
     user_email text, 
@@ -97,19 +59,7 @@ USER_SESSIONS = """
     device_info text,  
     last_activity timestamp,  
     PRIMARY KEY ((user_email), session_id) 
-) WITH CLUSTERING ORDER BY (last_activity);  
-"""
-
-SELECT_SESSIONS_BY_USER = """
-    SELECT session_id, device_info, last_activity
-    FROM user_sessions
-    WHERE user_email = ?
-"""
-
-SELECT_SESSION_BY_USER_SESSIONID = """
-    SELECT device_info, last_activity
-    FROM user_sessions
-    WHERE user_email = ? AND session_id = ?
+) WITH CLUSTERING ORDER BY (session_id DESC);  
 """
 
 STUDENT_CERTIFICATES = """
@@ -120,42 +70,18 @@ STUDENT_CERTIFICATES = """
     student_name text, 
     course_title text, 
     completion_date date,  
-    certificate_url text, PRIMARY KEY (user_email, completion_date, certificate_id) ) WITH CLUSTERING ORDER BY (certificate_id DESC,completion_date DESC);
+    certificate_url text, PRIMARY KEY (user_email, completion_date, certificate_id)) WITH CLUSTERING ORDER BY (completion_date DESC, certificate_id DESC);
 """
 
-SELECT_CERTIFICATES_BY_USER = """
-    SELECT completion_date, certificate_id, course_id, student_name, course_title, certificate_url
-    FROM certificates
-    WHERE user_email = ?
-"""
-
-SELECT_CERTIFICATES_BY_USER_COURSE = """
-    SELECT completion_date, certificate_id, student_name, course_title, certificate_url
-    FROM certificates
-    WHERE user_email = ? AND course_id = ?
-"""
 
 COURSE_PERFORMANCE = """
-    CREATE TABLE IF NOT EXISTS course_performance (  
-    progress_id uuid,  
+    CREATE TABLE IF NOT EXISTS course_performance (   
     user_email text, 
     course_id text, 
     progress_percent int, 
-    calificaciones float, 
-    PRIMARY KEY ((user_email), course_id) 
-); 
-"""
-
-SELECT_PERFORMANCE_BY_USER_COURSE = """
-    SELECT progress_id, progress_percent, calificaciones
-    FROM course_performance
-    WHERE user_email = ? AND course_id = ?
-"""
-
-SELECT_PERFORMANCES_BY_USER = """
-    SELECT course_id, progress_id, progress_percent, calificaciones
-    FROM course_performance
-    WHERE user_email = ?
+    grade float, 
+    PRIMARY KEY ((course_id), user_email)
+) WITH CLUSTERING ORDER BY (user_email ASC); 
 """
 
 LOGIN_LOGS = """
@@ -166,20 +92,9 @@ CREATE TABLE IF NOT EXISTS login_logs (
     last_activity timestamp,  
     device_info text, 
     active_status boolean, 
-    PRIMARY KEY (user_email, last_activity, session_id) ) WITH CLUSTERING ORDER BY (session_id DESC,last_activity DESC); 
+    PRIMARY KEY (user_email, last_activity, session_id) ) WITH CLUSTERING ORDER BY (last_activity DESC, session_id DESC); 
 """
 
-SELECT_LOGIN_LOGS_BY_USER = """
-    SELECT last_activity, session_id, start_time, device_info, active_status
-    FROM login_logs
-    WHERE user_email = ?
-"""
-
-SELECT_LOGIN_LOGS_BY_USER_SESSION = """
-    SELECT start_time, device_info, active_status
-    FROM login_logs
-    WHERE user_email = ? AND session_id = ?
-"""
 
 TASK_REMINDERS = """
 CREATE TABLE IF NOT EXISTS task_reminders (  
@@ -191,20 +106,9 @@ CREATE TABLE IF NOT EXISTS task_reminders (
     PRIMARY KEY (user_email, task_id)); 
 """
 
-SELECT_TASKS_BY_USER = """
-    SELECT task_id, task_description, due_date, is_completed
-    FROM task_reminders
-    WHERE user_email = ?
-"""
-
-SELECT_TASK_BY_USER_TASKID = """
-    SELECT task_description, due_date, is_completed
-    FROM task_reminders
-    WHERE user_email = ? AND task_id = ?
-"""
 
 COURSE_VIEWS = """
-CREATE TABLE IF NOT EXISTS course_viewss (
+CREATE TABLE IF NOT EXISTS course_views (
     course_id text,
     view_date timestamp,
     views int,
@@ -212,17 +116,6 @@ CREATE TABLE IF NOT EXISTS course_viewss (
 );
 """
 
-SELECT_COURSE_VIEWS_BY_COURSE = """
-    SELECT view_date, views
-    FROM course_viewss
-    WHERE course_id = ?
-"""
-
-SELECT_COURSE_VIEWS_BY_COURSE_DATE = """
-    SELECT views
-    FROM course_viewss
-    WHERE course_id = ? AND view_date = ?
-"""
 
 TOP_INSTRUCTORS = """
 CREATE TABLE IF NOT EXISTS top_instructors ( 
@@ -232,18 +125,6 @@ CREATE TABLE IF NOT EXISTS top_instructors (
     avg_rating float, 
     total_courses int, 
     PRIMARY KEY (ranking)); """
-
-SELECT_TOP_INSTRUCTORS = """
-    SELECT instructor_email, instructor_name, avg_rating, total_courses
-    FROM top_instructors
-"""
-
-SELECT_INSTRUCTOR_BY_RANKING = """
-    SELECT instructor_email, instructor_name, avg_rating, total_courses
-    FROM top_instructors
-    WHERE ranking = ?
-"""
-
 
 
 # Datos de prueba
@@ -257,157 +138,219 @@ STUDENTS = [
 
 ACTIVITY_TYPE = ['QUIZ', 'FORO', 'TAREA', 'VIDEO', 'EXAMEN']
 
-# Función para poblar las tablas con datos aleatorios
-def populate_data(session):
-    log.info("Insertando datos de prueba...")
+def populate_data_from_csv(session, filepath):
+    log.info("Insertando datos desde CSV...")
+    print("entrando a la funcion")
 
-    for student_username, student_name in STUDENTS:
-        user_email = f"{student_username}@example.com"
-        course_id = f"course_{random.randint(1, 5)}"
+    try:
+        with open(filepath, 'r', encoding='utf-8') as file:
+            csv_reader = csv.reader(file)
+            next(csv_reader)  # Salta el encabezado del CSV
+            ranking = 1
+            for row in csv_reader:
+                if row:
+                    user_email, course_id, tipo_actividad, timestamp_str, activity_id, detalles, progress_percent, grade, device_info, teacher_name, teacher_email,teacher_avg = row
+                    
+                    # Convertir el timestamp a formato datetime de Python
+                    timestamp = datetime.fromisoformat(timestamp_str.replace('Z', '+00:00'))  # Asumimos que el formato es ISO 8601
+                    progress_percent = int(progress_percent)
+                    grade = float(grade)
+                    activity_id = uuid.UUID(activity_id)  # Convertir a UUID
+                    
+                    INSERT_student_activity = """
+                        INSERT INTO student_activity (user_email, course_id, tipo_actividad, timestamp, activity_id, detalles)
+                        VALUES (?, ?, ?, ?, ?, ?)
+                    """
+                    prepared = session.prepare(INSERT_student_activity)
+                    try:
+                        session.execute(prepared, (user_email, course_id, tipo_actividad, timestamp, activity_id, detalles))
+                        log.info(f"Datos insertados para {user_email} en la actividad {activity_id}.")
+                    except Exception as e:
+                        print(f"Error al insertar datos de actividad del estudiante: {e}")
 
-        # Insertar actividad aleatoria
-        for _ in range(3):  # Cada estudiante hace 3 actividades
-            activity_id = uuid.uuid4()
-            tipo_actividad = random.choice(ACTIVITY_TYPE)
-            timestamp = datetime.utcnow()
-            detalles = f"Realizó la actividad {tipo_actividad}"
+                    INSERT_course_progress = """
+                        INSERT INTO course_progress (user_email, course_id, progress_percent, grade)
+                        VALUES (?, ?, ?, ?)
+                    """
+                    prepared = session.prepare(INSERT_course_progress)
+                    try:
+                        session.execute(prepared, (user_email, course_id, progress_percent, grade))
+                        log.info(f"Datos insertados para {user_email} en el curso {course_id}.")
+                    except Exception as e:
+                        print(f"Error al insertar datos de progreso del curso: {e}")
 
-            session.execute("""
-                INSERT INTO student_activity (user_email, course_id, tipo_actividad, timestamp, activity_id, detalles)
-                VALUES (%s, %s, %s, %s, %s, %s)
-            """, (user_email, course_id, tipo_actividad, timestamp, activity_id, detalles))
+                    notification_id = uuid.uuid4()
+                    tipo_notificacion = random.choice(['Anuncio', 'Recordatorio', 'Calificación'])
+                    mensaje = f"{tipo_notificacion} para {user_email}"
 
-        # Insertar progreso
-        progress_percent = random.randint(20, 100)
-        grade = round(random.uniform(6.0, 10.0), 2)
+                    INSERT_system_notifications = """
+                        INSERT INTO system_notifications (user_email, timestamp, notification_id, course_id, tipo, notificacion)
+                        VALUES (?, ?, ?, ?, ?, ?)
+                    """
+                    prepared = session.prepare(INSERT_system_notifications)
+                    try:
+                        session.execute(prepared, (user_email, timestamp, notification_id, course_id, tipo_notificacion, mensaje))
+                        log.info(f"Datos insertados para {user_email} en la notificación {notification_id}.")
+                    except Exception as e:
+                        print(f"Error al insertar datos de notificaciones: {e}")
 
-        session.execute("""
-            INSERT INTO course_progress (user_email, course_id, progress_percent, grade)
-            VALUES (%s, %s, %s, %s)
-        """, (user_email, course_id, progress_percent, grade))
+                    session_id = uuid.uuid4()
+                    last_activity = datetime.now()
 
-        # Insertar notificaciones
-        notification_id = uuid.uuid4()
-        tipo_notificacion = random.choice(['Anuncio', 'Recordatorio', 'Calificación'])
-        mensaje = f"{tipo_notificacion} para {student_name}"
-        notification_timestamp = datetime.utcnow()
+                    INSERT_user_sessions = """
+                        INSERT INTO user_sessions (user_email, session_id, device_info, last_activity)
+                        VALUES (?, ?, ?, ?)
+                    """
+                    prepared = session.prepare(INSERT_user_sessions)
+                    try:
+                        session.execute(prepared, (user_email, session_id, device_info, last_activity))
+                        log.info(f"Datos insertados para {user_email} en la sesión {session_id}.")
+                    except Exception as e:
+                        print(f"Error al insertar datos de sesiones de usuario: {e}")
 
-        session.execute("""
-            INSERT INTO system_notifications (user_email, timestamp, notification_id, course_id, tipo, notificacion)
-            VALUES (%s, %s, %s, %s, %s, %s)
-        """, (user_email, notification_timestamp, notification_id, course_id, tipo_notificacion, mensaje))
+                    student_name = "mike"
+                    certificate_id = uuid.uuid4()
+                    completion_date = datetime.now().date()
+                    certificate_url = f"https://certificados.com/{student_name}_curso"
 
-        # Insertar sesiones activas
-        session_id = uuid.uuid4()
-        device_info = random.choice(['Windows 10 - Chrome', 'MacBook - Safari', 'Android - Firefox'])
-        last_activity = datetime.utcnow()
+                    INSERT_certificates = """
+                        INSERT INTO certificates (user_email, completion_date, certificate_id, course_id, student_name, course_title, certificate_url)
+                        VALUES (?, ?, ?, ?, ?, ?, ?)
+                    """
+                    prepared = session.prepare(INSERT_certificates)
+                    try:
+                        session.execute(prepared, (user_email, completion_date, certificate_id, course_id, student_name, course_id, certificate_url))
+                        log.info(f"Datos insertados para {user_email} en el curso {course_id}.")
+                    except Exception as e:
+                        print(f"Error al insertar datos de certificados: {e}")
 
-        session.execute("""
-            INSERT INTO user_sessions (user_email, session_id, device_info, last_activity)
-            VALUES (%s, %s, %s, %s)
-        """, (user_email, session_id, device_info, last_activity))
 
-        # Insertar certificados
-        certificate_id = uuid.uuid4()
-        completion_date = datetime.utcnow().date()
-        certificate_url = f"https://certificados.com/{student_username}_curso"
+                    INSERT_course_performance = """
+                        INSERT INTO course_performance (user_email, course_id, progress_percent, grade)
+                        VALUES (?, ?, ?, ?)
+                    """
+                    prepared = session.prepare(INSERT_course_performance)
+                    try:
+                        session.execute(prepared, (user_email, course_id, progress_percent, grade))
+                        log.info(f"Datos insertados para {user_email} en el curso {course_id}.")
+                    except Exception as e:
+                        print(f"Error al insertar datos de desempeño en curso: {e}")
 
-        session.execute("""
-            INSERT INTO certificates (user_email, completion_date, certificate_id, course_id, student_name, course_title, certificate_url)
-            VALUES (%s, %s, %s, %s, %s, %s, %s)
-        """, (user_email, completion_date, certificate_id, course_id, student_name, "Curso de Cassandra", certificate_url))
+                                # Insertar login logs
+                    start_time = datetime.now()
+                    last_activity = datetime.now()
+                    device_info = random.choice(['Windows 10 - Chrome', 'MacBook - Safari', 'Android - Firefox'])
+                    active_status = random.choice([True, False])
 
-        # Insertar desempeño en curso
-        progress_id = uuid.uuid4()
-        progress_percent = random.randint(20, 100)
-        calificaciones = round(random.uniform(6.0, 10.0), 2)
+                    INSERT_login_logs = """
+                        INSERT INTO login_logs (user_email, last_activity, session_id, start_time, device_info, active_status)
+                        VALUES (?, ?, ?, ?, ?, ?)
+                    """
+                    prepared = session.prepare(INSERT_login_logs)
+                    try:
+                        session.execute(prepared, (user_email, last_activity, session_id, start_time, device_info, active_status))
+                        log.info(f"Datos insertados para {user_email} en la sesión {session_id}.")
+                    except Exception as e:
+                        print(f"Error al insertar datos de login logs: {e}")
 
-        session.execute("""
-            INSERT INTO course_performance (user_email, course_id, progress_id, progress_percent, calificaciones)
-            VALUES (%s, %s, %s, %s, %s)
-        """, (user_email, course_id, progress_id, progress_percent, calificaciones))
+                    # Insertar recordatorios de tareas
+                    task_id = uuid.uuid4()
+                    task_description = "Completar módulo 3"
+                    due_date = datetime.now().date()
+                    is_completed = random.choice([True, False])
 
-        # Insertar login logs
-        start_time = datetime.utcnow()
-        last_activity = datetime.utcnow()
-        device_info = random.choice(['Windows 10 - Chrome', 'MacBook - Safari', 'Android - Firefox'])
-        active_status = random.choice([True, False])
+                    INSERT_tasks = """
+                        INSERT INTO task_reminders (user_email, task_id, task_description, due_date, is_completed)
+                        VALUES (?, ?, ?, ?, ?)
+                    """
+                    prepared = session.prepare(INSERT_tasks)
+                    try:
+                        session.execute(prepared, (user_email, task_id, task_description, due_date, is_completed))
+                        log.info(f"Datos insertados para {user_email} en la tarea {task_description}.")
+                    except Exception as e:
+                        print(f"Error al insertar datos de recordatorios de tareas: {e}")
 
-        session.execute("""
-            INSERT INTO login_logs (user_email, last_activity, session_id, start_time, device_info, active_status)
-            VALUES (%s, %s, %s, %s, %s, %s)
-        """, (user_email, last_activity, session_id, start_time, device_info, active_status))
+                    view_date = datetime.now()
+                    views = random.randint(10, 100)
 
-        # Insertar recordatorios de tareas
-        task_id = uuid.uuid4()
-        task_description = "Completar módulo 3"
-        due_date = datetime.utcnow().date()
-        is_completed = random.choice([True, False])
+                    # Insertar vistas del curso
+                    INSERT_views = """
+                        INSERT INTO course_views (course_id, view_date, views)
+                        VALUES (?, ?, ?)
+                    """
+                    prepared = session.prepare(INSERT_views)
+                    try:
+                        session.execute(prepared, (course_id, view_date, views))
+                        log.info(f"Datos insertados para {course_id} en la fecha {view_date}.")
+                    except Exception as e:
+                        print(f"Error al insertar datos de vistas del curso: {e}")
 
-        session.execute("""
-            INSERT INTO task_reminders (user_email, task_id, task_description, due_date, is_completed)
-            VALUES (%s, %s, %s, %s, %s)
-        """, (user_email, task_id, task_description, due_date, is_completed))
+                    instructor_email = teacher_email
+                    instructor_name = teacher_name
+                    ranking += 1
+                    avg_rating = float(teacher_avg)
+                    total_courses = random.randint(5, 20)
+                    #print(f"Datos del instructor: {instructor_email}, {instructor_name}, {ranking},{avg_rating}, {total_courses}")
+                    
+                    # Insertar datos de los instructores    
+                    INSERT_Instructors = """
+                        INSERT INTO top_instructors (ranking, instructor_email, instructor_name, avg_rating, total_courses)
+                        VALUES (?, ?, ?, ?, ?);
+                    """
+                    prepared = session.prepare(INSERT_Instructors)
+                    try:
+                        session.execute(prepared, (ranking, instructor_email, instructor_name, avg_rating, total_courses))
+                        log.info(f"Datos insertados para {instructor_email} en el curso {instructor_name}.")
+                    except Exception as e:
+                        print(f"Error al insertar datos del instructor: {e}")
 
-    # Insertar vistas de cursos
-    for course_number in range(1, 6):
-        course_id = f"course_{course_number}"
-        for _ in range(3):  # 3 registros por curso
-            view_date = datetime.utcnow()
-            views = random.randint(10, 100)
+                                        
 
-            session.execute("""
-                INSERT INTO course_viewss (course_id, view_date, views)
-                VALUES (%s, %s, %s)
-            """, (course_id, view_date, views))
-
-    # Insertar instructores top
-    for ranking in range(1, 6):
-        instructor_email = f"instructor{ranking}@example.com"
-        instructor_name = f"Instructor {ranking}"
-        avg_rating = round(random.uniform(3.0, 5.0), 2)
-        total_courses = random.randint(5, 20)
-
-        session.execute("""
-            INSERT INTO top_instructors (ranking, instructor_email, instructor_name, avg_rating, total_courses)
-            VALUES (%s, %s, %s, %s, %s)
-        """, (ranking, instructor_email, instructor_name, avg_rating, total_courses))
-
-    log.info("Datos de prueba insertados correctamente.")
+        log.info("Datos desde CSV insertados correctamente.")
+    except Exception as e:
+                    log.error(f"Error al insertar datos desde CSV: {e}")
 
 
 # Crear esquema de base de datos
 def create_schema(session):
     log.info("Creando Keyspace...")
-    session.execute(CREATE_KEYSPACE)
+    try:
+        session.execute(CREATE_KEYSPACE)
 
-    # Usar el Keyspace antes de crear las tablas
-    session.set_keyspace(KEYSPACE)
-    
-    log.info("Creando tablas...")
-    session.execute(CREATE_STUDENTS_ACTIVITY)
-    session.execute(STUDENT_PROGRESS)
-    session.execute(SYSTEM_NOTIFICATIONS)
-    session.execute(USER_SESSIONS)
-    session.execute(STUDENT_CERTIFICATES)
-    session.execute(COURSE_PERFORMANCE)
-    session.execute(LOGIN_LOGS)
-    session.execute(TASK_REMINDERS)
-    session.execute(COURSE_VIEWS)
-    session.execute(TOP_INSTRUCTORS)
+        # Usar el Keyspace antes de crear las tablas
+        session.set_keyspace(KEYSPACE)
+        
+        log.info("Creando tablas...")
+        session.execute(CREATE_STUDENTS_ACTIVITY)
+        session.execute(COURSE_PROGRESS)
+        session.execute(SYSTEM_NOTIFICATIONS)
+        session.execute(USER_SESSIONS)
+        session.execute(STUDENT_CERTIFICATES)
+        session.execute(COURSE_PERFORMANCE)
+        session.execute(LOGIN_LOGS)
+        session.execute(TASK_REMINDERS)
+        session.execute(COURSE_VIEWS)
+        session.execute(TOP_INSTRUCTORS)
 
-    log.info("Esquema creado exitosamente.")
+        log.info("Esquema creado exitosamente.")
+    except Exception as e:
+        log.error(f"Error al crear el esquema: {e}")
+
 
 def main():
     log.info("Conectando a Cassandra...")
-    cluster = Cluster(['127.0.0.1'], protocol_version=5)
-    session = cluster.connect()
+    try:
+        cluster = Cluster(['127.0.0.1'], protocol_version=5)
+        session = cluster.connect()
+    except Exception as e:
+        log.error(f"Error al conectar a Cassandra: {e}")
+        return
 
     # Crear esquema de base de datos
     create_schema(session)
 
     # Poblar datos de prueba
-    populate_data(session)
+    populate_data_from_csv(session)
 
     log.info("Datos insertados correctamente.")
 
