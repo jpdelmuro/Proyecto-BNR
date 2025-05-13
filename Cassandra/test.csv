@@ -1,0 +1,31 @@
+user_email,course_id,tipo_actividad,timestamp,activity_id,detalles,progress_percent,grade,device_info,teacher_name,teacher_email,teacher_avg
+mike@example.com,course_1,QUIZ,2024-10-15T12:34:56Z,10000000-0000-0000-0000-000000000001,Completó el quiz inicial,85,8.5,Macbook,Jose,jose@example.com,9.0
+anna@example.com,course_2,TAREA,2024-10-16T09:15:23Z,10000000-0000-0000-0000-000000000002,Entregó ensayo sobre ética,92,9.2,iPhone,Miguel,miguel@example.com,8.1
+li@example.com,course_3,FORO,2024-10-17T11:22:10Z,10000000-0000-0000-0000-000000000003,Participó en foro ambiental,78,7.8,Windows Laptop,Paty,paty@example.com,9.5
+mike@example.com,course_1,VIDEO,2024-10-18T18:30:00Z,10000000-0000-0000-0000-000000000004,Visualizó introducción al curso,70,7.0,Pixel,Ernesto,ernesto@example.com,9.2
+anna@example.com,course_2,EXAMEN,2024-10-19T14:00:00Z,10000000-0000-0000-0000-000000000005,Presentó examen parcial,88,8.8,Macbook,Ulises,ulises@example.com,8.6
+li@example.com,course_3,TAREA,2024-10-20T08:45:00Z,10000000-0000-0000-0000-000000000006,Subió práctica de laboratorio,95,9.5,Chromebook,Luis,luis@example.com,9.0
+mike@example.com,course_1,VIDEO,2024-10-21T13:40:00Z,10000000-0000-0000-0000-000000000007,Reprodujo clase sobre teoría,75,7.5,Mac,Ivan,ivan@example.com,9.8
+anna@example.com,course_2,QUIZ,2024-10-22T15:20:00Z,10000000-0000-0000-0000-000000000008,Quiz de conceptos básicos,89,8.9,Surface,Jose,jose@example.com,9.0
+li@example.com,course_3,TAREA,2024-10-23T16:10:00Z,10000000-0000-0000-0000-000000000009,Entregó informe final,90,9.0,Galaxy Tab,Miguel,miguel@example.com,8.1
+mike@example.com,course_1,FORO,2024-10-24T17:00:00Z,10000000-0000-0000-0000-000000000010,Comentó en foro de dudas,80,8.0,Samsung,Paty,paty@example.com,9.5
+anna@example.com,course_2,VIDEO,2024-10-25T10:00:00Z,10000000-0000-0000-0000-000000000011,Reprodujo documental educativo,77,7.7,Macbook,Ernesto,ernesto@example.com,9.2
+li@example.com,course_3,EXAMEN,2024-10-26T12:30:00Z,10000000-0000-0000-0000-000000000012,Examen final,93,9.3,Laptop,Ulises,ulises@example.com,8.6
+mike@example.com,course_1,TAREA,2024-10-27T09:20:00Z,10000000-0000-0000-0000-000000000013,Proyecto final entregado,94,9.4,iPad,Luis,luis@example.com,9.0
+anna@example.com,course_2,VIDEO,2024-10-28T11:15:00Z,10000000-0000-0000-0000-000000000014,Clase magistral reproducida,82,8.2,ThinkPad,Ivan,ivan@example.com,9.8
+li@example.com,course_3,QUIZ,2024-10-29T14:45:00Z,10000000-0000-0000-0000-000000000015,Cuestionario técnico,88,8.8,Macbook,Jose,jose@example.com,9.0
+mike@example.com,course_1,FORO,2024-10-30T10:50:00Z,10000000-0000-0000-0000-000000000016,Foro sobre metodología,81,8.1,PC,Miguel,miguel@example.com,8.1
+anna@example.com,course_1,TAREA,2024-11-01T13:10:00Z,10000000-0000-0000-0000-000000000017,Ensayo crítico entregado,91,9.1,Mac,Paty,paty@example.com,9.5
+li@example.com,course_3,VIDEO,2024-11-02T16:00:00Z,10000000-0000-0000-0000-000000000018,Clase audiovisual reproducida,79,7.9,Dell,Ernesto,ernesto@example.com,9.2
+mike@example.com,course_1,EXAMEN,2024-11-03T09:30:00Z,10000000-0000-0000-0000-000000000019,Evaluación final presentada,90,9.0,Acer,Ulises,ulises@example.com,8.6
+anna@example.com,course_2,QUIZ,2024-11-04T11:45:00Z,10000000-0000-0000-0000-000000000020,Quiz intermedio,86,8.6,Lenovo,Luis,luis@example.com,9.0
+li@example.com,course_3,FORO,2024-11-05T14:10:00Z,10000000-0000-0000-0000-000000000021,Participación activa en foro,85,8.5,iPhone,Ivan,ivan@example.com,9.8
+mike@example.com,course_1,VIDEO,2024-11-06T17:25:00Z,10000000-0000-0000-0000-000000000022,Tutorial reproducido,76,7.6,Macbook,Jose,jose@example.com,9.0
+anna@example.com,course_2,TAREA,2024-11-07T08:35:00Z,10000000-0000-0000-0000-000000000023,Entregó proyecto grupal,93,9.3,Surface,Miguel,miguel@example.com,8.1
+li@example.com,course_3,QUIZ,2024-11-08T10:15:00Z,10000000-0000-0000-0000-000000000024,Quiz sobre tendencias,87,8.7,Tablet,Paty,paty@example.com,9.5
+mike@example.com,course_1,TAREA,2024-11-09T12:40:00Z,10000000-0000-0000-0000-000000000025,Tarea de cierre entregada,92,9.2,Mac,Ernesto,ernesto@example.com,9.2
+anna@example.com,course_2,FORO,2024-11-10T14:20:00Z,10000000-0000-0000-0000-000000000026,Foro sobre temas actuales,84,8.4,Laptop,Ulises,ulises@example.com,8.6
+li@example.com,course_3,VIDEO,2024-11-11T16:50:00Z,10000000-0000-0000-0000-000000000027,Video final del curso,81,8.1,iPad,Luis,luis@example.com,9.0
+mike@example.com,course_1,QUIZ,2024-11-12T18:05:00Z,10000000-0000-0000-0000-000000000028,Quiz de repaso,89,8.9,Dell,Ivan,ivan@example.com,9.8
+anna@example.com,course_2,EXAMEN,2024-11-13T09:00:00Z,10000000-0000-0000-0000-000000000029,Evaluación global,94,9.4,Macbook,Jose,jose@example.com,9.0
+li@example.com,course_3,TAREA,2024-11-14T10:20:00Z,10000000-0000-0000-0000-000000000030,Informe final del módulo,90,9.0,ThinkPad,Miguel,miguel@example.com,8.1
