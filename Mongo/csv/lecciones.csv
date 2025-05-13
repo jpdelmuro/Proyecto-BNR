@@ -1,0 +1,6 @@
+lesson_id,course_id,title,content,duration,resource,comment_user_id,comment,timestamp
+l001,c001,Instalacion de MongoDB,"Guia para instalar MongoDB.",15,https://mongodb.com/install,u001,"Muy buena lección",2024-04-01T10:00:00Z
+l002,c001,Operaciones Basicas,"Insert, Find, Update y Delete.",20,https://mongodb.com/docs,,, 
+l003,c002,Closures en JS,"Que son y como funcionan.",25,https://developer.mozilla.org/js-closures,,, 
+l004,c002,Asincronia y Promesas,"Como manejar tareas asincronas.",30,https://developer.mozilla.org/js-async,,, 
+l005,c003,Pandas Intro,"Lectura de datos con Pandas.",40,https://pandas.pydata.org/,,, 

@@ -1,0 +1,499 @@
+docker run --name Proyecto -d -p 27017:27017 mongo
+
+docker exec -it Proyecto mongosh
+
+show dbs
+
+use proyecto
+
+db.dropDatabase()
+
+""" Crear USUARIO """
+db.usuarios.insertMany([
+  {
+    user_id: "u001",
+    name: "Juan Pablo Del Muro",
+    email: "juan@gmail.com",
+    password: "ContrasenaJuan",
+    courses_enrolled: ["c002"],
+    courses_completed: [
+      { course_id: "c001", score: 10 }
+    ],
+    created_at: ISODate("2024-03-01T10:00:00Z")
+  },
+  {
+    user_id: "u002",
+    name: "Luisa Ikram Zaldivar",
+    email: "Luisa@gmail.com",
+    password: "ContrasenaIkram",
+    courses_enrolled: ["c003"],
+    courses_completed: [
+      { course_id: "c002", score: 10 }
+    ],
+    created_at: ISODate("2024-04-01T12:00:00Z")
+  },
+  {
+    user_id: "u003",
+    name: "Sebastian Macias Macias",
+    email: "Sebastian@gmail.com",
+    password: "ContrasenaSebastian",
+    courses_enrolled: ["c003"],
+    courses_completed: [
+      { course_id: "c001", score: 9.5}
+    ],
+    created_at: ISODate("2024-03-15T14:20:00Z")
+  },
+  {
+    user_id: "u004",
+    name: "Maria Diaz",
+    email: "maria@gmail.com",
+    password: "ContrasenaMaria",
+    courses_enrolled: ["c004"],
+    courses_completed: [],
+    created_at: ISODate("2024-05-01T09:00:00Z")
+  },
+  {
+    user_id: "u005",
+    name: "Pedro Sanchez",
+    email: "pedro@gmail.com",
+    password: "ContrasenaPedro",
+    courses_enrolled: ["c004"],
+    courses_completed: [
+      { course_id: "c003", score: 6.0 }
+    ],
+    created_at: ISODate("2024-02-28T18:30:00Z")
+  }
+]);
+  
+
+""" Crear Curso"""
+db.cursos.insertMany([
+  {
+    course_id: "c001",
+    title: "Bases de datos no relacionales",
+    description: "Curso básico para aprender MongoDB, Cassandra y Dgraph",
+    teacher_id: "i001",
+    lessons: ["l001", "l002"],
+    created_at: ISODate("2024-03-01T08:00:00Z"),
+    rating: 4.7,
+    category: "Bases de Datos"
+  },
+  {
+    course_id: "c002",
+    title: "Desarrollo WEB",
+    description: "Conceptos avanzados de HTML, CSS, JS",
+    teacher_id: "i001",
+    lessons: ["l003", "l004"],
+    created_at: ISODate("2024-04-05T10:30:00Z"),
+    rating: 4.5,
+    category: "Programación"
+  },
+  {
+    course_id: "c003",
+    title: "Minería de datos",
+    description: "Manipulación de datos con Pandas y NumPy.",
+    teacher_id: "i002",
+    lessons: ["l005", "l006"],
+    created_at: ISODate("2024-02-20T11:00:00Z"),
+    rating: 4.8,
+    category: "Ciencia de Datos"
+  },
+  {
+    course_id: "c004",
+    title: "Fundamentos de Redes",
+    description: "Aprende cómo funciona internet.",
+    teacher_id: "i002",
+    lessons: ["l007", "l008"],
+    created_at: ISODate("2024-01-15T09:45:00Z"),
+    rating: 4.2,
+    category: "Redes"
+  },
+  {
+    course_id: "c005",
+    title: "Ingles VIII",
+    description: "Taller de el lenguaje inglés",
+    teacher_id: "i003",
+    lessons: ["l009", "l010"],
+    created_at: ISODate("2024-03-22T13:15:00Z"),
+    rating: 4.9,
+    category: "Lenguas"
+  }
+]);
+
+""" Crear LECCION"""
+db.lecciones.insertMany([
+  {
+    lesson_id: "l001",
+    course_id: "c001",
+    title: "Instalación de MongoDB",
+    content: "Guía para instalar MongoDB.",
+    duration: 15,
+    resources: ["https://mongodb.com/install"],
+    comments: [
+      {"user_id": "u001", "comment": "Muy buena lección", "timestamp": ISODate("2024-04-01T10:00:00Z")}
+    ]
+  },
+  {
+    lesson_id: "l002",
+    course_id: "c001",
+    title: "Operaciones Básicas",
+    content: "Insert, Find, Update y Delete.",
+    duration: 20,
+    resources: ["https://mongodb.com/docs"],
+    comments: []
+  },
+  {
+    lesson_id: "l003",
+    course_id: "c002",
+    title: "Closures en JS",
+    content: "Qué son y cómo funcionan.",
+    duration: 25,
+    resources: ["https://developer.mozilla.org/js-closures"],
+    comments: []
+  },
+  {
+    lesson_id: "l004",
+    course_id: "c002",
+    title: "Asincronía y Promesas",
+    content: "Cómo manejar tareas asíncronas.",
+    duration: 30,
+    resources: ["https://developer.mozilla.org/js-async"],
+    comments: []
+  },
+  {
+    lesson_id: "l005",
+    course_id: "c003",
+    title: "Pandas Intro",
+    content: "Lectura de datos con Pandas.",
+    duration: 40,
+    resources: ["https://pandas.pydata.org/"],
+    comments: []
+  }
+]);
+
+""" Crear INSTRUCTOR """
+db.instructores.insertMany([
+  {
+    user_id: "i001",
+    name: "Carlos Ramírez",
+    email: "carlos@gmail.com",
+    password: "ContrasenaCarlos",
+    courses_list: ["c001", "c002"],
+    course_rating: 4.6,
+    created_at: ISODate("2024-01-20T09:30:00Z")
+  },
+  {
+    user_id: "i002",
+    name: "Laura Torres",
+    email: "laura@gmail.com",
+    password: "ContrasenaLaura",
+    courses_list: ["c003", "c004"],
+    course_rating: 4.7,
+    created_at: ISODate("2024-02-15T11:00:00Z")
+  },
+  {
+    user_id: "i003",
+    name: "José Medina",
+    email: "jose@gmail.com",
+    password: "ContrasenaJose",
+    courses_list: ["c005"],
+    course_rating: 4.9,
+    created_at: ISODate("2024-03-10T08:45:00Z")
+  },
+  {
+    user_id: "i004",
+    name: "Sofía Ríos",
+    email: "sofia@gmail.com",
+    password: "ContrasenaSofia",
+    courses_list: [],
+    course_rating: 0,
+    created_at: ISODate("2024-03-28T13:15:00Z")
+  },
+  {
+    user_id: "i005",
+    name: "Miguel Lara",
+    email: "miguel@gmail.com",
+    password: "ContrasenaMiguel",
+    courses_list: [],
+    course_rating: 0,
+    created_at: ISODate("2024-04-01T16:00:00Z")
+  }
+]);
+
+
+// USUARIO
+db.usuarios.createIndex({ email: 1 }); // Índice para buscar usuarios rápidamente por su email (útil para login, recuperación de cuenta, etc.)
+db.usuarios.createIndex({ name: 1 }); // Índice para buscar usuarios por nombre (por ejemplo, cuando se quiera consultar su perfil por nombre)
+
+
+// CURSO
+db.cursos.createIndex({ title: "text" }); // Índice de texto para realizar búsquedas por título (permite usar búsquedas tipo full-text con $text y $search)
+db.cursos.createIndex({ teacher_id: 1 }); // Índice para buscar todos los cursos creados por un profesor específico (teacher_id)
+// Índice compuesto para buscar o ordenar cursos por categoría y rating
+db.cursos.createIndex({ category: 1, rating: -1 }); // Útil para mostrar "los cursos mejor calificados de una categoría"
+
+
+// LECCION
+db.lecciones.createIndex({ course_id: 1 }); // Índice para buscar todas las lecciones de un curso específico (por course_id)
+db.lecciones.createIndex({ "comments.user_id": 1 }); // Útil para la consulta "comentarios por alumnos (fecha y comentario)"
+
+
+// INSTRUCTOR
+db.instructores.createIndex({ user_id: 1 }); // Índice para buscar instructores por su user_id (necesario para consultar su perfil y los cursos que imparte)
+
+
+
+// QUERYS
+// - crear un usuario
+db.usuarios.insertOne({
+  user_id: "u006",
+  name: "Ana López",
+  email: "ana@gmail.com",
+  password: "ContrasenaAna",
+  courses_enrolled: [],
+  courses_completed: [],
+  created_at: ISODate("2024-04-18T10:00:00Z")
+});
+
+// - cambiar contraseña
+db.usuarios.updateOne(
+  { email: "ana@gmail.com" },
+  { $set: { password: "NuevaContrasenaAna" } }
+);
+
+// - consultar perfil
+db.usuarios.findOne(
+  { email: "ana@gmail.com" },
+  { password: 0 } // Ocultamos la contraseña
+);
+
+// - consultar curso por titulo o maestro
+db.cursos.find(
+  { $text: { $search: "Desarrollo WEB" } } // Búsqueda en campo title
+);
+
+db.cursos.find(
+  { teacher_id: "i001" }
+);
+
+
+// - Listar cursos en los que está inscrito el usuario con pipeline
+db.usuarios.aggregate([
+  { $match: { user_id: "u001" } },
+  { $unwind: "$courses_enrolled" },
+  {
+    $lookup: {
+      from: "cursos",
+      localField: "courses_enrolled",
+      foreignField: "course_id",
+      as: "curso_info"
+    }
+  },
+  { $unwind: "$curso_info" },
+  {
+    $project: {
+      _id: 0,
+      course_id: "$courses_enrolled",
+      title: "$curso_info.title",
+      category: "$curso_info.category",
+      rating: "$curso_info.rating"
+    }
+  }
+]);
+
+
+// - Consultar lecciones de un curso
+db.lecciones.find( { course_id: "c001" }, { title: 1, duration: 1, _id: 0 } );
+
+// - En caso de ser un profesor poder crear cursos
+db.cursos.insertOne({
+  course_id: "c006",
+  title: "Inteligencia Artificial Básica",
+  description: "Introducción a IA con Python",
+  teacher_id: "i001",
+  lessons: [],
+  created_at: ISODate("2024-04-18T12:00:00Z"),
+  rating: 0,
+  category: "IA"
+});
+
+// - Consultar el perfil del profesor y los cursos que imparte con pipeline
+db.instructores.aggregate([
+  { $match: { user_id: "i001" } },
+  {
+    $lookup: {
+      from: "cursos",
+      localField: "user_id",
+      foreignField: "teacher_id",
+      as: "cursos_impartidos"
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      nombre: "$name",
+      email: 1,
+      course_rating: 1,
+      cursos_impartidos: {
+        title: 1,
+        category: 1,
+        rating: 1
+      }
+    }
+  }
+]);
+
+// - Consultar comentarios por alumnos (fecha y comentario)
+db.lecciones.find(
+  { "comments.user_id": "u001" },
+  { title: 1, "comments.$": 1, _id: 0 }
+);
+
+// ó
+
+db.lecciones.aggregate([
+  { $unwind: "$comments" },
+  { $match: { "comments.user_id": "u001" } },
+  {
+    $project: {
+      _id: 0,
+      leccion: "$title",
+      comentario: "$comments.comment",
+      fecha: "$comments.timestamp"
+    }
+  },
+  { $sort: { fecha: -1 } }
+]);
+
+
+
+db.usuarios.find({}, {
+  password: 0,
+  user_id: 0,
+  _id: 0
+});
+
+
+db.usuarios.updateOne(
+  { email: "" },
+  { $set: { password: "" } }
+);
+
+
+db.cursos.find({}, {
+  title: 1,
+  description: 1,
+  teacher_id: 1,
+  created_at: 1,
+  _id: 0
+});
+
+db.cursos.find({ $text: { $search: "" } });
+db.cursos.find({ teacher_id: " " });
+
+
+
+db.usuarios.aggregate([
+  { $match: { user_id: " " } },
+  { $unwind: "$courses_enrolled" },
+  {
+    $lookup: {
+      from: "cursos",
+      localField: "courses_enrolled",
+      foreignField: "course_id",
+      as: "curso_info"
+    }
+  },
+  { $unwind: "$curso_info" },
+  {
+    $project: {
+      _id: 0,
+      course_id: "$courses_enrolled",
+      title: "$curso_info.title",
+      instructor: "$curso_info.teacher_id",
+      created_at: "$curso_info.created_at"
+    }
+  }
+]);
+
+
+
+
+
+db.usuarios.insertOne({
+  user_id: "u007",
+  name: "Usuario Nuevo",
+  email: "nuevo@gmail.com",
+  password: "ContrasenaNuevo",
+  courses_enrolled: ["c002"],
+  courses_completed: [
+    { course_id: "c001", score: 10 }
+  ],
+  created_at: ISODate("2024-03-01T10:00:00Z")
+});
+
+
+db.usuarios.updateOne(
+  { email: "nuevo@gmail.com" },
+  { $set: { password: "OtraContrasena" } }
+);
+
+
+db.usuarios.findOne(
+  { $or: [ { email: "nuevo@gmail.com" }, { name: "Usuario Nuevo" } ] },
+  { password: 0 }
+);
+
+
+db.cursos.find(
+  { $text: { $search: "Desarrollo WEB" } }
+);
+
+
+
+db.usuarios.aggregate([
+  { $match: { user_id: "u001" } },
+  { $unwind: "$courses_enrolled" },
+  {
+    $lookup: {
+      from: "cursos",
+      localField: "courses_enrolled",
+      foreignField: "course_id",
+      as: "curso_info"
+    }
+  },
+  { $unwind: "$curso_info" },
+  {
+    $project: {
+      _id: 0,
+      course_id: "$courses_enrolled",
+      title: "$curso_info.title",
+      instructor: "$curso_info.teacher_id",
+      created_at: "$curso_info.created_at"
+    }
+  }
+]);
+
+
+
+db.cursos.aggregate([
+  { $sort: { created_at: -1 } },
+  {
+    $project: {
+      _id: 0,
+      title: 1,
+      category: 1,
+      created_at: 1
+    }
+  }
+]);
+
+db.usuarios.aggregate([
+  { $match: { user_id: "u001" } },
+  {
+    $project: {
+      _id: 0,
+      total_cursos_completados: { $size: "$courses_completed" }
+    }
+  }
+]);
