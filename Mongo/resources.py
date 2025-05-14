@@ -137,7 +137,6 @@ def perfil_profesor_con_cursos(db, nombre_profesor):
                 "_id": 0,
                 "nombre": "$name",
                 "email": 1,
-                "course_rating": 1,
                 "cursos_impartidos": {
                     "$map": {
                         "input": "$cursos_impartidos",
