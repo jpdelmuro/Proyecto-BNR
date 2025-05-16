@@ -113,12 +113,23 @@ def view_activities(session, user_email,option,fecha_inicio=None, fecha_fin=None
     for row in rows:
         print(f"ID: {row.activity_id}, Tipo: {row.tipo_actividad}, Fecha: {row.timestamp}, Detalles: {row.detalles}")
 
-def view_progress(session, user_email):
-    rows = session.execute("""
-        SELECT course_id, progress_percent, grade
-        FROM course_progress
-        WHERE user_email = %s
-    """, (user_email,))
+def view_progress(session, user_email,option):
+    if option == 1:
+        rows = session.execute("""
+            SELECT course_id, progress_percent, grade
+            FROM course_progress
+            WHERE user_email = %s
+        """, (user_email,))
+    elif option == 2:
+        course = input("Ingrese el ID del curso: ")
+        rows = session.execute("""
+            SELECT course_id, progress_percent, grade
+            FROM course_progress
+            WHERE user_email = %s AND course_id = %s
+        """, (user_email,course))
+    else:
+        print("Opción inválida, por favor intente de nuevo")
+        return
     
     print(f"Progreso del estudiante {user_email}:")
     for row in rows:
@@ -146,12 +157,28 @@ def view_user_sessions(session, user_email):
     for row in rows:
         print(f"ID: {row.session_id}, Dispositivo: {row.device_info}, Última actividad: {row.last_activity}")
 
-def view_certificates(session, user_email):
-    rows = session.execute("""
-        SELECT completion_date, certificate_id, course_id, student_name, course_title, certificate_url
-        FROM certificates
-        WHERE user_email = %s
-    """, (user_email,))
+def view_certificates(session, user_email,option):
+    if option == 1:
+        rows = session.execute("""
+            SELECT completion_date, certificate_id, course_id, student_name, course_title, certificate_url
+            FROM certificates
+            WHERE user_email = %s
+        """, (user_email,))
+    elif option == 2:
+        try:
+            fecha = input("Ingrese la fecha del certificado: ")
+            rows = session.execute("""
+                SELECT completion_date, certificate_id, course_id, student_name, course_title, certificate_url
+                FROM certificates
+                WHERE user_email = %s AND completion_date = %s
+            """, (user_email,fecha))
+        except Exception as e:
+            log.error(f"Error al obtener certificados por fecha: {e}")
+            print("Error al obtener certificados por fecha")
+            return
+    else:
+        print("Opción inválida, por favor intente de nuevo")
+        return
     
     print("Certificados del estudiante:")
     for row in rows:
@@ -289,13 +316,21 @@ def main():
             option = int(input('Ingrese su opción: '))
             view_activities(session, user_email, option)
         elif option == 2:
-            view_progress(session, user_email)
+            print("Seleccione una opción:")
+            print("1. Ver progreso de estudiante de todos los cursos")
+            print("2. Ver progreso de estudiante por curso especifico")
+            option = int(input('Ingrese su opción: '))
+            view_progress(session, user_email,option)
         elif option == 3:
             view_notifications(session, user_email)
         elif option == 4:
             view_user_sessions(session, user_email)
         elif option == 5:
-            view_certificates(session, user_email)
+            print("Seleccione una opción:")
+            print("1. Ver certificados de estudiante")
+            print("2. Ver certificados por fecha")
+            option = int(input('Ingrese su opción: '))
+            view_certificates(session, user_email,option)
         elif option == 6:
             course = input("Ingrese el ID del curso: ")
             view_course_progress(session, course)
