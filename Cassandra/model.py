@@ -147,6 +147,7 @@ def populate_data_from_csv(session, filepath):
             csv_reader = csv.reader(file)
             next(csv_reader)  # Salta el encabezado del CSV
             ranking = 1
+            instructores = set()
             for row in csv_reader:
                 if row:
                     user_email, course_id, tipo_actividad, timestamp_str, activity_id, detalles, progress_percent, grade, device_info, teacher_name, teacher_email,teacher_avg = row
@@ -208,7 +209,7 @@ def populate_data_from_csv(session, filepath):
                     except Exception as e:
                         print(f"Error al insertar datos de sesiones de usuario: {e}")
 
-                    student_name = "mike"
+                    student_name = user_email.split('@')[0]  # Obtener el nombre del estudiante a partir del email
                     certificate_id = uuid.uuid4()
                     completion_date = datetime.now().date()
                     certificate_url = f"https://certificados.com/{student_name}_curso"
@@ -291,18 +292,19 @@ def populate_data_from_csv(session, filepath):
                     avg_rating = float(teacher_avg)
                     total_courses = random.randint(5, 20)
                     #print(f"Datos del instructor: {instructor_email}, {instructor_name}, {ranking},{avg_rating}, {total_courses}")
-                    
+                    if instructor_email not in instructores:
                     # Insertar datos de los instructores    
-                    INSERT_Instructors = """
-                        INSERT INTO top_instructors (ranking, instructor_email, instructor_name, avg_rating, total_courses)
-                        VALUES (?, ?, ?, ?, ?);
-                    """
-                    prepared = session.prepare(INSERT_Instructors)
-                    try:
-                        session.execute(prepared, (ranking, instructor_email, instructor_name, avg_rating, total_courses))
-                        log.info(f"Datos insertados para {instructor_email} en el curso {instructor_name}.")
-                    except Exception as e:
-                        print(f"Error al insertar datos del instructor: {e}")
+                        INSERT_Instructors = """
+                            INSERT INTO top_instructors (ranking, instructor_email, instructor_name, avg_rating, total_courses)
+                            VALUES (?, ?, ?, ?, ?);
+                        """
+                        prepared = session.prepare(INSERT_Instructors)
+                        try:
+                            session.execute(prepared, (ranking, instructor_email, instructor_name, avg_rating, total_courses))
+                            log.info(f"Datos insertados para {instructor_email} en el curso {instructor_name}.")
+                            instructores.add(instructor_email)
+                        except Exception as e:
+                            print(f"Error al insertar datos del instructor: {e}")
 
                                         
 
