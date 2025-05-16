@@ -43,34 +43,34 @@ def set_user_email():
     return user_email
 
 # Poblar los datos de prueba o desde CSV
-def populate_data(session):
+def populate_data(session,user_email):
     log.info("Eliminando datos anteriores...")
     session.execute("""
-        DELETE FROM student_activity WHERE user_email = 'mike@example.com';
-    """)
+        DELETE FROM student_activity WHERE user_email = %s;
+    """, (user_email,))
     session.execute("""
-        DELETE FROM course_progress WHERE user_email = 'mike@example.com';
-    """)
+        DELETE FROM course_progress WHERE user_email = %s;
+    """, (user_email,))
     session.execute("""
-        DELETE FROM system_notifications WHERE user_email = 'mike@example.com';
-    """)
+        DELETE FROM system_notifications WHERE user_email = %s;
+    """, (user_email,))
     session.execute("""
-        DELETE FROM user_sessions WHERE user_email = 'mike@example.com';
-    """)
+        DELETE FROM user_sessions WHERE user_email = %s;
+    """, (user_email,))
     session.execute("""
-        DELETE FROM certificates WHERE user_email = 'mike@example.com';
-    """)
+        DELETE FROM certificates WHERE user_email = %s;
+    """, (user_email,))
     session.execute("""
         TRUNCATE course_performance;
     """)
     session.execute("""
-        DELETE FROM login_logs WHERE user_email = 'mike@example.com';
-    """)
+        DELETE FROM login_logs WHERE user_email = %s;
+    """, (user_email,))
     session.execute("""
-        DELETE FROM task_reminders WHERE user_email = 'mike@example.com';
-    """)
+        DELETE FROM task_reminders WHERE user_email = %s;
+    """, (user_email,))
     session.execute("""
-        DELETE FROM course_views WHERE course_id = 'course_1';
+        TRUNCATE course_views;
     """)
     session.execute("""
         TRUNCATE top_instructors;
@@ -80,18 +80,34 @@ def populate_data(session):
     spec = importlib.util.spec_from_file_location("model", "model.py")
     model = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(model)
-    
     # Llamar a la función para poblar datos
     model.populate_data_from_csv(session, 'test.csv')
     print("Datos de prueba insertados correctamente")
 
-# Ver actividades del estudiante
-def view_activities(session, user_email):
-    rows = session.execute("""
-        SELECT tipo_actividad, timestamp, activity_id, detalles
-        FROM student_activity
-        WHERE user_email = %s
-    """, (user_email,))
+# Selects para cada tabla
+def view_activities(session, user_email,option,fecha_inicio=None, fecha_fin=None):
+    if option == 1:
+        try:
+            fecha_inicio = input("Ingrese la fecha de inicio (YYYY-MM-DD): ")
+            fecha_fin = input("Ingrese la fecha de fin (YYYY-MM-DD): ") 
+            rows = session.execute("""
+                SELECT tipo_actividad, timestamp, activity_id, detalles
+                    FROM student_activity
+                    WHERE user_email = %s AND timestamp >= %s AND timestamp <= %s
+            """, (user_email,fecha_inicio, fecha_fin))
+        except Exception as e:
+            log.error(f"Error al obtener actividades por rango de fechas: {e}")
+            print("Error al obtener actividades por rango de fechas")
+            return
+    elif option == 2:
+        rows = session.execute("""
+            SELECT tipo_actividad, timestamp, activity_id, detalles
+            FROM student_activity
+            WHERE user_email = %s
+        """, (user_email,))
+    else:
+        print("Opción inválida, por favor intente de nuevo")
+        return
     
     print("Actividades del estudiante:")
     for row in rows:
@@ -143,16 +159,19 @@ def view_certificates(session, user_email):
 
 
 def view_course_progress(session, course_id):
-    rows = session.execute("""
-        SELECT user_email, progress_percent, grade
-        FROM course_performance
-        WHERE course_id = %s
-    """, (course_id,))
-    
-    print("Progreso del curso del estudiante:")
-    for row in rows:
-        print(f"Email: {row.user_email}, Progreso: {row.progress_percent}%, Calificación: {row.grade}")
-
+    try:
+        rows = session.execute("""
+            SELECT user_email, progress_percent, grade
+            FROM course_performance
+            WHERE course_id = %s
+        """, (course_id,))
+        
+        print("Progreso del curso del estudiante:")
+        for row in rows:
+            print(f"Email: {row.user_email}, Progreso: {row.progress_percent}%, Calificación: {row.grade}")
+    except Exception as e:
+        log.error(f"Error al obtener el progreso del curso: {e}")
+        print("Error al obtener el progreso del curso")
 def view_login_logs(session, user_email):
     rows = session.execute("""
         SELECT last_activity, session_id, start_time, device_info, active_status
@@ -191,12 +210,14 @@ def view_Teachers(session):
         SELECT instructor_email, instructor_name, avg_rating, total_courses
         FROM top_instructors
     """)
+
+    sorted_rows = sorted(rows, key=lambda row: row.avg_rating, reverse=True)
     
     print("Instructores destacados:")
-    if not rows:
+    if not sorted_rows:
         print("No hay instructores destacados disponibles.")
     else:
-        for row in rows:
+        for row in sorted_rows:
             print(f"Email: {row.instructor_email}, Nombre: {row.instructor_name}, Calificación promedio: {row.avg_rating}, Cursos totales: {row.total_courses}")
 
 def delete_user_data(session, user_email):
@@ -254,16 +275,19 @@ def main():
     model.create_schema(session)
     
     user_email = set_user_email()
-    course = 'course_1'
     
     while(True):
         print_menu()
         option = int(input('Ingrese su opción: '))
         
         if option == 0:
-            populate_data(session)
+            populate_data(session, user_email)
         elif option == 1:
-            view_activities(session, user_email)
+            print("Seleccione una opción:")
+            print("1. Ver actividades de estudiante por rango de fechas")
+            print("2. Ver todas las actividades de estudiante")
+            option = int(input('Ingrese su opción: '))
+            view_activities(session, user_email, option)
         elif option == 2:
             view_progress(session, user_email)
         elif option == 3:
@@ -280,6 +304,7 @@ def main():
         elif option == 8:
             view_tasks(session, user_email)
         elif option == 9:
+            course = input("Ingrese el ID del curso: ")
             view_course_views(session, course)
         elif option == 10:
             view_Teachers(session)
