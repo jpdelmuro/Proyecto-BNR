@@ -1,0 +1,6 @@
+user_id,name,email,password,courses_enrolled,completed_course_id,score,created_at
+u001,Juan Pablo Del Muro,juan@gmail.com,ContrasenaJuan,c002,c001,10,2024-03-01T10:00:00Z
+u002,Luisa Ikram Zaldivar,Luisa@gmail.com,ContrasenaIkram,c003,c002,10,2024-04-01T12:00:00Z
+u003,Sebastian Macias Macias,Sebastian@gmail.com,ContrasenaSebastian,c003,c001,9.5,2024-03-15T14:20:00Z
+u004,Maria Diaz,maria@gmail.com,ContrasenaMaria,c004,,,2024-05-01T09:00:00Z
+u005,Pedro Sanchez,pedro@gmail.com,ContrasenaPedro,c004,c003,6.0,2024-02-28T18:30:00Z

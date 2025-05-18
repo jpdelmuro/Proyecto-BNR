@@ -1,0 +1,6 @@
+course_id,title,description,teacher_id,lessons,created_at,rating,category
+c001,Bases de datos no relacionales,"Curso básico para aprender MongoDB, Cassandra y Dgraph",i001,"l001;l002",2024-03-01T08:00:00Z,4.7,Bases de Datos
+c002,Desarrollo WEB,"Conceptos avanzados de HTML, CSS, JS",i001,"l003;l004",2024-04-05T10:30:00Z,4.5,Programación
+c003,Mineria de datos,"Manipulación de datos con Pandas y NumPy.",i002,"l005;l006",2024-02-20T11:00:00Z,4.8,Ciencia de Datos
+c004,Fundamentos de Redes,"Aprende cómo funciona internet.",i002,"l007;l008",2024-01-15T09:45:00Z,4.2,Redes
+c005,Ingles VIII,"Taller de el lenguaje inglés",i003,"l009;l010",2024-03-22T13:15:00Z,4.9,Lenguas
