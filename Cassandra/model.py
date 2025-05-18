@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS login_logs (
     last_activity timestamp,  
     device_info text, 
     active_status boolean, 
-    PRIMARY KEY (user_email, last_activity, session_id) ) WITH CLUSTERING ORDER BY (last_activity DESC, session_id DESC); 
+    PRIMARY KEY (user_email, last_activity, session_id)) WITH CLUSTERING ORDER BY (last_activity DESC, session_id DESC); 
 """
 
 
