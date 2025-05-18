@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import logging
 import os
+import uuid
 import random    
 from cassandra.cluster import Cluster
 from datetime import datetime
@@ -46,29 +47,29 @@ def set_user_email():
 def populate_data(session,user_email):
     log.info("Eliminando datos anteriores...")
     session.execute("""
-        DELETE FROM student_activity WHERE user_email = %s;
-    """, (user_email,))
+        TRUNCATE student_activity;
+    """)
     session.execute("""
-        DELETE FROM course_progress WHERE user_email = %s;
-    """, (user_email,))
+        TRUNCATE course_progress;
+    """)
     session.execute("""
-        DELETE FROM system_notifications WHERE user_email = %s;
-    """, (user_email,))
+        TRUNCATE system_notifications;
+    """)
     session.execute("""
-        DELETE FROM user_sessions WHERE user_email = %s;
-    """, (user_email,))
+        TRUNCATE user_sessions;
+    """)
     session.execute("""
-        DELETE FROM certificates WHERE user_email = %s;
-    """, (user_email,))
+        TRUNCATE certificates;
+    """)
     session.execute("""
         TRUNCATE course_performance;
     """)
     session.execute("""
-        DELETE FROM login_logs WHERE user_email = %s;
-    """, (user_email,))
+        TRUNCATE login_logs;
+    """)
     session.execute("""
-        DELETE FROM task_reminders WHERE user_email = %s;
-    """, (user_email,))
+        TRUNCATE task_reminders;
+    """)
     session.execute("""
         TRUNCATE course_views;
     """)
@@ -135,23 +136,58 @@ def view_progress(session, user_email,option):
     for row in rows:
         print(f"Curso: {row.course_id}, Progreso: {row.progress_percent}%, Calificación: {row.grade}")
 
-def view_notifications(session, user_email):
-    rows = session.execute("""
-        SELECT timestamp, notification_id, course_id, tipo, notificacion
-        FROM system_notifications
-        WHERE user_email = %s
-    """, (user_email,))
+def view_notifications(session, user_email,option,fecha_inicio=None,fecha_fin=None):
+    try:
+        if option == 1:
+            rows = session.execute("""
+                SELECT timestamp, notification_id, course_id, tipo, notificacion
+                FROM system_notifications
+                WHERE user_email = %s
+            """, (user_email,))
+        elif option == 2:
+            fecha_inicio = input("Ingrese la fecha de inicio (YYYY-MM-DD): ")
+            fecha_fin = input("Ingrese la fecha de fin (YYYY-MM-DD): ") 
+            rows = session.execute("""
+                SELECT timestamp, notification_id, course_id, tipo, notificacion
+                FROM system_notifications
+                WHERE user_email = %s AND timestamp >= %s AND timestamp <= %s
+            """, (user_email,fecha_inicio, fecha_fin))
+        else:
+            print("Opción inválida, por favor intente de nuevo")
+            return
+    except Exception as e:
+        log.error(f"Error al obtener notificaciones: {e}")
+        print("Error al obtener notificaciones")
+        return
+
     
     print(f"Notificaciones del sistema para {user_email}:")
     for row in rows:
         print(f"ID: {row.notification_id}, Fecha: {row.timestamp}, Curso: {row.course_id}, Tipo: {row.tipo}, Mensaje: {row.notificacion}")
 
-def view_user_sessions(session, user_email):
-    rows = session.execute("""
-        SELECT session_id, device_info, last_activity
-        FROM user_sessions
-        WHERE user_email = %s
-    """, (user_email,))
+def view_user_sessions(session, user_email,option):
+    try:
+        if option == 1:
+            rows = session.execute("""
+                SELECT session_id, device_info, last_activity
+                FROM user_sessions
+                WHERE user_email = %s
+            """, (user_email,))
+        elif option == 2:
+            session_id = input("Ingrese el ID de la sesión: ")
+            session_id = uuid.UUID(session_id)
+            rows = session.execute("""
+                SELECT session_id, device_info, last_activity
+                FROM user_sessions
+                WHERE user_email = %s AND session_id = %s
+            """, (user_email,session_id))
+        else:
+            print("Opción inválida, por favor intente de nuevo")
+            return
+    except Exception as e:
+        log.error(f"Error al obtener sesiones de usuario: {e}")
+        print("Error al obtener sesiones de usuario")
+        return
     
     print(f"Sesiones de usuario para {user_email}:")
     for row in rows:
@@ -199,23 +235,57 @@ def view_course_progress(session, course_id):
     except Exception as e:
         log.error(f"Error al obtener el progreso del curso: {e}")
         print("Error al obtener el progreso del curso")
-def view_login_logs(session, user_email):
-    rows = session.execute("""
-        SELECT last_activity, session_id, start_time, device_info, active_status
-        FROM login_logs
-        WHERE user_email = %s
-    """, (user_email,))
+def view_login_logs(session, user_email,option ,fecha_inicio=None,fecha_fin=None):
+    try:
+        if option == 1:
+            rows = session.execute("""
+                SELECT last_activity, session_id, start_time, device_info, active_status
+                FROM login_logs
+                WHERE user_email = %s
+            """, (user_email,))
+        elif option == 2:
+            fecha_inicio = input("Ingrese la fecha de inicio (YYYY-MM-DD): ")
+            fecha_fin = input("Ingrese la fecha de fin (YYYY-MM-DD): ")
+            rows = session.execute("""
+                SELECT last_activity, session_id, start_time, device_info, active_status
+                FROM login_logs
+                WHERE user_email = %s AND last_activity >= %s AND last_activity <= %s
+            """, (user_email,fecha_inicio, fecha_fin))
+        else:
+            print("Opción inválida, por favor intente de nuevo")
+            return
+    except Exception as e:
+        log.error(f"Error al obtener logs de inicio de sesión: {e}")
+        print("Error al obtener logs de inicio de sesión")
+        return
     
     print("Logs de inicio de sesión del estudiante:")
     for row in rows:
         print(f"ID: {row.session_id}, Última actividad: {row.last_activity}, Hora de inicio: {row.start_time}, Dispositivo: {row.device_info}, Estado activo: {row.active_status}")
 
-def view_tasks(session, user_email):
-    rows = session.execute("""
-        SELECT task_id, task_description, due_date, is_completed
-        FROM task_reminders
-        WHERE user_email = %s
-    """, (user_email,))
+def view_tasks(session, user_email,option):
+    try:
+        if option == 1:
+            rows = session.execute("""
+                SELECT task_id, task_description, due_date, is_completed
+                FROM task_reminders
+                WHERE user_email = %s
+            """, (user_email,))
+        elif option == 2:
+            task_id = input("Ingrese el ID de la tarea: ")
+            task_id = uuid.UUID(task_id)
+            rows = session.execute("""
+                SELECT task_id, task_description, due_date, is_completed
+                FROM task_reminders
+                WHERE user_email = %s AND task_id = %s
+            """, (user_email,task_id))
+        else:
+            print("Opción inválida, por favor intente de nuevo")
+            return
+    except Exception as e:
+        log.error(f"Error al obtener recordatorios de tareas: {e}")
+        print("Error al obtener recordatorios de tareas")
+        return
     
     print("Recordatorios de tareas del estudiante:")
     for row in rows:
@@ -322,9 +392,17 @@ def main():
             option = int(input('Ingrese su opción: '))
             view_progress(session, user_email,option)
         elif option == 3:
-            view_notifications(session, user_email)
+            print("Seleccione una opción:")
+            print("1. Ver notificaciones del sistema")
+            print("2. Ver notificaciones por rango de fecha")
+            option = int(input('Ingrese su opción: '))
+            view_notifications(session, user_email,option)
         elif option == 4:
-            view_user_sessions(session, user_email)
+            print("Seleccione una opción:")
+            print("1. Ver sesiones de usuario")
+            print("2. Ver sesiones de usuario por id")
+            option = int(input('Ingrese su opción: '))
+            view_user_sessions(session, user_email,option)
         elif option == 5:
             print("Seleccione una opción:")
             print("1. Ver certificados de estudiante")
@@ -335,9 +413,17 @@ def main():
             course = input("Ingrese el ID del curso: ")
             view_course_progress(session, course)
         elif option == 7:
-            view_login_logs(session, user_email)
+            print("Seleccione una opción:")
+            print("1. Ver logs de inicio de sesión")
+            print("2. Ver logs de inicio de sesión por fecha")
+            option = int(input('Ingrese su opción: '))
+            view_login_logs(session, user_email,option)
         elif option == 8:
-            view_tasks(session, user_email)
+            print("Seleccione una opción:")
+            print("1. Ver recordatorios de tareas")
+            print("2. Ver recordatorios de tareas por id")
+            option = int(input('Ingrese su opción: '))
+            view_tasks(session, user_email,option)
         elif option == 9:
             course = input("Ingrese el ID del curso: ")
             view_course_views(session, course)
