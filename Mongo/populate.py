@@ -86,7 +86,6 @@ with open("csv/instructores.csv", newline='', encoding='utf-8') as f:
             "email": row["email"],
             "password": row["password"],
             "courses_list": row["courses_list"].split(";") if row["courses_list"] else [],
-            "course_rating": float(row["course_rating"]),
             "created_at": datetime.fromisoformat(row["created_at"].replace("Z", "+00:00"))
         }
         instructores.append(doc)

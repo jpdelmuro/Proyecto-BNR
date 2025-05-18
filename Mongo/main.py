@@ -148,7 +148,6 @@ def menu():
             else:
                 print(f"\nPerfil del profesor: {perfil['nombre']}")
                 print(f"Email: {perfil['email']}")
-                print(f"Promedio de cursos: {perfil['course_rating']}")
                 print(f"\nCursos impartidos:")
                 if not perfil["cursos_impartidos"]:
                     print("Este profesor no tiene cursos aún.")
