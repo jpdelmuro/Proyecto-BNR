@@ -11,62 +11,43 @@ def connect_to_dgraph():
 def set_schema(client):
     schema = """
     type Usuario {
-        nombre: string
-        amigos: [uid]
-        inscritoEn: [uid]
-        completado: [uid]
+        nombre
+        amigos
+        completado
     }
 
     type Instructor {
-        nombre: string
-        cursos: [uid]
+        nombre
+        cursos
     }
 
     type Curso {
-        titulo: string
-        categoria: string
-        lecciones: [uid]
-        creadoPor: uid
-    }
-
-    type Leccion {
-        titulo: string
-        curso: uid
-        interacciones: [uid]
+        titulo
+        categoria
     }
 
     type Interaccion {
-        tipo: string
-        contenido: string
-        fecha: datetime
-        leccion: uid
-        usuario: uid
-        instructor: uid
+        tipo
+        fecha
+        usuario
+        instructor
     }
 
     nombre: string @index(exact) .
-    user_id: string @index(exact) .
     titulo: string @index(term, fulltext) .
-    categoria: string @index(trigram, hash) .
+    categoria: string @index(trigram) .
     tipo: string @index(hash) .
-    contenido: string .
     fecha: datetime .
 
     amigos: [uid] @reverse .
-    inscritoEn: [uid] @reverse .
     completado: [uid] @reverse .
-    cursos: [uid] @reverse .
-    lecciones: [uid] @reverse .
-    creadoPor: uid @reverse .
-    curso: uid @reverse .
-    interacciones: [uid] @reverse .
-    leccion: uid @reverse .
+    cursos: [uid] .
     usuario: uid @reverse .
     instructor: uid @reverse .
     """
     client.alter(pydgraph.Operation(schema=schema))
 
-# ... resto del archivo sigue igual ...
+
 
 def drop_all(client):
     client.alter(pydgraph.Operation(drop_all=True))
