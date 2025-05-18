@@ -9,7 +9,7 @@ def query_recomendaciones_por_likes(nombre):
     query = """
     query q($name: string) {
       usuario(func: eq(nombre, $name)) {
-        liked: ~usuario @filter(eq(tipo, "like")) {
+        liked: ~usuario @filter(eq(tipo, \"like\")) {
           instructor {
             nombre
             cursos {
@@ -21,8 +21,7 @@ def query_recomendaciones_por_likes(nombre):
       }
     }
     """
-    res = client.txn(read_only=True).query(query, variables={"$name": nombre})
-    print(json.dumps(json.loads(res.json), indent=2))
+    return query_runner(query, {"$name": nombre})
 
 def query_cursos_amigos(nombre):
     query = """
@@ -35,14 +34,14 @@ def query_cursos_amigos(nombre):
           cursos_amigos as completado
         }
       }
+
       recomendaciones(func: uid(cursos_amigos)) @filter(NOT uid(u)) {
         titulo
         categoria
       }
     }
     """
-    res = client.txn(read_only=True).query(query, variables={"$name": nombre})
-    print(json.dumps(json.loads(res.json), indent=2))
+    return query_runner(query, {"$name": nombre})
 
 def query_ruta_aprendizaje(nombre):
     query = """
@@ -52,21 +51,21 @@ def query_ruta_aprendizaje(nombre):
           cat as categoria
         }
       }
+
       recomendaciones(func: type(Curso)) @filter(eq(categoria, val(cat))) {
         titulo
         categoria
       }
     }
     """
-    res = client.txn(read_only=True).query(query, variables={"$name": nombre})
-    print(json.dumps(json.loads(res.json), indent=2))
+    return query_runner(query, {"$name": nombre})
 
 def query_recomendacion_instructores_amigos(nombre):
     query = """
     query q($name: string) {
       usuario(func: eq(nombre, $name)) {
         amigos {
-          ~usuario @filter(eq(tipo, "like")) {
+          ~usuario @filter(eq(tipo, \"like\")) {
             instructor {
               nombre
               cursos {
@@ -78,8 +77,7 @@ def query_recomendacion_instructores_amigos(nombre):
       }
     }
     """
-    res = client.txn(read_only=True).query(query, variables={"$name": nombre})
-    print(json.dumps(json.loads(res.json), indent=2))
+    return query_runner(query, {"$name": nombre})
 
 def query_sugerencia_amigos_por_cursos(nombre):
     query = """
@@ -89,13 +87,14 @@ def query_sugerencia_amigos_por_cursos(nombre):
           cursos_comunes as uid
         }
       }
+
       recomendacion(func: type(Usuario)) @filter(uid(cursos_comunes) AND NOT eq(nombre, $name)) {
         nombre
       }
     }
     """
-    res = client.txn(read_only=True).query(query, variables={"$name": nombre})
-    print(json.dumps(json.loads(res.json), indent=2))
+    return query_runner(query, {"$name": nombre})
+
 
 def query_runner(query, variables):
     client, stub = get_dgraph_client()
@@ -111,14 +110,16 @@ def menu_consultas_dgraph():
     while True:
         print("""
 === CONSULTAS DGRAPH ===
-5. Recomendaciones por profesor (likes a instructores)
-6. Recomendaciones por amigos (cursos que ellos completaron)
-7. Ruta de aprendizaje (categoría de cursos completados)
-8. Recomendación de instructores que amigos han likeado
-9. Sugerencia de nuevos amigos por cursos similares
+
+1. Recomendaciones por profesor (likes a instructores)
+2. Recomendaciones por amigos (cursos que ellos completaron)
+3. Ruta de aprendizaje (categoría de cursos completados)
+4. Recomendación de instructores que amigos han likeado
+5. Sugerencia de nuevos amigos por cursos similares
 0. Volver al menú principal
         """)
         opcion = input("Seleccione una opción: ").strip()
+
 
         if opcion == "1":
             query_recomendaciones_por_likes(input("Nombre del usuario: "))
