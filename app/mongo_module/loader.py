@@ -59,6 +59,7 @@ def load_mongo_data(csv_dir):
             "category": row["category"]
         })
     db.cursos.insert_many(cursos)
+    db.cursos.create_index([("title", "text")])
 
     # === LECCIONES ===
     lecciones_data = load_csv_data(os.path.join(csv_dir, "leccionesM.csv"))
