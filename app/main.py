@@ -3,13 +3,13 @@ import json
 import pydgraph
 from pymongo import MongoClient
 from cassandra.cluster import Cluster
+from cassandra.policies import RoundRobinPolicy
 from cassandra_module.loader import load_cassandra_data
 from mongo_module.loader import load_mongo_data
 from dgraph_module.loader import load_dgraph_data
 from shared.sync import sync_users_across_dbs
 from mongo_module.queries import menu_consultas_mongo
-from cassandra_module.queries import run_queries as consultas_cassandra
-
+from cassandra_module.app import main as consultas_cassandra  # <- CORRECTO
 
 def mostrar_menu():
     print("\n=== MENÚ PRINCIPAL ===")
@@ -20,7 +20,6 @@ def mostrar_menu():
     print("5. Consultas Cassandra")
     print("6. Consultas Dgraph")
     print("7. Salir")
-
 
 def cargar_datos():
     print("\nCargando datos en Cassandra...")
@@ -33,7 +32,6 @@ def cargar_datos():
     load_dgraph_data("data/dgraph/")
 
     print("\n✓ Datos cargados en todas las bases correctamente.")
-
 
 def consultar_usuario():
     user_id = input("\nIngrese el user_id del usuario (ej: u001): ").strip()
@@ -51,7 +49,11 @@ def consultar_usuario():
 
     # Cassandra
     try:
-        cluster = Cluster(["127.0.0.1"])
+        cluster = Cluster(
+            contact_points=["127.0.0.1"],
+            load_balancing_policy=RoundRobinPolicy(),
+            protocol_version=5
+        )
         session = cluster.connect("plataforma_online")
         row = session.execute("SELECT name FROM user_basic WHERE user_id = %s", [user_id]).one()
         if row:
@@ -83,12 +85,10 @@ def consultar_usuario():
     print(f"Cassandra:   {nombre_cassandra if nombre_cassandra else 'No encontrado'}")
     print(f"Dgraph:      {nombre_dgraph if nombre_dgraph else 'No encontrado'}")
 
-
 def sincronizar_usuarios():
     print("\nSincronizando usuarios entre las tres bases de datos...")
     sync_users_across_dbs()
     print("✓ Sincronización completada.")
-
 
 def main():
     while True:
@@ -115,7 +115,6 @@ def main():
             sys.exit(0)
         else:
             print("\nOpción no válida. Intente nuevamente.")
-
 
 if __name__ == "__main__":
     main()
