@@ -1,6 +1,21 @@
 lesson_id,course_id,title,content,duration,resource,comment_user_id,comment,timestamp
-l001,c001,Instalacion de MongoDB,"Guia para instalar MongoDB.",15,https://mongodb.com/install,u001,"Muy buena lección",2024-04-01T10:00:00Z
-l002,c001,Operaciones Basicas,"Insert, Find, Update y Delete.",20,https://mongodb.com/docs,,, 
-l003,c002,Closures en JS,"Que son y como funcionan.",25,https://developer.mozilla.org/js-closures,,, 
-l004,c002,Asincronia y Promesas,"Como manejar tareas asincronas.",30,https://developer.mozilla.org/js-async,,, 
-l005,c003,Pandas Intro,"Lectura de datos con Pandas.",40,https://pandas.pydata.org/,,, 
+l001,Sistemas_Operativos,Introducción a Sistemas Operativos,"Conceptos básicos y arquitectura de SO.",30,https://es.wikipedia.org/wiki/Sistema_operativo,u001,"Excelente explicación",2024-01-15T09:00:00Z
+l002,Sistemas_Operativos,Gestión de Procesos,"Planificación y administración de procesos.",45,https://www.geeksforgeeks.org/process-scheduling-in-operating-systems/,u002,"Muy claro el tema de procesos",2024-01-16T10:00:00Z
+l003,Bases_de_Datos,Introducción a Bases de Datos,"Fundamentos y tipos de bases de datos.",35,https://www.tutorialspoint.com/dbms/dbms_overview.htm,u003,"Me gustó el enfoque general",2024-02-10T14:00:00Z
+l004,Bases_de_Datos,Consultas SQL Básicas,"Cómo hacer consultas SELECT, INSERT, UPDATE.",40,https://www.w3schools.com/sql/,u004,"Fácil de entender",2024-02-11T15:00:00Z
+l005,Redes_de_Computadoras,Conceptos de Redes,"Modelos OSI y TCP/IP.",30,https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-a-computer-network.html,u005,"Información útil",2024-03-05T11:00:00Z
+l006,Redes_de_Computadoras,Protocolos de Comunicación,"Funcionamiento de protocolos TCP y UDP.",50,https://tools.ietf.org/html/rfc793,u006,"Me ayudó mucho",2024-03-06T12:00:00Z
+l007,Programacion_Avanzada,Programación Orientada a Objetos,"Clases, objetos y herencia.",45,https://docs.oracle.com/javase/tutorial/java/concepts/,u007,"Excelente para repasar POO",2024-03-20T09:00:00Z
+l008,Programacion_Avanzada,Patrones de Diseño,"Introducción a patrones comunes.",40,https://refactoring.guru/es/design-patterns,u008,"Muy buena explicación",2024-03-21T10:00:00Z
+l009,Inteligencia_Artificial,Introducción a IA,"Historia y aplicaciones.",30,https://ai.google/education/,u009,"Interesante",2024-04-05T14:00:00Z
+l010,Inteligencia_Artificial,Aprendizaje Automático,"Bases y algoritmos principales.",50,https://scikit-learn.org/stable/tutorial/basic/tutorial.html,u010,"Explicado muy claro",2024-04-06T15:00:00Z
+l011,Ingenieria_de_Software,Metodologías de Desarrollo,"Ágil, Scrum y Waterfall.",35,https://www.agilealliance.org/agile101/,u011,"Muy útil para proyectos",2024-04-20T09:00:00Z
+l012,Ingenieria_de_Software,Pruebas de Software,"Técnicas y tipos de testing.",40,https://www.guru99.com/software-testing.html,u012,"Me ayudó a entender testing",2024-04-21T10:00:00Z
+l013,Seguridad_Informática,Fundamentos de Seguridad,"Cifrado y seguridad en redes.",45,https://www.csoonline.com/article/3233704/what-is-cybersecurity.html,u013,"Muy informativo",2024-05-05T11:00:00Z
+l014,Seguridad_Informática,Seguridad en Aplicaciones,"Prácticas recomendadas para apps.",50,https://owasp.org/www-project-top-ten/,u014,"Excelente contenido",2024-05-06T12:00:00Z
+l015,Arquitectura_de_Computadoras,Arquitectura Básica,"Componentes y funcionamiento.",35,https://www.cs.cmu.edu/~410/doc/lectures/arch.html,u015,"Bien explicado",2024-05-20T09:00:00Z
+l016,Arquitectura_de_Computadoras,Sistemas de Memoria,"Jerarquías y gestión de memoria.",40,https://en.wikipedia.org/wiki/Computer_memory_hierarchy,u016,"Me gustó el detalle",2024-05-21T10:00:00Z
+l017,Matematicas_Discretas,Lógica Matemática,"Proposiciones y operadores.",30,https://mathworld.wolfram.com/Logic.html,u017,"Interesante",2024-06-05T14:00:00Z
+l018,Matematicas_Discretas,Teoría de Grafos,"Nodos, aristas y aplicaciones.",50,https://www.graph-theory.com/,u018,"Muy claro",2024-06-06T15:00:00Z
+l019,Desarrollo_Web,HTML y CSS,"Bases para construir sitios web.",40,https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics,u019,"Genial para principiantes",2024-06-20T11:00:00Z
+l020,Desarrollo_Web,JavaScript Básico,"Programación en cliente.",45,https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide,u020,"Muy práctico",2024-06-21T12:00:00Z
