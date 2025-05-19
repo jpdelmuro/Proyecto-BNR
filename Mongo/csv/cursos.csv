@@ -1,11 +1,11 @@
 course_id,title,description,teacher_id,lessons,created_at,rating,category
-Sistemas_Operativos,Sistemas Operativos,"Fundamentos y administración de sistemas operativos",i001,l001;l002,2024-01-10T08:00:00Z,4.8,Ingeniería en Sistemas
-Bases_de_Datos,Bases de Datos,"Curso básico para bases de datos relacionales y no relacionales",i003,l003;l004,2024-02-15T08:00:00Z,4.7,Ingeniería en Sistemas
-Redes_de_Computadoras,Redes de Computadoras,"Introducción a redes, protocolos y comunicaciones",i005,l005;l006,2024-03-01T08:00:00Z,4.6,Ingeniería en Sistemas
-Programacion_Avanzada,Programación Avanzada,"Técnicas avanzadas de programación en varios lenguajes",i007,l007;l008,2024-03-15T08:00:00Z,4.9,Ingeniería en Sistemas
-Inteligencia_Artificial,Inteligencia Artificial,"Conceptos y aplicaciones de IA en sistemas modernos",i009,l009;l010,2024-04-01T08:00:00Z,4.8,Ingeniería en Sistemas
-Ingenieria_de_Software,Ingeniería de Software,"Metodologías y prácticas para desarrollo de software",i011,l011;l012,2024-04-15T08:00:00Z,4.7,Ingeniería en Sistemas
-Seguridad_Informática,Seguridad Informática,"Principios y técnicas para proteger sistemas informáticos",i013,l013;l014,2024-05-01T08:00:00Z,4.8,Ingeniería en Sistemas
-Arquitectura_de_Computadoras,Arquitectura de Computadoras,"Diseño y organización de computadoras modernas",i015,l015;l016,2024-05-15T08:00:00Z,4.6,Ingeniería en Sistemas
-Matematicas_Discretas,Matemáticas Discretas,"Fundamentos matemáticos para ciencias de la computación",i017,l017;l018,2024-06-01T08:00:00Z,4.7,Ingeniería en Sistemas
-Desarrollo_Web,Desarrollo Web,"Técnicas modernas para desarrollo de aplicaciones web",i019,l019;l020,2024-06-15T08:00:00Z,4.9,Ingeniería en Sistemas
+Sistemas_Operativos,Sistemas Operativos,Fundamentos y administración de sistemas operativos,i001,l001;l002,2024-01-10T08:00:00Z,4.8,Ingeniería en Sistemas
+Bases_de_Datos,Bases de Datos,Principios fundamentales y lenguajes de consulta,i003,l003;l004,2024-01-11T08:00:00Z,4.7,Ingeniería en Sistemas
+Redes_de_Computadoras,Redes de Computadoras,Arquitectura, protocolos y seguridad en redes,i005,l005;l006,2024-01-12T08:00:00Z,4.6,Ingeniería en Sistemas
+Programacion_Avanzada,Programación Avanzada,Patrones de diseño y optimización de código,i007,l007;l008,2024-01-13T08:00:00Z,4.9,Ingeniería en Software
+Inteligencia_Artificial,Inteligencia Artificial,Conceptos de IA y aprendizaje automático,i009,l009;l010,2024-01-14T08:00:00Z,4.7,Ingeniería en Software
+Ingenieria_de_Software,Ingeniería de Software,Ciclo de vida del software y metodologías ágiles,i011,l011;l012,2024-01-15T08:00:00Z,4.8,Ingeniería en Software
+Seguridad_Informática,Seguridad Informática,Cifrado, hacking ético y medidas de seguridad,i013,l013;l014,2024-01-16T08:00:00Z,4.6,Ingeniería en Seguridad
+Arquitectura_de_Computadoras,Arquitectura de Computadoras,Componentes físicos y paralelismo,i015,l015;l016,2024-01-17T08:00:00Z,4.7,Ingeniería en Hardware
+Matematicas_Discretas,Matemáticas Discretas,Lógica matemática y teoría de grafos,i017,l017;l018,2024-01-18T08:00:00Z,4.7,Matemáticas
+Desarrollo_Web,Desarrollo Web,Estructuras, estilos y programación web moderna,i019,l019;l020,2024-01-19T08:00:00Z,4.9,Ingeniería en Software
