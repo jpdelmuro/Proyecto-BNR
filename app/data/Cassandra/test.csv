@@ -1,201 +1,201 @@
 user_email,course_id,tipo_actividad,timestamp,activity_id,detalles,progress_percent,grade,device_info,teacher_name,teacher_email,teacher_avg
-isabel@iteso.mx,math_101,PROYECTO,2024-10-14T02:52:00Z,794230b1-1d25-4e3e-adf0-f12feec02890,Subió proyecto final del curso math_101,96,6.3,Macbook,Javier,javier@iteso.mx,8.0
-isabel@iteso.mx,math_101,FORO,2024-11-05T21:44:00Z,9b985b96-3ec9-4839-9977-5dd8b8e11166,Participó en foro del curso math_101,82,7.5,Chromebook,Javier,javier@iteso.mx,8.6
-isabel@iteso.mx,math_101,EVALUACION,2024-10-26T20:22:00Z,9e7a1da9-1f44-4f03-a416-3d85343bd4de,Presentó evaluación final del curso math_101,60,8.6,Android Tablet,Cecilia,cecilia@iteso.mx,9.8
-isabel@iteso.mx,math_101,LECTURA,2024-10-27T13:27:00Z,0b31a58e-b7a3-4a50-b1da-943d09194fd6,Leyó el material del curso math_101,92,9.2,Chromebook,Javier,javier@iteso.mx,9.8
-isabel@iteso.mx,math_101,VIDEO,2024-10-17T09:50:00Z,dcbd85c7-d361-432e-8033-d634e1e74f28,Vio el video completo del curso math_101,88,9.6,Chromebook,Javier,javier@iteso.mx,8.0
-manuel@iteso.mx,math_101,QUIZ,2024-10-15T04:19:00Z,397d6818-2720-4e05-bfc8-99770451e6a0,Completó el quiz del curso math_101,82,9.7,Android Tablet,Javier,javier@iteso.mx,8.7
-manuel@iteso.mx,math_101,FORO,2024-10-15T02:09:00Z,08ea58b9-e855-41e9-9cf0-8e41ef4f9ee5,Participó en foro del curso math_101,65,6.1,iPad,Javier,javier@iteso.mx,9.7
-manuel@iteso.mx,math_101,PROYECTO,2024-10-23T14:49:00Z,226430d1-e0fd-4c43-b3b6-40a178a249f9,Subió proyecto final del curso math_101,56,7.0,iPad,Javier,javier@iteso.mx,9.3
-manuel@iteso.mx,math_101,EVALUACION,2024-10-10T16:13:00Z,8662955d-0044-41e1-b260-d1538dee096e,Presentó evaluación final del curso math_101,95,7.2,Chromebook,Javier,javier@iteso.mx,9.6
-manuel@iteso.mx,math_101,LECTURA,2024-10-22T10:11:00Z,40c9b9e2-df25-424c-92b2-9f7e3758625e,Leyó el material del curso math_101,97,8.1,Chromebook,Javier,javier@iteso.mx,9.5
-angela@iteso.mx,math_101,EVALUACION,2024-10-18T05:51:00Z,49a61493-fb1c-4467-b274-b6dfd8b81d73,Presentó evaluación final del curso math_101,55,9.4,Linux PC,Cecilia,cecilia@iteso.mx,7.7
-angela@iteso.mx,math_101,PROYECTO,2024-10-19T23:17:00Z,786b11a8-b29c-46d7-bc47-7f3bf1067030,Subió proyecto final del curso math_101,70,6.7,Chromebook,Javier,javier@iteso.mx,9.3
-angela@iteso.mx,math_101,QUIZ,2024-10-16T23:18:00Z,f82fade4-0e41-4324-9405-fa08f501ae96,Completó el quiz del curso math_101,88,7.1,Chromebook,Cecilia,cecilia@iteso.mx,9.4
-angela@iteso.mx,math_101,LECTURA,2024-10-19T06:02:00Z,b9a7a5c5-37a8-436a-83c6-d970b586cc8e,Leyó el material del curso math_101,59,7.6,iPad,Javier,javier@iteso.mx,9.9
-angela@iteso.mx,math_101,FORO,2024-10-11T05:20:00Z,e12dec54-8fd6-4a20-b72f-d3eeba8cd577,Participó en foro del curso math_101,92,6.9,iPhone,Javier,javier@iteso.mx,9.8
-ivan@iteso.mx,math_101,QUIZ,2024-10-22T15:34:00Z,d8fa6b05-d25c-4122-8cb4-17a176b4a22a,Completó el quiz del curso math_101,79,9.0,Macbook,Cecilia,cecilia@iteso.mx,8.0
-ivan@iteso.mx,math_101,LECTURA,2024-10-11T03:15:00Z,17dfb255-c5d4-4a29-bc75-e3fd9b4aa51b,Leyó el material del curso math_101,90,8.6,Android Tablet,Cecilia,cecilia@iteso.mx,9.6
-ivan@iteso.mx,math_101,VIDEO,2024-10-22T05:31:00Z,d11b48fd-845b-442a-beaf-809c22c7502e,Vio el video completo del curso math_101,66,6.0,Android Tablet,Javier,javier@iteso.mx,9.5
-ivan@iteso.mx,math_101,EVALUACION,2024-10-21T18:09:00Z,baffed09-8e56-4cef-8ab7-a91f26effa84,Presentó evaluación final del curso math_101,59,9.0,iPad,Javier,javier@iteso.mx,9.2
-ivan@iteso.mx,math_101,PROYECTO,2024-10-15T07:12:00Z,c244cb8f-df60-405f-b06d-f239e87f40fe,Subió proyecto final del curso math_101,86,9.3,Macbook,Javier,javier@iteso.mx,9.7
-jorge@iteso.mx,ethics_201,TAREA,2024-10-29T08:09:00Z,7a695901-5343-452e-a778-1a110320e6c0,Entregó tarea del curso ethics_201,75,6.7,Macbook,Tomas,tomas@iteso.mx,8.9
-jorge@iteso.mx,ethics_201,VIDEO,2024-11-04T22:47:00Z,f2a323fa-3ac0-4bbc-9e45-3a26464540b1,Vio el video completo del curso ethics_201,79,9.7,iPad,Tomas,tomas@iteso.mx,9.0
-jorge@iteso.mx,ethics_201,FORO,2024-10-19T00:55:00Z,406d3847-2940-4af1-8531-26717aef5eeb,Participó en foro del curso ethics_201,56,7.2,Linux PC,Veronica,veronica@iteso.mx,7.6
-jorge@iteso.mx,ethics_201,EVALUACION,2024-10-11T13:52:00Z,9d069e44-211c-4c9b-8928-13a7ced1ec93,Presentó evaluación final del curso ethics_201,67,8.6,iPhone,Veronica,veronica@iteso.mx,7.2
-jorge@iteso.mx,ethics_201,PROYECTO,2024-10-20T00:33:00Z,e6b74046-93d4-47cb-9c85-9a8b77e01eb3,Subió proyecto final del curso ethics_201,72,8.4,iPhone,Veronica,veronica@iteso.mx,9.9
-raul@iteso.mx,ethics_201,LECTURA,2024-10-22T11:39:00Z,598ab96e-c31b-4173-8bb1-5b435d64293d,Leyó el material del curso ethics_201,51,6.6,iPhone,Veronica,veronica@iteso.mx,9.6
-raul@iteso.mx,ethics_201,QUIZ,2024-10-13T11:26:00Z,98f29a0d-fc4d-47d2-9ea8-8bb4f2d6d459,Completó el quiz del curso ethics_201,69,8.6,Chromebook,Veronica,veronica@iteso.mx,9.7
-raul@iteso.mx,ethics_201,FORO,2024-11-07T13:36:00Z,5f1ef832-abbc-4684-ab20-02f858bd56b7,Participó en foro del curso ethics_201,65,8.7,Linux PC,Veronica,veronica@iteso.mx,9.1
-raul@iteso.mx,ethics_201,TAREA,2024-10-15T05:33:00Z,0d109cdd-973d-4f96-b8fe-68e284e83773,Entregó tarea del curso ethics_201,62,6.2,Chromebook,Veronica,veronica@iteso.mx,8.2
-raul@iteso.mx,ethics_201,VIDEO,2024-11-02T02:51:00Z,b65f4cc8-aafe-498d-95cf-531a2bab787b,Vio el video completo del curso ethics_201,68,7.4,Chromebook,Veronica,veronica@iteso.mx,9.3
-juan@iteso.mx,ethics_201,EVALUACION,2024-10-19T20:29:00Z,8006ca46-8272-44c9-908c-823a0d4d5dc3,Presentó evaluación final del curso ethics_201,56,7.8,iPad,Veronica,veronica@iteso.mx,9.2
-juan@iteso.mx,ethics_201,VIDEO,2024-11-07T14:45:00Z,093cc442-36e2-4471-bbcf-648e6f56b0d7,Vio el video completo del curso ethics_201,80,7.5,Linux PC,Veronica,veronica@iteso.mx,8.6
-juan@iteso.mx,ethics_201,LECTURA,2024-11-09T14:50:00Z,9b1fba67-1f72-4652-bdd8-4be6ba227103,Leyó el material del curso ethics_201,51,7.0,Chromebook,Tomas,tomas@iteso.mx,9.6
-juan@iteso.mx,ethics_201,QUIZ,2024-10-29T06:04:00Z,23547b3d-cf82-4618-9035-2335ecae5124,Completó el quiz del curso ethics_201,52,8.9,iPad,Tomas,tomas@iteso.mx,9.3
-juan@iteso.mx,ethics_201,TAREA,2024-10-28T01:35:00Z,29585cef-7fe6-4754-b0ef-d806549f0e86,Entregó tarea del curso ethics_201,88,9.3,Macbook,Tomas,tomas@iteso.mx,7.5
-li@iteso.mx,ethics_201,FORO,2024-11-03T05:17:00Z,35ad7954-3083-4b9c-8166-790531252232,Participó en foro del curso ethics_201,92,9.1,Android Tablet,Veronica,veronica@iteso.mx,9.2
-li@iteso.mx,ethics_201,TAREA,2024-10-11T05:19:00Z,7dfab3de-4445-4581-8330-b3a2eec00ceb,Entregó tarea del curso ethics_201,81,7.0,Windows Laptop,Tomas,tomas@iteso.mx,7.4
-li@iteso.mx,ethics_201,LECTURA,2024-11-10T03:45:00Z,a8428a6d-4191-4169-b47a-66198eb0bd62,Leyó el material del curso ethics_201,96,8.3,Macbook,Tomas,tomas@iteso.mx,7.4
-li@iteso.mx,ethics_201,QUIZ,2024-10-16T07:55:00Z,76bb9c77-9675-45e4-9fca-053775664f74,Completó el quiz del curso ethics_201,91,7.4,Android Tablet,Tomas,tomas@iteso.mx,8.5
-li@iteso.mx,ethics_201,EVALUACION,2024-11-01T23:23:00Z,e3f6f13e-0062-45d9-aa12-0d5cbb06c843,Presentó evaluación final del curso ethics_201,94,7.4,iPad,Veronica,veronica@iteso.mx,8.7
-luis@iteso.mx,environment_301,VIDEO,2024-10-28T09:25:00Z,8f0cb3e2-d99a-4417-b156-d4dcbd1971b2,Vio el video completo del curso environment_301,60,9.3,Linux PC,Lucia,lucia@iteso.mx,9.5
-luis@iteso.mx,environment_301,TAREA,2024-10-19T07:07:00Z,5aa9dbd1-360e-4370-9da6-57e44d9f4ed9,Entregó tarea del curso environment_301,87,8.5,iPhone,Miguel,miguel@iteso.mx,7.8
-luis@iteso.mx,environment_301,EVALUACION,2024-11-08T20:43:00Z,c8a4089a-c787-4c4c-86ea-6b3783d5191b,Presentó evaluación final del curso environment_301,54,9.8,Android Tablet,Miguel,miguel@iteso.mx,9.2
-luis@iteso.mx,environment_301,QUIZ,2024-11-06T05:50:00Z,6b49bc84-c158-4a6e-b935-2ce9651016b4,Completó el quiz del curso environment_301,86,8.2,iPad,Lucia,lucia@iteso.mx,7.4
-luis@iteso.mx,environment_301,LECTURA,2024-11-02T13:59:00Z,aaa03627-a31b-41be-823c-6acaa4332ac6,Leyó el material del curso environment_301,56,9.5,Android Tablet,Lucia,lucia@iteso.mx,9.2
-valeria@iteso.mx,environment_301,LECTURA,2024-10-26T03:19:00Z,a238a336-4a37-4d2a-b07f-8cbb2a55b816,Leyó el material del curso environment_301,98,8.3,Chromebook,Miguel,miguel@iteso.mx,7.0
-valeria@iteso.mx,environment_301,VIDEO,2024-11-04T10:12:00Z,64dca63e-1a27-4737-b8c8-5505852fa3cf,Vio el video completo del curso environment_301,81,7.0,iPhone,Miguel,miguel@iteso.mx,9.2
-valeria@iteso.mx,environment_301,QUIZ,2024-10-24T08:46:00Z,11a4dce3-528d-4825-bbfc-869db89278ef,Completó el quiz del curso environment_301,88,7.0,iPad,Miguel,miguel@iteso.mx,7.6
-valeria@iteso.mx,environment_301,EVALUACION,2024-10-27T21:46:00Z,86cb2770-9f38-401f-b564-474d38306c93,Presentó evaluación final del curso environment_301,66,8.8,Windows Laptop,Lucia,lucia@iteso.mx,7.7
-valeria@iteso.mx,environment_301,TAREA,2024-10-27T11:43:00Z,83a65005-7cae-4a5b-897d-43baa5212b96,Entregó tarea del curso environment_301,93,7.6,Chromebook,Lucia,lucia@iteso.mx,7.8
-mike@iteso.mx,environment_301,LECTURA,2024-10-22T11:06:00Z,1e1531d0-8dc9-41cc-8b45-510c404105f6,Leyó el material del curso environment_301,70,8.6,Macbook,Miguel,miguel@iteso.mx,9.5
-mike@iteso.mx,environment_301,FORO,2024-11-06T08:13:00Z,d60295a5-c801-4c51-89d1-257a639096a5,Participó en foro del curso environment_301,50,9.3,Windows Laptop,Lucia,lucia@iteso.mx,8.7
-mike@iteso.mx,environment_301,TAREA,2024-11-01T02:27:00Z,dde7ff29-63d8-4b64-ba3c-e79e0e96ecd3,Entregó tarea del curso environment_301,73,8.5,Chromebook,Lucia,lucia@iteso.mx,8.0
-mike@iteso.mx,environment_301,VIDEO,2024-11-08T01:22:00Z,72c71341-117e-4104-9e8a-936be4517e57,Vio el video completo del curso environment_301,83,8.8,Android Tablet,Lucia,lucia@iteso.mx,9.4
-mike@iteso.mx,environment_301,QUIZ,2024-10-27T16:05:00Z,fcaac077-c0ea-4bf6-ab61-53b3ff1f2c97,Completó el quiz del curso environment_301,66,8.1,iPhone,Miguel,miguel@iteso.mx,9.9
-rocio@iteso.mx,environment_301,EVALUACION,2024-10-19T04:57:00Z,a9dad898-bc5e-436c-bc46-b9e1eb534ac5,Presentó evaluación final del curso environment_301,54,8.3,iPhone,Lucia,lucia@iteso.mx,9.1
-rocio@iteso.mx,environment_301,TAREA,2024-11-03T14:59:00Z,9a7e6e72-5c27-442a-89b0-3119f4a8d66b,Entregó tarea del curso environment_301,88,7.3,Android Tablet,Lucia,lucia@iteso.mx,9.4
-rocio@iteso.mx,environment_301,FORO,2024-10-16T03:58:00Z,2725b616-62e7-428c-b421-d7d7ea777d22,Participó en foro del curso environment_301,81,9.8,Linux PC,Miguel,miguel@iteso.mx,8.1
-rocio@iteso.mx,environment_301,VIDEO,2024-10-15T01:56:00Z,d851ab60-bd33-4a20-a2c5-18cb9720a14b,Vio el video completo del curso environment_301,98,8.3,Android Tablet,Lucia,lucia@iteso.mx,7.3
-rocio@iteso.mx,environment_301,QUIZ,2024-10-25T19:10:00Z,0381ad5a-e351-499d-8cef-a5fcf1a98d7a,Completó el quiz del curso environment_301,89,7.5,iPad,Miguel,miguel@iteso.mx,9.1
-andres@iteso.mx,physics_102,TAREA,2024-10-10T10:27:00Z,5c61ef73-6934-4052-939b-93c582517aaf,Entregó tarea del curso physics_102,53,7.9,Android Tablet,Raquel,raquel@iteso.mx,8.9
-andres@iteso.mx,physics_102,VIDEO,2024-11-06T04:58:00Z,09b158ae-78e3-4778-b87d-23b12168a8ba,Vio el video completo del curso physics_102,61,9.5,iPhone,Raquel,raquel@iteso.mx,9.1
-andres@iteso.mx,physics_102,QUIZ,2024-10-30T22:55:00Z,f9bdd5eb-6e70-48c1-bd92-6f2ede3a884d,Completó el quiz del curso physics_102,68,8.7,Windows Laptop,Raquel,raquel@iteso.mx,10.0
-andres@iteso.mx,physics_102,LECTURA,2024-10-14T22:06:00Z,eedbeb46-54ee-42d8-95b6-09d3d389c3f3,Leyó el material del curso physics_102,74,8.6,Windows Laptop,Raquel,raquel@iteso.mx,9.3
-andres@iteso.mx,physics_102,FORO,2024-11-09T22:54:00Z,477d7479-00e8-4ce2-af0d-663e06b66862,Participó en foro del curso physics_102,59,9.5,Macbook,Raquel,raquel@iteso.mx,7.9
-alfredo@iteso.mx,physics_102,EVALUACION,2024-11-06T14:48:00Z,58e52600-4128-40e1-a74f-124fefe6e096,Presentó evaluación final del curso physics_102,72,7.2,iPhone,Raquel,raquel@iteso.mx,9.7
-alfredo@iteso.mx,physics_102,PROYECTO,2024-10-22T01:14:00Z,2caf452e-0a4f-428a-abd4-95bccd4e61e9,Subió proyecto final del curso physics_102,85,8.7,iPhone,Raquel,raquel@iteso.mx,8.6
-alfredo@iteso.mx,physics_102,LECTURA,2024-11-07T21:02:00Z,0ef8fc3a-b2e5-4880-a565-c0cc343ecf7e,Leyó el material del curso physics_102,98,7.8,Android Tablet,Jose,jose@iteso.mx,7.5
-alfredo@iteso.mx,physics_102,TAREA,2024-10-21T12:15:00Z,65169c43-030b-4619-8962-1eef46d64204,Entregó tarea del curso physics_102,69,7.7,Chromebook,Raquel,raquel@iteso.mx,7.7
-alfredo@iteso.mx,physics_102,QUIZ,2024-10-17T20:30:00Z,d5ad5776-acd8-479d-95a7-a5d96bb9ccef,Completó el quiz del curso physics_102,55,8.8,Macbook,Raquel,raquel@iteso.mx,9.7
-ruben@iteso.mx,physics_102,TAREA,2024-10-23T04:49:00Z,324f9072-a773-49ce-aaaa-0a91bc0bd546,Entregó tarea del curso physics_102,51,6.5,Chromebook,Raquel,raquel@iteso.mx,10.0
-ruben@iteso.mx,physics_102,FORO,2024-11-08T13:23:00Z,18f81090-b84b-4b84-93f7-51e352f55349,Participó en foro del curso physics_102,70,6.8,Windows Laptop,Jose,jose@iteso.mx,9.7
-ruben@iteso.mx,physics_102,VIDEO,2024-10-11T16:27:00Z,e9f42d4a-d9f4-4407-8e2d-74e6434ebe6f,Vio el video completo del curso physics_102,57,6.0,iPad,Raquel,raquel@iteso.mx,8.9
-ruben@iteso.mx,physics_102,EVALUACION,2024-11-06T05:46:00Z,b922abc1-3b64-4988-9bc5-224bd64727f9,Presentó evaluación final del curso physics_102,94,7.1,Android Tablet,Raquel,raquel@iteso.mx,9.9
-ruben@iteso.mx,physics_102,LECTURA,2024-10-29T21:55:00Z,7a0b812e-a54c-4e01-8d40-d9b51ec43c92,Leyó el material del curso physics_102,86,8.0,Linux PC,Raquel,raquel@iteso.mx,7.3
-fernanda@iteso.mx,physics_102,LECTURA,2024-11-09T12:55:00Z,e1752652-98d2-4055-8b2e-d0fe555a8cf5,Leyó el material del curso physics_102,60,9.6,Chromebook,Jose,jose@iteso.mx,7.5
-fernanda@iteso.mx,physics_102,EVALUACION,2024-10-14T17:20:00Z,bad576c4-e4b6-40e5-a42b-29be0eb4b6ea,Presentó evaluación final del curso physics_102,92,7.7,iPhone,Raquel,raquel@iteso.mx,9.8
-fernanda@iteso.mx,physics_102,TAREA,2024-10-19T10:05:00Z,b31d62da-1e72-49dc-aebd-a52f42547569,Entregó tarea del curso physics_102,62,9.2,Linux PC,Raquel,raquel@iteso.mx,7.2
-fernanda@iteso.mx,physics_102,VIDEO,2024-11-08T23:01:00Z,4c9cd1fa-5550-43b9-8b2e-09a1e65a4049,Vio el video completo del curso physics_102,99,8.8,iPhone,Raquel,raquel@iteso.mx,7.8
-fernanda@iteso.mx,physics_102,QUIZ,2024-10-17T20:59:00Z,086db480-4bb8-4648-a4e6-213aa4a4288c,Completó el quiz del curso physics_102,75,7.0,iPad,Raquel,raquel@iteso.mx,7.5
-sofia@iteso.mx,history_202,LECTURA,2024-10-19T07:56:00Z,573b50ec-2dd8-443d-965a-a1c362b30d99,Leyó el material del curso history_202,93,8.7,iPhone,Beatriz,beatriz@iteso.mx,7.5
-sofia@iteso.mx,history_202,PROYECTO,2024-10-26T21:04:00Z,11a10f61-0797-41e7-853d-b7c26322f0dd,Subió proyecto final del curso history_202,81,7.0,iPhone,Paty,paty@iteso.mx,9.9
-sofia@iteso.mx,history_202,VIDEO,2024-10-26T07:48:00Z,53f84048-a3b9-4099-b587-1e229bd024a3,Vio el video completo del curso history_202,94,9.5,Chromebook,Beatriz,beatriz@iteso.mx,10.0
-sofia@iteso.mx,history_202,QUIZ,2024-11-04T06:48:00Z,f782e6c0-1312-409c-aa83-123814b31bfc,Completó el quiz del curso history_202,62,9.0,Macbook,Beatriz,beatriz@iteso.mx,9.5
-sofia@iteso.mx,history_202,EVALUACION,2024-10-17T02:19:00Z,74053f91-9d51-42d3-8071-79e54b9e1a03,Presentó evaluación final del curso history_202,99,8.1,iPad,Beatriz,beatriz@iteso.mx,7.6
-pedro@iteso.mx,history_202,EVALUACION,2024-10-12T16:07:00Z,d9d45a9d-289b-4317-a7fc-8c64f91a305d,Presentó evaluación final del curso history_202,67,8.4,Macbook,Beatriz,beatriz@iteso.mx,9.3
-pedro@iteso.mx,history_202,PROYECTO,2024-10-16T09:44:00Z,9231f89a-8e61-4e31-be8a-ca5a2a4cb1ec,Subió proyecto final del curso history_202,53,9.7,Chromebook,Beatriz,beatriz@iteso.mx,8.1
-pedro@iteso.mx,history_202,FORO,2024-10-16T18:54:00Z,a6ccfe89-23c2-4f28-b455-88c0de675505,Participó en foro del curso history_202,67,9.9,iPhone,Beatriz,beatriz@iteso.mx,7.8
-pedro@iteso.mx,history_202,LECTURA,2024-10-15T12:03:00Z,0b399941-225c-473f-ae74-d1bb17da3fef,Leyó el material del curso history_202,67,6.5,Android Tablet,Beatriz,beatriz@iteso.mx,7.8
-pedro@iteso.mx,history_202,QUIZ,2024-10-25T22:09:00Z,abe88419-9129-4113-a0c6-5ca374d21856,Completó el quiz del curso history_202,80,8.0,iPad,Beatriz,beatriz@iteso.mx,9.9
-teresa@iteso.mx,history_202,PROYECTO,2024-10-14T15:33:00Z,595770bf-8097-4724-a034-d4ecaa6db997,Subió proyecto final del curso history_202,94,8.8,Chromebook,Beatriz,beatriz@iteso.mx,9.9
-teresa@iteso.mx,history_202,FORO,2024-10-21T00:43:00Z,3992872f-c320-45de-b786-a4e1c4dd76d4,Participó en foro del curso history_202,51,8.1,Android Tablet,Paty,paty@iteso.mx,7.6
-teresa@iteso.mx,history_202,VIDEO,2024-10-15T08:25:00Z,b5c4439d-f23c-49c3-a5bc-1b9bd03cdbdb,Vio el video completo del curso history_202,85,9.9,iPad,Paty,paty@iteso.mx,9.8
-teresa@iteso.mx,history_202,TAREA,2024-10-22T20:47:00Z,758aaf92-625e-4b68-8609-50ebba88acdb,Entregó tarea del curso history_202,77,6.3,iPad,Paty,paty@iteso.mx,9.2
-teresa@iteso.mx,history_202,QUIZ,2024-10-24T21:55:00Z,efd9eb7a-dce5-43d0-ab9d-90ef22597013,Completó el quiz del curso history_202,98,9.5,Macbook,Paty,paty@iteso.mx,8.8
-julieta@iteso.mx,history_202,QUIZ,2024-10-18T22:26:00Z,bfafff49-0ae9-4833-a206-c746e1efcfa8,Completó el quiz del curso history_202,92,8.2,iPhone,Paty,paty@iteso.mx,7.1
-julieta@iteso.mx,history_202,FORO,2024-10-27T19:55:00Z,7481d6a5-9336-4d8b-9050-40d0b79b1142,Participó en foro del curso history_202,50,7.3,Android Tablet,Beatriz,beatriz@iteso.mx,9.6
-julieta@iteso.mx,history_202,LECTURA,2024-10-28T07:52:00Z,eb49bcbc-910d-46b1-84c1-154df00cb801,Leyó el material del curso history_202,62,10.0,Chromebook,Beatriz,beatriz@iteso.mx,8.7
-julieta@iteso.mx,history_202,TAREA,2024-10-31T17:46:00Z,4bd54135-756c-48a5-b635-16025dfd729a,Entregó tarea del curso history_202,82,6.7,iPhone,Beatriz,beatriz@iteso.mx,9.3
-julieta@iteso.mx,history_202,PROYECTO,2024-11-06T16:52:00Z,a571508d-f218-486e-b8aa-af2d93bf75eb,Subió proyecto final del curso history_202,82,8.0,Linux PC,Beatriz,beatriz@iteso.mx,9.9
-laura@iteso.mx,biology_303,TAREA,2024-11-09T19:27:00Z,6ccb6386-7191-453e-80bf-7c83921d132d,Entregó tarea del curso biology_303,75,6.3,Macbook,Carlos,carlos@iteso.mx,9.9
-laura@iteso.mx,biology_303,QUIZ,2024-10-16T16:57:00Z,0f660340-98ca-4810-a28d-b33b6cdcd4f6,Completó el quiz del curso biology_303,82,6.5,Chromebook,Jose,jose@iteso.mx,9.9
-laura@iteso.mx,biology_303,EVALUACION,2024-10-11T18:02:00Z,df3620b7-3493-48c1-939e-02d2d4c12b28,Presentó evaluación final del curso biology_303,72,6.6,Macbook,Jose,jose@iteso.mx,8.4
-laura@iteso.mx,biology_303,FORO,2024-10-17T09:25:00Z,bad460b1-e26d-44d9-bee4-153a2db6d961,Participó en foro del curso biology_303,94,7.0,Windows Laptop,Jose,jose@iteso.mx,10.0
-laura@iteso.mx,biology_303,LECTURA,2024-11-03T17:01:00Z,56dc494c-b00e-4582-ab12-84ed74b8f5d3,Leyó el material del curso biology_303,53,8.8,Android Tablet,Carlos,carlos@iteso.mx,9.7
-daniela@iteso.mx,biology_303,LECTURA,2024-11-10T00:53:00Z,d572c992-9d5b-4419-86df-a050b60bddcc,Leyó el material del curso biology_303,92,9.7,iPhone,Carlos,carlos@iteso.mx,9.8
-daniela@iteso.mx,biology_303,FORO,2024-10-14T03:33:00Z,b3a9520a-478d-4dcb-9239-aee634b986b1,Participó en foro del curso biology_303,90,8.4,Macbook,Carlos,carlos@iteso.mx,7.9
-daniela@iteso.mx,biology_303,PROYECTO,2024-11-05T01:27:00Z,26dd5869-ec47-4429-b4bb-1bd8f0de5b7a,Subió proyecto final del curso biology_303,66,9.9,Chromebook,Carlos,carlos@iteso.mx,7.1
-daniela@iteso.mx,biology_303,EVALUACION,2024-11-01T20:38:00Z,1edd20fa-b7d4-4f85-bd3a-586e01effd8b,Presentó evaluación final del curso biology_303,50,6.2,Chromebook,Carlos,carlos@iteso.mx,8.0
-daniela@iteso.mx,biology_303,QUIZ,2024-10-22T13:22:00Z,2cd6cd86-49a9-4c41-adad-607eab9d1900,Completó el quiz del curso biology_303,90,6.6,iPhone,Carlos,carlos@iteso.mx,8.3
-carlos@iteso.mx,biology_303,LECTURA,2024-10-17T20:16:00Z,504d3af4-6fb6-4d10-8f76-d1231d27df51,Leyó el material del curso biology_303,76,8.3,Macbook,Jose,jose@iteso.mx,7.9
-carlos@iteso.mx,biology_303,EVALUACION,2024-10-14T10:43:00Z,87df0726-57d3-4f92-9cde-ab41c3fd8f07,Presentó evaluación final del curso biology_303,85,9.5,Linux PC,Carlos,carlos@iteso.mx,8.2
-carlos@iteso.mx,biology_303,PROYECTO,2024-10-13T08:01:00Z,84fdcff3-dc50-49bc-a6a8-209cb5eda92b,Subió proyecto final del curso biology_303,76,6.1,Macbook,Carlos,carlos@iteso.mx,7.7
-carlos@iteso.mx,biology_303,FORO,2024-10-31T00:51:00Z,123a8660-2edd-424b-9d49-b690e0300333,Participó en foro del curso biology_303,86,9.7,Android Tablet,Jose,jose@iteso.mx,7.7
-carlos@iteso.mx,biology_303,QUIZ,2024-10-15T02:55:00Z,009f0da1-4c41-4e88-95f7-ae57b32d1beb,Completó el quiz del curso biology_303,81,8.1,Windows Laptop,Jose,jose@iteso.mx,9.9
-tomas@iteso.mx,biology_303,FORO,2024-10-12T11:49:00Z,28d9067c-1386-414e-b9d7-6d46977c894b,Participó en foro del curso biology_303,100,9.5,Macbook,Jose,jose@iteso.mx,8.9
-tomas@iteso.mx,biology_303,QUIZ,2024-10-21T03:28:00Z,a860d56c-b3d6-42be-a18a-a1982a72e1b3,Completó el quiz del curso biology_303,66,7.6,iPhone,Jose,jose@iteso.mx,7.1
-tomas@iteso.mx,biology_303,VIDEO,2024-10-12T09:18:00Z,498fbd31-2256-4410-81f5-31dfc7557230,Vio el video completo del curso biology_303,78,8.2,Linux PC,Carlos,carlos@iteso.mx,9.1
-tomas@iteso.mx,biology_303,EVALUACION,2024-10-23T02:21:00Z,9e26992f-fc84-4d46-a9e8-7b6ea9196d40,Presentó evaluación final del curso biology_303,74,7.3,iPad,Jose,jose@iteso.mx,7.8
-tomas@iteso.mx,biology_303,PROYECTO,2024-10-20T07:19:00Z,9aa1c95f-ba6a-4bf7-9576-285d274cce31,Subió proyecto final del curso biology_303,76,6.6,iPhone,Carlos,carlos@iteso.mx,9.8
-camila@iteso.mx,literature_101,TAREA,2024-10-26T04:10:00Z,477dcdb3-7c2a-4437-b1ad-5037a7ca8dc9,Entregó tarea del curso literature_101,51,9.2,iPad,Beatriz,beatriz@iteso.mx,8.6
-camila@iteso.mx,literature_101,FORO,2024-10-16T09:36:00Z,b8b4041b-ff23-452f-811a-90184b4c7b9d,Participó en foro del curso literature_101,85,9.1,Windows Laptop,Ana,ana@iteso.mx,9.6
-camila@iteso.mx,literature_101,VIDEO,2024-10-20T15:19:00Z,2dca66e6-bced-4dda-b0a5-8e407a0a0ce8,Vio el video completo del curso literature_101,54,6.0,iPad,Ana,ana@iteso.mx,8.1
-camila@iteso.mx,literature_101,EVALUACION,2024-10-17T18:20:00Z,e1b40da3-7f2b-468b-92a8-8fb8925289db,Presentó evaluación final del curso literature_101,62,7.4,Macbook,Ana,ana@iteso.mx,9.6
-camila@iteso.mx,literature_101,LECTURA,2024-11-08T01:23:00Z,df365149-1427-4429-bd34-90f81cc54331,Leyó el material del curso literature_101,66,6.3,Chromebook,Beatriz,beatriz@iteso.mx,7.3
-anna@iteso.mx,literature_101,FORO,2024-11-05T08:32:00Z,59471a73-6634-4961-a3ea-3ba68bc9dc72,Participó en foro del curso literature_101,65,8.2,Chromebook,Beatriz,beatriz@iteso.mx,9.8
-anna@iteso.mx,literature_101,QUIZ,2024-10-16T04:19:00Z,ca1e429e-f48b-40f5-9224-61929586d51d,Completó el quiz del curso literature_101,56,6.2,Windows Laptop,Ana,ana@iteso.mx,9.8
-anna@iteso.mx,literature_101,TAREA,2024-10-20T17:05:00Z,dcf7051f-5b3f-4396-bae3-9c5e89e09016,Entregó tarea del curso literature_101,63,8.3,Macbook,Beatriz,beatriz@iteso.mx,7.7
-anna@iteso.mx,literature_101,LECTURA,2024-10-17T04:55:00Z,8c8eb0f4-b9b6-442c-8cb3-ce59837164d5,Leyó el material del curso literature_101,59,7.2,Linux PC,Beatriz,beatriz@iteso.mx,9.0
-anna@iteso.mx,literature_101,EVALUACION,2024-10-13T10:38:00Z,5e0007bd-7804-4a59-9a42-bbb626baf6d4,Presentó evaluación final del curso literature_101,62,8.8,iPhone,Ana,ana@iteso.mx,8.2
-marina@iteso.mx,literature_101,VIDEO,2024-10-19T21:41:00Z,99528f01-9e5a-4684-830f-298e97623337,Vio el video completo del curso literature_101,94,9.0,Linux PC,Beatriz,beatriz@iteso.mx,10.0
-marina@iteso.mx,literature_101,QUIZ,2024-11-02T06:32:00Z,521ee978-d90c-4a61-99d0-a882df877417,Completó el quiz del curso literature_101,93,8.3,Windows Laptop,Ana,ana@iteso.mx,7.0
-marina@iteso.mx,literature_101,PROYECTO,2024-10-16T10:46:00Z,7971183d-8a88-4124-a4ec-c72367dd671f,Subió proyecto final del curso literature_101,95,10.0,Android Tablet,Ana,ana@iteso.mx,7.7
-marina@iteso.mx,literature_101,LECTURA,2024-11-02T10:19:00Z,aceced79-1ed6-45d0-9676-26d692b88553,Leyó el material del curso literature_101,87,8.7,Linux PC,Ana,ana@iteso.mx,9.0
-marina@iteso.mx,literature_101,EVALUACION,2024-10-14T18:28:00Z,ae387477-eb97-46fe-b668-a9a87379a74c,Presentó evaluación final del curso literature_101,55,7.8,Windows Laptop,Beatriz,beatriz@iteso.mx,9.5
-oscar@iteso.mx,literature_101,VIDEO,2024-10-20T14:21:00Z,37854755-0762-43e9-a633-26a67d0df1b4,Vio el video completo del curso literature_101,78,9.7,iPad,Ana,ana@iteso.mx,8.9
-oscar@iteso.mx,literature_101,QUIZ,2024-10-15T04:22:00Z,5e90e12e-a049-4c1c-902a-1f88ef95d175,Completó el quiz del curso literature_101,92,7.5,Chromebook,Ana,ana@iteso.mx,9.0
-oscar@iteso.mx,literature_101,EVALUACION,2024-11-01T12:56:00Z,1f6cde93-def7-4b5c-ac01-dcab2640f511,Presentó evaluación final del curso literature_101,74,9.2,iPad,Beatriz,beatriz@iteso.mx,9.7
-oscar@iteso.mx,literature_101,PROYECTO,2024-10-11T03:51:00Z,5b70a676-0233-4f04-8b97-b359a021de7e,Subió proyecto final del curso literature_101,85,6.3,iPhone,Ana,ana@iteso.mx,7.8
-oscar@iteso.mx,literature_101,TAREA,2024-10-20T08:48:00Z,4c354d54-47ad-4784-91a0-03d82eb8a28b,Entregó tarea del curso literature_101,64,6.9,Linux PC,Ana,ana@iteso.mx,8.8
-pablo@iteso.mx,philosophy_204,QUIZ,2024-10-14T22:46:00Z,765e9c94-cc7a-4920-86b0-bdf8ff59c8cc,Completó el quiz del curso philosophy_204,57,7.1,iPhone,Veronica,veronica@iteso.mx,8.7
-pablo@iteso.mx,philosophy_204,VIDEO,2024-10-18T20:28:00Z,1d5df6aa-91fa-45f2-a68a-4c63c644f34a,Vio el video completo del curso philosophy_204,94,7.9,Linux PC,Veronica,veronica@iteso.mx,7.2
-pablo@iteso.mx,philosophy_204,LECTURA,2024-10-20T16:36:00Z,ce24d1c0-772f-4069-923c-c26047bc5368,Leyó el material del curso philosophy_204,71,6.1,Linux PC,Lucia,lucia@iteso.mx,9.0
-pablo@iteso.mx,philosophy_204,EVALUACION,2024-10-18T22:45:00Z,9e40ec46-dcc2-4384-9a39-1e93e6df2134,Presentó evaluación final del curso philosophy_204,78,7.0,Windows Laptop,Veronica,veronica@iteso.mx,9.7
-pablo@iteso.mx,philosophy_204,TAREA,2024-11-03T04:10:00Z,f917826c-c9f9-442b-8e46-955a592cdb29,Entregó tarea del curso philosophy_204,54,7.0,Linux PC,Lucia,lucia@iteso.mx,8.9
-ricardo@iteso.mx,philosophy_204,QUIZ,2024-10-13T07:33:00Z,e73fa875-1282-4fb5-8aad-b704465e986e,Completó el quiz del curso philosophy_204,100,7.6,Windows Laptop,Lucia,lucia@iteso.mx,7.0
-ricardo@iteso.mx,philosophy_204,EVALUACION,2024-11-05T23:25:00Z,7006fa31-3297-4871-955e-48fe6e401594,Presentó evaluación final del curso philosophy_204,56,6.3,Android Tablet,Veronica,veronica@iteso.mx,9.5
-ricardo@iteso.mx,philosophy_204,VIDEO,2024-10-26T17:12:00Z,041b45de-f6ef-4a25-994a-629a9830045b,Vio el video completo del curso philosophy_204,77,6.1,Linux PC,Veronica,veronica@iteso.mx,9.8
-ricardo@iteso.mx,philosophy_204,FORO,2024-10-29T17:29:00Z,997e11e9-bdde-402f-b92d-5e77491ccb52,Participó en foro del curso philosophy_204,100,6.4,Macbook,Lucia,lucia@iteso.mx,7.5
-ricardo@iteso.mx,philosophy_204,TAREA,2024-10-27T18:45:00Z,9b2c85a1-ae8e-4683-99e8-081b6ec73cff,Entregó tarea del curso philosophy_204,99,7.9,iPhone,Veronica,veronica@iteso.mx,7.7
-martin@iteso.mx,philosophy_204,LECTURA,2024-10-31T22:30:00Z,4ba2087a-591f-4a1f-a9b4-22fda68cd279,Leyó el material del curso philosophy_204,69,7.5,iPad,Lucia,lucia@iteso.mx,8.4
-martin@iteso.mx,philosophy_204,FORO,2024-10-20T15:31:00Z,db5ec115-9bb4-4933-9a97-0531c59b274f,Participó en foro del curso philosophy_204,62,6.2,iPhone,Lucia,lucia@iteso.mx,7.5
-martin@iteso.mx,philosophy_204,TAREA,2024-10-26T07:13:00Z,2118d8e7-f4db-4863-a682-212d170d92f0,Entregó tarea del curso philosophy_204,72,6.8,Android Tablet,Lucia,lucia@iteso.mx,9.0
-martin@iteso.mx,philosophy_204,PROYECTO,2024-11-08T18:54:00Z,6bd16431-0448-46be-8d43-3fce4ce07a8d,Subió proyecto final del curso philosophy_204,82,9.1,Chromebook,Lucia,lucia@iteso.mx,9.7
-martin@iteso.mx,philosophy_204,VIDEO,2024-11-08T15:42:00Z,fb8c17d7-c7ae-4a96-9f3f-24ba78c09e07,Vio el video completo del curso philosophy_204,58,6.9,Chromebook,Veronica,veronica@iteso.mx,9.4
-hector@iteso.mx,philosophy_204,EVALUACION,2024-10-24T14:02:00Z,8fc73556-d37a-45ef-ab57-9e6db237b95d,Presentó evaluación final del curso philosophy_204,60,6.2,Linux PC,Lucia,lucia@iteso.mx,8.2
-hector@iteso.mx,philosophy_204,QUIZ,2024-10-23T05:28:00Z,79b8b729-2dbb-4b27-8e40-aa0a85473a9a,Completó el quiz del curso philosophy_204,92,6.8,Windows Laptop,Veronica,veronica@iteso.mx,9.3
-hector@iteso.mx,philosophy_204,TAREA,2024-11-01T11:01:00Z,95a87922-9d35-4abb-928d-5d930b7303d8,Entregó tarea del curso philosophy_204,66,6.3,iPhone,Veronica,veronica@iteso.mx,7.2
-hector@iteso.mx,philosophy_204,LECTURA,2024-10-29T10:04:00Z,7f47e217-24aa-43d4-9e11-bbe0ff737e7f,Leyó el material del curso philosophy_204,62,7.0,Linux PC,Veronica,veronica@iteso.mx,8.6
-hector@iteso.mx,philosophy_204,VIDEO,2024-10-11T20:22:00Z,6518bda2-5d8c-4add-8c1d-3ac3590c1644,Vio el video completo del curso philosophy_204,64,7.0,Macbook,Lucia,lucia@iteso.mx,8.3
-viviana@iteso.mx,art_105,VIDEO,2024-10-12T17:27:00Z,dfcde5dc-b9e8-4814-9a13-0957e4bd3a91,Vio el video completo del curso art_105,67,8.5,Windows Laptop,Luis,luis@iteso.mx,9.5
-viviana@iteso.mx,art_105,QUIZ,2024-10-18T06:53:00Z,331e0c10-5b14-4d5d-af1a-c1f2d8d651b5,Completó el quiz del curso art_105,64,6.9,iPhone,Luis,luis@iteso.mx,9.9
-viviana@iteso.mx,art_105,FORO,2024-10-18T06:02:00Z,b81ef5e8-f7d1-4270-9dcc-036a0b3183ca,Participó en foro del curso art_105,56,8.9,Macbook,Luis,luis@iteso.mx,8.6
-viviana@iteso.mx,art_105,TAREA,2024-10-27T07:33:00Z,dd3308a7-00d9-494f-9fae-84d11d84da4a,Entregó tarea del curso art_105,94,6.7,Linux PC,Javier,javier@iteso.mx,8.8
-viviana@iteso.mx,art_105,EVALUACION,2024-10-19T03:10:00Z,cb8b86ea-3a68-493a-bf96-77c422b4715b,Presentó evaluación final del curso art_105,57,8.6,Windows Laptop,Javier,javier@iteso.mx,9.5
-paola@iteso.mx,art_105,PROYECTO,2024-10-16T07:24:00Z,dc1a8f8a-349a-4a01-b837-7bbd38795276,Subió proyecto final del curso art_105,69,7.2,Windows Laptop,Javier,javier@iteso.mx,7.4
-paola@iteso.mx,art_105,TAREA,2024-11-04T23:05:00Z,5b9d6a38-04be-44e0-86c9-40e93be70c7a,Entregó tarea del curso art_105,69,9.4,Chromebook,Javier,javier@iteso.mx,7.9
-paola@iteso.mx,art_105,EVALUACION,2024-11-08T01:46:00Z,0d4092e3-266c-429a-86b6-b644edad6e94,Presentó evaluación final del curso art_105,50,9.0,iPad,Javier,javier@iteso.mx,9.8
-paola@iteso.mx,art_105,VIDEO,2024-10-31T09:35:00Z,4f00b14f-a4ba-4cf3-8213-0e2265b74cdb,Vio el video completo del curso art_105,64,9.8,iPad,Luis,luis@iteso.mx,7.1
-paola@iteso.mx,art_105,LECTURA,2024-11-01T02:34:00Z,21106f9a-2101-4299-a0b0-6a5312bd9375,Leyó el material del curso art_105,50,9.9,Macbook,Javier,javier@iteso.mx,7.7
-francisco@iteso.mx,art_105,QUIZ,2024-10-24T03:54:00Z,fab78391-7d25-469a-b6ba-30a75030cbab,Completó el quiz del curso art_105,53,6.5,iPad,Luis,luis@iteso.mx,8.1
-francisco@iteso.mx,art_105,LECTURA,2024-10-17T16:49:00Z,15ceaa5a-347f-4e06-928c-804f2de46611,Leyó el material del curso art_105,87,8.8,Windows Laptop,Javier,javier@iteso.mx,9.7
-francisco@iteso.mx,art_105,FORO,2024-11-05T09:39:00Z,0b354be2-81f6-452a-959f-3a710d0a9210,Participó en foro del curso art_105,60,6.3,Linux PC,Luis,luis@iteso.mx,7.4
-francisco@iteso.mx,art_105,VIDEO,2024-10-14T05:37:00Z,9c3a08eb-46aa-4900-a8ae-c34e2bb2452f,Vio el video completo del curso art_105,91,9.9,iPad,Javier,javier@iteso.mx,7.4
-francisco@iteso.mx,art_105,TAREA,2024-10-24T03:03:00Z,e83f298d-d373-420a-a806-9fef65336b7c,Entregó tarea del curso art_105,96,8.2,Chromebook,Luis,luis@iteso.mx,8.8
-lucia@iteso.mx,art_105,TAREA,2024-10-12T09:44:00Z,36a7c556-8919-4e07-b317-c1e4dc4fdca0,Entregó tarea del curso art_105,87,9.6,iPad,Luis,luis@iteso.mx,7.5
-lucia@iteso.mx,art_105,EVALUACION,2024-10-15T22:21:00Z,a21d4b05-d31b-47c1-ab68-7ca17d9002e1,Presentó evaluación final del curso art_105,95,9.1,Macbook,Javier,javier@iteso.mx,7.8
-lucia@iteso.mx,art_105,FORO,2024-11-05T06:41:00Z,ef6fe477-e25c-4778-bf84-def6d160aed2,Participó en foro del curso art_105,98,7.5,iPhone,Javier,javier@iteso.mx,8.4
-lucia@iteso.mx,art_105,QUIZ,2024-10-18T18:39:00Z,3056bab4-440a-4085-b4ba-55a78994dffb,Completó el quiz del curso art_105,57,8.8,Macbook,Javier,javier@iteso.mx,8.4
-lucia@iteso.mx,art_105,VIDEO,2024-11-09T15:15:00Z,efe60e53-4b3d-4ca8-95b7-a0e52deb1fa6,Vio el video completo del curso art_105,73,8.4,Macbook,Luis,luis@iteso.mx,7.5
-diego@iteso.mx,programming_110,PROYECTO,2024-11-06T02:20:00Z,7a686d99-04ff-4eb7-be40-b4224543c404,Subió proyecto final del curso programming_110,84,6.4,Windows Laptop,Daniel,daniel@iteso.mx,9.2
-diego@iteso.mx,programming_110,FORO,2024-10-31T16:40:00Z,90a1936c-3f63-4849-b01a-54352937d1ec,Participó en foro del curso programming_110,67,9.8,iPad,Felipe,felipe@iteso.mx,8.6
-diego@iteso.mx,programming_110,TAREA,2024-10-17T05:04:00Z,7421e79d-6ce0-48c3-bc5c-931617bc0740,Entregó tarea del curso programming_110,79,6.2,Linux PC,Daniel,daniel@iteso.mx,9.3
-diego@iteso.mx,programming_110,EVALUACION,2024-11-07T03:06:00Z,80f89e7c-b3b9-4e11-8463-e045c9cbd57f,Presentó evaluación final del curso programming_110,73,9.5,Macbook,Daniel,daniel@iteso.mx,7.3
-diego@iteso.mx,programming_110,LECTURA,2024-10-17T00:37:00Z,95b93010-ac94-43b4-9433-eb852d03c275,Leyó el material del curso programming_110,76,6.6,Macbook,Daniel,daniel@iteso.mx,7.7
-beatriz@iteso.mx,programming_110,EVALUACION,2024-10-25T07:55:00Z,8c22601a-8c48-45c1-810c-08f661c4c437,Presentó evaluación final del curso programming_110,94,7.5,Windows Laptop,Daniel,daniel@iteso.mx,8.5
-beatriz@iteso.mx,programming_110,FORO,2024-10-26T18:20:00Z,7acc3036-d459-4996-9ac4-912d19b40833,Participó en foro del curso programming_110,51,9.8,Windows Laptop,Daniel,daniel@iteso.mx,7.7
-beatriz@iteso.mx,programming_110,PROYECTO,2024-10-24T06:51:00Z,47bcd009-07df-4879-a8e2-2d58a5befdd2,Subió proyecto final del curso programming_110,51,7.0,Linux PC,Felipe,felipe@iteso.mx,8.1
-beatriz@iteso.mx,programming_110,QUIZ,2024-10-22T01:49:00Z,3452965f-47ac-4790-9a95-cd6e0ac61aff,Completó el quiz del curso programming_110,69,6.3,Windows Laptop,Daniel,daniel@iteso.mx,7.6
-beatriz@iteso.mx,programming_110,LECTURA,2024-10-22T16:44:00Z,bd996e85-5f62-4808-a519-ecf690a02b8b,Leyó el material del curso programming_110,94,9.0,Windows Laptop,Daniel,daniel@iteso.mx,8.7
-maria@iteso.mx,programming_110,FORO,2024-10-15T08:09:00Z,3456670d-9a68-471b-8f59-414783a9bc05,Participó en foro del curso programming_110,78,7.7,Chromebook,Felipe,felipe@iteso.mx,9.2
-maria@iteso.mx,programming_110,PROYECTO,2024-10-23T08:19:00Z,ee5c1e96-e532-40eb-a1ee-e9e5d71ed2b7,Subió proyecto final del curso programming_110,61,6.7,Windows Laptop,Daniel,daniel@iteso.mx,7.6
-maria@iteso.mx,programming_110,TAREA,2024-11-08T09:13:00Z,06b5bb7b-ddd8-403e-aa31-e0234fd3132c,Entregó tarea del curso programming_110,93,8.1,iPad,Felipe,felipe@iteso.mx,7.3
-maria@iteso.mx,programming_110,LECTURA,2024-10-14T11:09:00Z,ab88bc7d-1a3f-45d5-a1aa-a9bb5af88df7,Leyó el material del curso programming_110,63,6.5,Android Tablet,Daniel,daniel@iteso.mx,7.6
-maria@iteso.mx,programming_110,QUIZ,2024-11-05T17:48:00Z,c56d93f9-4337-4aff-ba3a-ca7ef846ba47,Completó el quiz del curso programming_110,61,9.7,iPad,Daniel,daniel@iteso.mx,8.4
-diana@iteso.mx,programming_110,PROYECTO,2024-10-11T02:01:00Z,60b0d296-f5d8-4819-8836-f921a4cdd4ff,Subió proyecto final del curso programming_110,66,6.6,iPhone,Felipe,felipe@iteso.mx,9.0
-diana@iteso.mx,programming_110,EVALUACION,2024-10-19T05:53:00Z,7bc93cd9-5f02-4bc5-b6f2-dea6c6a7f71e,Presentó evaluación final del curso programming_110,89,8.0,iPhone,Daniel,daniel@iteso.mx,8.7
-diana@iteso.mx,programming_110,LECTURA,2024-10-27T05:19:00Z,f3bd1517-6367-4b55-a1f2-a40aff124842,Leyó el material del curso programming_110,66,8.7,iPhone,Daniel,daniel@iteso.mx,7.6
-diana@iteso.mx,programming_110,FORO,2024-11-01T06:27:00Z,d24f1dd5-c30b-4507-8bac-b79c4c8f85d5,Participó en foro del curso programming_110,56,9.6,Windows Laptop,Felipe,felipe@iteso.mx,8.7
-diana@iteso.mx,programming_110,VIDEO,2024-10-25T01:09:00Z,3a7cacad-d0f5-44ba-9722-6f420216f363,Vio el video completo del curso programming_110,97,7.5,Linux PC,Felipe,felipe@iteso.mx,9.5
+mike@iteso.mx,Sistemas_Operativos,QUIZ,2024-10-10T16:00:00Z,c8623068-9601-5119-8eb8-a7bfde9c6908,Completo el quiz del curso Sistemas_Operativos,50,9.0,Macbook,Jose,jose@iteso.mx,7.0
+mike@iteso.mx,Sistemas_Operativos,TAREA,2024-10-11T16:00:00Z,0c1dce95-7c88-5004-9ca8-6d007d111952,Entrego tarea del curso Sistemas_Operativos,50,8.0,iPhone,Jose,jose@iteso.mx,7.0
+anna@iteso.mx,Sistemas_Operativos,QUIZ,2024-10-12T16:00:00Z,f3fe376c-b765-54d0-b071-f3b749d53c4b,Completo el quiz del curso Sistemas_Operativos,55,7.1,iPhone,Miguel,miguel@iteso.mx,8.5
+anna@iteso.mx,Sistemas_Operativos,TAREA,2024-10-13T16:00:00Z,4d337ba8-dcbd-5147-a590-9715a58356bc,Entrego tarea del curso Sistemas_Operativos,55,7.9,Windows Laptop,Miguel,miguel@iteso.mx,8.5
+li@iteso.mx,Sistemas_Operativos,QUIZ,2024-10-14T16:00:00Z,8c58494e-d12e-5a77-95a5-91f69ee0ffc9,Completo el quiz del curso Sistemas_Operativos,60,8.5,Windows Laptop,Jose,jose@iteso.mx,10.0
+li@iteso.mx,Sistemas_Operativos,TAREA,2024-10-15T16:00:00Z,eed59280-fd97-5479-a590-7f0895167729,Entrego tarea del curso Sistemas_Operativos,60,9.4,Android Tablet,Jose,jose@iteso.mx,10.0
+carlos@iteso.mx,Sistemas_Operativos,QUIZ,2024-10-16T16:00:00Z,2be9ee8f-5df5-517c-8b41-110c439b2ab5,Completo el quiz del curso Sistemas_Operativos,65,7.3,Android Tablet,Miguel,miguel@iteso.mx,11.5
+carlos@iteso.mx,Sistemas_Operativos,TAREA,2024-10-17T16:00:00Z,ccf18d7b-e286-5d93-8960-5c950888b818,Entrego tarea del curso Sistemas_Operativos,65,6.6,iPad,Miguel,miguel@iteso.mx,11.5
+maria@iteso.mx,Sistemas_Operativos,QUIZ,2024-10-18T16:00:00Z,3fa8693a-4c95-5fe4-be4c-f8b71abf32a8,Completo el quiz del curso Sistemas_Operativos,70,6.4,iPad,Jose,jose@iteso.mx,13.0
+maria@iteso.mx,Sistemas_Operativos,TAREA,2024-10-19T16:00:00Z,d6dc548b-8652-5482-8ad3-e61b015759cd,Entrego tarea del curso Sistemas_Operativos,70,9.4,Linux PC,Jose,jose@iteso.mx,13.0
+luis@iteso.mx,Sistemas_Operativos,QUIZ,2024-10-20T16:00:00Z,3fde2eba-8513-5386-899e-d3656d149036,Completo el quiz del curso Sistemas_Operativos,75,9.3,Linux PC,Miguel,miguel@iteso.mx,14.5
+luis@iteso.mx,Sistemas_Operativos,TAREA,2024-10-21T16:00:00Z,f2b1f322-56cb-5e07-a116-e9ac58b4ef98,Entrego tarea del curso Sistemas_Operativos,75,8.7,Chromebook,Miguel,miguel@iteso.mx,14.5
+fernanda@iteso.mx,Sistemas_Operativos,QUIZ,2024-10-22T16:00:00Z,6f2c06d5-52be-53f6-83fd-af4bd7ae4f4f,Completo el quiz del curso Sistemas_Operativos,80,9.3,Chromebook,Jose,jose@iteso.mx,16.0
+fernanda@iteso.mx,Sistemas_Operativos,TAREA,2024-10-23T16:00:00Z,47dfa0cf-d6e8-5df5-91d7-07fafe52dc71,Entrego tarea del curso Sistemas_Operativos,80,7.2,Macbook,Jose,jose@iteso.mx,16.0
+diego@iteso.mx,Sistemas_Operativos,QUIZ,2024-10-24T16:00:00Z,0072c659-dde1-5c03-8b10-aaa5c10427bf,Completo el quiz del curso Sistemas_Operativos,85,8.6,Macbook,Miguel,miguel@iteso.mx,17.5
+diego@iteso.mx,Sistemas_Operativos,TAREA,2024-10-25T16:00:00Z,b891a51e-f998-5a43-9f18-08f13ea4756b,Entrego tarea del curso Sistemas_Operativos,85,9.1,iPhone,Miguel,miguel@iteso.mx,17.5
+sofia@iteso.mx,Sistemas_Operativos,QUIZ,2024-10-26T16:00:00Z,3bd6ebbf-08da-5d01-9653-b3359d3763aa,Completo el quiz del curso Sistemas_Operativos,90,9.0,iPhone,Jose,jose@iteso.mx,19.0
+sofia@iteso.mx,Sistemas_Operativos,TAREA,2024-10-27T16:00:00Z,8ae3a94c-4f43-569f-a1e3-c52b53b258ba,Entrego tarea del curso Sistemas_Operativos,90,8.5,Windows Laptop,Jose,jose@iteso.mx,19.0
+juan@iteso.mx,Sistemas_Operativos,QUIZ,2024-10-28T16:00:00Z,74a08a35-1e88-5b1d-87f2-5254058b2304,Completo el quiz del curso Sistemas_Operativos,95,7.0,Windows Laptop,Miguel,miguel@iteso.mx,20.5
+juan@iteso.mx,Sistemas_Operativos,TAREA,2024-10-29T16:00:00Z,6a028aa9-ab2b-5cab-bc3b-1844c0f58d47,Entrego tarea del curso Sistemas_Operativos,95,6.1,Android Tablet,Miguel,miguel@iteso.mx,20.5
+mike@iteso.mx,Bases_de_Datos,QUIZ,2024-10-10T16:00:00Z,981bcc72-276b-5238-8fca-45d2410a57bd,Completo el quiz del curso Bases_de_Datos,50,6.3,Macbook,Paty,paty@iteso.mx,7.0
+mike@iteso.mx,Bases_de_Datos,TAREA,2024-10-11T16:00:00Z,79be3c1b-6af4-586e-ab4b-9fa2ae2b18a0,Entrego tarea del curso Bases_de_Datos,50,6.8,iPhone,Paty,paty@iteso.mx,7.0
+anna@iteso.mx,Bases_de_Datos,QUIZ,2024-10-12T16:00:00Z,9d5084a7-3f90-5cff-92dc-3212a0f096a4,Completo el quiz del curso Bases_de_Datos,55,8.3,iPhone,Luis,luis@iteso.mx,8.5
+anna@iteso.mx,Bases_de_Datos,TAREA,2024-10-13T16:00:00Z,03d6a637-dd00-55a9-adb1-98165799732b,Entrego tarea del curso Bases_de_Datos,55,8.7,Windows Laptop,Luis,luis@iteso.mx,8.5
+li@iteso.mx,Bases_de_Datos,QUIZ,2024-10-14T16:00:00Z,422400e6-e514-5fe1-9e84-f30019af72d5,Completo el quiz del curso Bases_de_Datos,60,6.5,Windows Laptop,Paty,paty@iteso.mx,10.0
+li@iteso.mx,Bases_de_Datos,TAREA,2024-10-15T16:00:00Z,74e68ab8-4563-5563-a2ee-f4fe7ecc52b2,Entrego tarea del curso Bases_de_Datos,60,7.4,Android Tablet,Paty,paty@iteso.mx,10.0
+carlos@iteso.mx,Bases_de_Datos,QUIZ,2024-10-16T16:00:00Z,30cb6547-6181-5247-8543-64e40c9ffaf5,Completo el quiz del curso Bases_de_Datos,65,8.5,Android Tablet,Luis,luis@iteso.mx,11.5
+carlos@iteso.mx,Bases_de_Datos,TAREA,2024-10-17T16:00:00Z,33f56fb9-f928-5946-9331-5c066a4a6465,Entrego tarea del curso Bases_de_Datos,65,8.6,iPad,Luis,luis@iteso.mx,11.5
+maria@iteso.mx,Bases_de_Datos,QUIZ,2024-10-18T16:00:00Z,bd6967da-5f30-5b0d-be22-6cec458b659d,Completo el quiz del curso Bases_de_Datos,70,8.3,iPad,Paty,paty@iteso.mx,13.0
+maria@iteso.mx,Bases_de_Datos,TAREA,2024-10-19T16:00:00Z,377ce465-1346-5dd8-bef6-c8e5c9b2c17e,Entrego tarea del curso Bases_de_Datos,70,6.8,Linux PC,Paty,paty@iteso.mx,13.0
+luis@iteso.mx,Bases_de_Datos,QUIZ,2024-10-20T16:00:00Z,0148b5d9-2e5d-5672-8a99-576c9eb58cd2,Completo el quiz del curso Bases_de_Datos,75,8.7,Linux PC,Luis,luis@iteso.mx,14.5
+luis@iteso.mx,Bases_de_Datos,TAREA,2024-10-21T16:00:00Z,555cbc34-c0eb-5a2e-8a83-348aaaab9809,Entrego tarea del curso Bases_de_Datos,75,6.0,Chromebook,Luis,luis@iteso.mx,14.5
+fernanda@iteso.mx,Bases_de_Datos,QUIZ,2024-10-22T16:00:00Z,6f0cff0c-c426-5ed7-8316-4ff136dca083,Completo el quiz del curso Bases_de_Datos,80,7.8,Chromebook,Paty,paty@iteso.mx,16.0
+fernanda@iteso.mx,Bases_de_Datos,TAREA,2024-10-23T16:00:00Z,ed5ffe0a-5e05-53d3-88e6-183267b18de4,Entrego tarea del curso Bases_de_Datos,80,6.9,Macbook,Paty,paty@iteso.mx,16.0
+diego@iteso.mx,Bases_de_Datos,QUIZ,2024-10-24T16:00:00Z,353fb878-141a-51a6-8a36-35624ca2dcda,Completo el quiz del curso Bases_de_Datos,85,8.1,Macbook,Luis,luis@iteso.mx,17.5
+diego@iteso.mx,Bases_de_Datos,TAREA,2024-10-25T16:00:00Z,fa8bf4bf-d400-5ff9-ab7a-db4f992c872d,Entrego tarea del curso Bases_de_Datos,85,7.5,iPhone,Luis,luis@iteso.mx,17.5
+sofia@iteso.mx,Bases_de_Datos,QUIZ,2024-10-26T16:00:00Z,77166048-81e5-5219-b334-93ca6602433d,Completo el quiz del curso Bases_de_Datos,90,6.2,iPhone,Paty,paty@iteso.mx,19.0
+sofia@iteso.mx,Bases_de_Datos,TAREA,2024-10-27T16:00:00Z,040d67b5-4c41-59ad-b540-6722bb281b5a,Entrego tarea del curso Bases_de_Datos,90,7.7,Windows Laptop,Paty,paty@iteso.mx,19.0
+juan@iteso.mx,Bases_de_Datos,QUIZ,2024-10-28T16:00:00Z,3937ae11-6408-574d-9103-db9f753b0c0a,Completo el quiz del curso Bases_de_Datos,95,7.9,Windows Laptop,Luis,luis@iteso.mx,20.5
+juan@iteso.mx,Bases_de_Datos,TAREA,2024-10-29T16:00:00Z,3eb9520e-1ec0-5eca-8020-aab7f0fef6e3,Entrego tarea del curso Bases_de_Datos,95,7.2,Android Tablet,Luis,luis@iteso.mx,20.5
+mike@iteso.mx,Redes_de_Computadoras,QUIZ,2024-10-10T16:00:00Z,e22dfad7-1329-529f-8c07-5cc74c78f1a9,Completo el quiz del curso Redes_de_Computadoras,50,6.7,Macbook,Ana,ana@iteso.mx,7.0
+mike@iteso.mx,Redes_de_Computadoras,TAREA,2024-10-11T16:00:00Z,3520bf05-b33b-5ea5-8901-507ea538f141,Entrego tarea del curso Redes_de_Computadoras,50,7.6,iPhone,Ana,ana@iteso.mx,7.0
+anna@iteso.mx,Redes_de_Computadoras,QUIZ,2024-10-12T16:00:00Z,7258f0c7-1062-514c-be7b-df74780ab5d3,Completo el quiz del curso Redes_de_Computadoras,55,6.3,iPhone,Carlos,carlos@iteso.mx,8.5
+anna@iteso.mx,Redes_de_Computadoras,TAREA,2024-10-13T16:00:00Z,c36aff7d-2bf5-59e5-898b-0d007945bd1a,Entrego tarea del curso Redes_de_Computadoras,55,7.5,Windows Laptop,Carlos,carlos@iteso.mx,8.5
+li@iteso.mx,Redes_de_Computadoras,QUIZ,2024-10-14T16:00:00Z,7552c257-9c2e-5962-98fd-67b976f52ca5,Completo el quiz del curso Redes_de_Computadoras,60,9.0,Windows Laptop,Ana,ana@iteso.mx,10.0
+li@iteso.mx,Redes_de_Computadoras,TAREA,2024-10-15T16:00:00Z,06c963a8-8f3e-551a-811d-fa43686e1929,Entrego tarea del curso Redes_de_Computadoras,60,7.6,Android Tablet,Ana,ana@iteso.mx,10.0
+carlos@iteso.mx,Redes_de_Computadoras,QUIZ,2024-10-16T16:00:00Z,474d726d-4208-51c5-a4d6-6cc18911964e,Completo el quiz del curso Redes_de_Computadoras,65,9.2,Android Tablet,Carlos,carlos@iteso.mx,11.5
+carlos@iteso.mx,Redes_de_Computadoras,TAREA,2024-10-17T16:00:00Z,40c46263-723e-5960-93c1-e16fd3620d95,Entrego tarea del curso Redes_de_Computadoras,65,7.3,iPad,Carlos,carlos@iteso.mx,11.5
+maria@iteso.mx,Redes_de_Computadoras,QUIZ,2024-10-18T16:00:00Z,f2177687-0b9d-514a-beb7-aafd3c82edd4,Completo el quiz del curso Redes_de_Computadoras,70,8.7,iPad,Ana,ana@iteso.mx,13.0
+maria@iteso.mx,Redes_de_Computadoras,TAREA,2024-10-19T16:00:00Z,01a3a51a-14b6-5dd4-8775-bf811e8c6482,Entrego tarea del curso Redes_de_Computadoras,70,7.0,Linux PC,Ana,ana@iteso.mx,13.0
+luis@iteso.mx,Redes_de_Computadoras,QUIZ,2024-10-20T16:00:00Z,5b0fe4cb-4734-5599-adb5-a5c0de55c0ac,Completo el quiz del curso Redes_de_Computadoras,75,6.0,Linux PC,Carlos,carlos@iteso.mx,14.5
+luis@iteso.mx,Redes_de_Computadoras,TAREA,2024-10-21T16:00:00Z,a82f774b-7d35-58fc-b506-6485a841177e,Entrego tarea del curso Redes_de_Computadoras,75,6.1,Chromebook,Carlos,carlos@iteso.mx,14.5
+fernanda@iteso.mx,Redes_de_Computadoras,QUIZ,2024-10-22T16:00:00Z,d9ebe88a-46f7-50a2-83d9-c12c854ad0b4,Completo el quiz del curso Redes_de_Computadoras,80,7.8,Chromebook,Ana,ana@iteso.mx,16.0
+fernanda@iteso.mx,Redes_de_Computadoras,TAREA,2024-10-23T16:00:00Z,445da918-8a8e-52bb-9736-a6268486bab0,Entrego tarea del curso Redes_de_Computadoras,80,8.0,Macbook,Ana,ana@iteso.mx,16.0
+diego@iteso.mx,Redes_de_Computadoras,QUIZ,2024-10-24T16:00:00Z,08ecc35d-d8a5-504a-88b5-4a38c93f0cca,Completo el quiz del curso Redes_de_Computadoras,85,7.5,Macbook,Carlos,carlos@iteso.mx,17.5
+diego@iteso.mx,Redes_de_Computadoras,TAREA,2024-10-25T16:00:00Z,8c1d9b07-0c83-555e-97e3-c31f6fe6a7e2,Entrego tarea del curso Redes_de_Computadoras,85,8.3,iPhone,Carlos,carlos@iteso.mx,17.5
+sofia@iteso.mx,Redes_de_Computadoras,QUIZ,2024-10-26T16:00:00Z,9a152f8c-8f79-5f5c-a80b-b225668dbb0e,Completo el quiz del curso Redes_de_Computadoras,90,7.4,iPhone,Ana,ana@iteso.mx,19.0
+sofia@iteso.mx,Redes_de_Computadoras,TAREA,2024-10-27T16:00:00Z,35b0717a-466f-584a-bd92-1adfb8e62387,Entrego tarea del curso Redes_de_Computadoras,90,7.2,Windows Laptop,Ana,ana@iteso.mx,19.0
+juan@iteso.mx,Redes_de_Computadoras,QUIZ,2024-10-28T16:00:00Z,8cbac993-150e-5b5c-9419-1910f76668ec,Completo el quiz del curso Redes_de_Computadoras,95,7.8,Windows Laptop,Carlos,carlos@iteso.mx,20.5
+juan@iteso.mx,Redes_de_Computadoras,TAREA,2024-10-29T16:00:00Z,b8e49ba6-3bd6-5111-bb5c-7599910c14a0,Entrego tarea del curso Redes_de_Computadoras,95,7.3,Android Tablet,Carlos,carlos@iteso.mx,20.5
+mike@iteso.mx,Programacion_Avanzada,QUIZ,2024-10-10T16:00:00Z,e7e8f178-42cc-51c2-b4a3-c1f58528b6fd,Completo el quiz del curso Programacion_Avanzada,50,9.0,Macbook,Lucia,lucia@iteso.mx,7.0
+mike@iteso.mx,Programacion_Avanzada,TAREA,2024-10-11T16:00:00Z,2183b4b0-4aac-5413-8c06-0b64646cb33d,Entrego tarea del curso Programacion_Avanzada,50,7.1,iPhone,Lucia,lucia@iteso.mx,7.0
+anna@iteso.mx,Programacion_Avanzada,QUIZ,2024-10-12T16:00:00Z,156ce1d6-79c5-5811-93a2-a26140cf590c,Completo el quiz del curso Programacion_Avanzada,55,7.8,iPhone,Eduardo,eduardo@iteso.mx,8.5
+anna@iteso.mx,Programacion_Avanzada,TAREA,2024-10-13T16:00:00Z,a5c0c15c-fb20-5455-a9c7-d65ba87e2216,Entrego tarea del curso Programacion_Avanzada,55,7.9,Windows Laptop,Eduardo,eduardo@iteso.mx,8.5
+li@iteso.mx,Programacion_Avanzada,QUIZ,2024-10-14T16:00:00Z,85cb7fc0-6eba-5259-bad9-af2dc763692a,Completo el quiz del curso Programacion_Avanzada,60,8.5,Windows Laptop,Lucia,lucia@iteso.mx,10.0
+li@iteso.mx,Programacion_Avanzada,TAREA,2024-10-15T16:00:00Z,f4b5578e-cef3-5898-912a-aba0357e9e7f,Entrego tarea del curso Programacion_Avanzada,60,7.1,Android Tablet,Lucia,lucia@iteso.mx,10.0
+carlos@iteso.mx,Programacion_Avanzada,QUIZ,2024-10-16T16:00:00Z,874e0303-f7e1-530b-9e83-9a3777e414ae,Completo el quiz del curso Programacion_Avanzada,65,9.1,Android Tablet,Eduardo,eduardo@iteso.mx,11.5
+carlos@iteso.mx,Programacion_Avanzada,TAREA,2024-10-17T16:00:00Z,73ae536d-1e56-5b77-a420-0adf6aef2e84,Entrego tarea del curso Programacion_Avanzada,65,6.8,iPad,Eduardo,eduardo@iteso.mx,11.5
+maria@iteso.mx,Programacion_Avanzada,QUIZ,2024-10-18T16:00:00Z,d6285e7f-9bd7-529f-a5b7-e03e08739c13,Completo el quiz del curso Programacion_Avanzada,70,9.0,iPad,Lucia,lucia@iteso.mx,13.0
+maria@iteso.mx,Programacion_Avanzada,TAREA,2024-10-19T16:00:00Z,22e9ea36-5bea-5c13-b388-2d404ff78d65,Entrego tarea del curso Programacion_Avanzada,70,7.4,Linux PC,Lucia,lucia@iteso.mx,13.0
+luis@iteso.mx,Programacion_Avanzada,QUIZ,2024-10-20T16:00:00Z,53c88f4a-d4f6-5ff3-9447-16de95b980fa,Completo el quiz del curso Programacion_Avanzada,75,7.4,Linux PC,Eduardo,eduardo@iteso.mx,14.5
+luis@iteso.mx,Programacion_Avanzada,TAREA,2024-10-21T16:00:00Z,f9483dd3-d270-5ec5-b7a6-3341f78c68f9,Entrego tarea del curso Programacion_Avanzada,75,9.4,Chromebook,Eduardo,eduardo@iteso.mx,14.5
+fernanda@iteso.mx,Programacion_Avanzada,QUIZ,2024-10-22T16:00:00Z,f6bb193a-561b-5546-80b7-dc5824712fe3,Completo el quiz del curso Programacion_Avanzada,80,7.2,Chromebook,Lucia,lucia@iteso.mx,16.0
+fernanda@iteso.mx,Programacion_Avanzada,TAREA,2024-10-23T16:00:00Z,888224d4-e2ce-50fc-929c-d96b714c964e,Entrego tarea del curso Programacion_Avanzada,80,9.4,Macbook,Lucia,lucia@iteso.mx,16.0
+diego@iteso.mx,Programacion_Avanzada,QUIZ,2024-10-24T16:00:00Z,1cd204f6-6d29-5ab8-b305-971d2dc3a34d,Completo el quiz del curso Programacion_Avanzada,85,7.8,Macbook,Eduardo,eduardo@iteso.mx,17.5
+diego@iteso.mx,Programacion_Avanzada,TAREA,2024-10-25T16:00:00Z,248f36e6-ae6a-5242-b52c-67753282d1a9,Entrego tarea del curso Programacion_Avanzada,85,7.7,iPhone,Eduardo,eduardo@iteso.mx,17.5
+sofia@iteso.mx,Programacion_Avanzada,QUIZ,2024-10-26T16:00:00Z,11160aa1-c988-549d-9322-4d41cf14a090,Completo el quiz del curso Programacion_Avanzada,90,8.4,iPhone,Lucia,lucia@iteso.mx,19.0
+sofia@iteso.mx,Programacion_Avanzada,TAREA,2024-10-27T16:00:00Z,10b0645c-0c72-5e33-9f62-ebd2a0239e4e,Entrego tarea del curso Programacion_Avanzada,90,8.6,Windows Laptop,Lucia,lucia@iteso.mx,19.0
+juan@iteso.mx,Programacion_Avanzada,QUIZ,2024-10-28T16:00:00Z,15eebae1-9b6e-5cc1-9399-4af1c6157a7b,Completo el quiz del curso Programacion_Avanzada,95,7.0,Windows Laptop,Eduardo,eduardo@iteso.mx,20.5
+juan@iteso.mx,Programacion_Avanzada,TAREA,2024-10-29T16:00:00Z,958cdf06-d661-58a1-9b7e-646a85d6ea63,Entrego tarea del curso Programacion_Avanzada,95,6.5,Android Tablet,Eduardo,eduardo@iteso.mx,20.5
+mike@iteso.mx,Inteligencia_Artificial,QUIZ,2024-10-10T16:00:00Z,d1090428-0b37-594f-9249-599a6be09390,Completo el quiz del curso Inteligencia_Artificial,50,8.3,Macbook,Raquel,raquel@iteso.mx,7.0
+mike@iteso.mx,Inteligencia_Artificial,TAREA,2024-10-11T16:00:00Z,ee1ed7d9-7e3b-5f0a-94e0-2fdaec3a9db8,Entrego tarea del curso Inteligencia_Artificial,50,9.0,iPhone,Raquel,raquel@iteso.mx,7.0
+anna@iteso.mx,Inteligencia_Artificial,QUIZ,2024-10-12T16:00:00Z,e7765606-5100-5e06-854d-980ff96db5f4,Completo el quiz del curso Inteligencia_Artificial,55,7.7,iPhone,Hugo,hugo@iteso.mx,8.5
+anna@iteso.mx,Inteligencia_Artificial,TAREA,2024-10-13T16:00:00Z,cf4c2162-eae3-5c12-90fe-603ec1a2486f,Entrego tarea del curso Inteligencia_Artificial,55,8.7,Windows Laptop,Hugo,hugo@iteso.mx,8.5
+li@iteso.mx,Inteligencia_Artificial,QUIZ,2024-10-14T16:00:00Z,5a9fa24f-c86b-5ad1-823b-4b1428e5e71d,Completo el quiz del curso Inteligencia_Artificial,60,7.9,Windows Laptop,Raquel,raquel@iteso.mx,10.0
+li@iteso.mx,Inteligencia_Artificial,TAREA,2024-10-15T16:00:00Z,007e2498-fed7-5395-856c-3dffaff2e3d0,Entrego tarea del curso Inteligencia_Artificial,60,9.5,Android Tablet,Raquel,raquel@iteso.mx,10.0
+carlos@iteso.mx,Inteligencia_Artificial,QUIZ,2024-10-16T16:00:00Z,f5327e8b-4fa7-5036-aea3-82bd1022d572,Completo el quiz del curso Inteligencia_Artificial,65,6.5,Android Tablet,Hugo,hugo@iteso.mx,11.5
+carlos@iteso.mx,Inteligencia_Artificial,TAREA,2024-10-17T16:00:00Z,a46bcfd9-fe9b-5cb6-a40a-6dbabaf7af69,Entrego tarea del curso Inteligencia_Artificial,65,8.5,iPad,Hugo,hugo@iteso.mx,11.5
+maria@iteso.mx,Inteligencia_Artificial,QUIZ,2024-10-18T16:00:00Z,ab8f107c-26e0-5511-b2a1-983d601ad3c8,Completo el quiz del curso Inteligencia_Artificial,70,7.2,iPad,Raquel,raquel@iteso.mx,13.0
+maria@iteso.mx,Inteligencia_Artificial,TAREA,2024-10-19T16:00:00Z,1278fd4f-d6ea-5e36-8f80-1cd4e2dd2cd2,Entrego tarea del curso Inteligencia_Artificial,70,7.3,Linux PC,Raquel,raquel@iteso.mx,13.0
+luis@iteso.mx,Inteligencia_Artificial,QUIZ,2024-10-20T16:00:00Z,06377182-222b-5fb1-81d0-3325bdd4918a,Completo el quiz del curso Inteligencia_Artificial,75,8.4,Linux PC,Hugo,hugo@iteso.mx,14.5
+luis@iteso.mx,Inteligencia_Artificial,TAREA,2024-10-21T16:00:00Z,1c5c570f-5c9f-53c1-8a90-5df773c24813,Entrego tarea del curso Inteligencia_Artificial,75,6.7,Chromebook,Hugo,hugo@iteso.mx,14.5
+fernanda@iteso.mx,Inteligencia_Artificial,QUIZ,2024-10-22T16:00:00Z,c88e8da6-f228-5a35-8bc5-c17e1cd676a2,Completo el quiz del curso Inteligencia_Artificial,80,8.7,Chromebook,Raquel,raquel@iteso.mx,16.0
+fernanda@iteso.mx,Inteligencia_Artificial,TAREA,2024-10-23T16:00:00Z,4dc8b6cc-1637-5ed5-bdd1-f0bb294322c9,Entrego tarea del curso Inteligencia_Artificial,80,8.7,Macbook,Raquel,raquel@iteso.mx,16.0
+diego@iteso.mx,Inteligencia_Artificial,QUIZ,2024-10-24T16:00:00Z,b4d0bcb5-a189-5f0b-aaee-4d9bc55c82d8,Completo el quiz del curso Inteligencia_Artificial,85,9.0,Macbook,Hugo,hugo@iteso.mx,17.5
+diego@iteso.mx,Inteligencia_Artificial,TAREA,2024-10-25T16:00:00Z,36e4403e-2d48-5259-a6d2-b7c3bd7363d5,Entrego tarea del curso Inteligencia_Artificial,85,9.0,iPhone,Hugo,hugo@iteso.mx,17.5
+sofia@iteso.mx,Inteligencia_Artificial,QUIZ,2024-10-26T16:00:00Z,5ef12123-d495-554e-ad0c-0de91dbfbca2,Completo el quiz del curso Inteligencia_Artificial,90,8.3,iPhone,Raquel,raquel@iteso.mx,19.0
+sofia@iteso.mx,Inteligencia_Artificial,TAREA,2024-10-27T16:00:00Z,27d317aa-e2d2-522f-a31f-1a598dd36922,Entrego tarea del curso Inteligencia_Artificial,90,8.1,Windows Laptop,Raquel,raquel@iteso.mx,19.0
+juan@iteso.mx,Inteligencia_Artificial,QUIZ,2024-10-28T16:00:00Z,50833dee-4b12-5660-a5ac-fc7faf33f161,Completo el quiz del curso Inteligencia_Artificial,95,7.4,Windows Laptop,Hugo,hugo@iteso.mx,20.5
+juan@iteso.mx,Inteligencia_Artificial,TAREA,2024-10-29T16:00:00Z,caced5ed-281c-5869-bd71-d9ef85325e81,Entrego tarea del curso Inteligencia_Artificial,95,6.8,Android Tablet,Hugo,hugo@iteso.mx,20.5
+isabel@iteso.mx,Ingenieria_de_Software,QUIZ,2024-10-10T16:00:00Z,111d953f-8814-5528-b707-de1cac33adab,Completo el quiz del curso Ingenieria_de_Software,50,9.1,Macbook,Beatriz,beatriz@iteso.mx,7.0
+isabel@iteso.mx,Ingenieria_de_Software,TAREA,2024-10-11T16:00:00Z,f0e3f50d-7b9f-56da-b3e4-001d2e94663f,Entrego tarea del curso Ingenieria_de_Software,50,9.3,iPhone,Beatriz,beatriz@iteso.mx,7.0
+andres@iteso.mx,Ingenieria_de_Software,QUIZ,2024-10-12T16:00:00Z,2db5773d-04cd-502e-ae00-2af03ceefb77,Completo el quiz del curso Ingenieria_de_Software,55,9.4,iPhone,Mario,mario@iteso.mx,8.5
+andres@iteso.mx,Ingenieria_de_Software,TAREA,2024-10-13T16:00:00Z,50eb7278-3abf-53df-af72-ab878d2e6358,Entrego tarea del curso Ingenieria_de_Software,55,6.3,Windows Laptop,Mario,mario@iteso.mx,8.5
+valeria@iteso.mx,Ingenieria_de_Software,QUIZ,2024-10-14T16:00:00Z,51b0284c-3e9b-5a46-a2ad-9c546683ce6d,Completo el quiz del curso Ingenieria_de_Software,60,7.0,Windows Laptop,Beatriz,beatriz@iteso.mx,10.0
+valeria@iteso.mx,Ingenieria_de_Software,TAREA,2024-10-15T16:00:00Z,cdec4c16-2a7c-57f1-bac9-44d8092c5d53,Entrego tarea del curso Ingenieria_de_Software,60,8.0,Android Tablet,Beatriz,beatriz@iteso.mx,10.0
+pablo@iteso.mx,Ingenieria_de_Software,QUIZ,2024-10-16T16:00:00Z,ad1103ae-fd55-567a-b00d-567986f1d270,Completo el quiz del curso Ingenieria_de_Software,65,8.9,Android Tablet,Mario,mario@iteso.mx,11.5
+pablo@iteso.mx,Ingenieria_de_Software,TAREA,2024-10-17T16:00:00Z,bff40ca9-734a-50f7-b0a1-4fd761b67a70,Entrego tarea del curso Ingenieria_de_Software,65,7.6,iPad,Mario,mario@iteso.mx,11.5
+camila@iteso.mx,Ingenieria_de_Software,QUIZ,2024-10-18T16:00:00Z,237200ed-fbf8-5fc7-97c7-41dfa2a567fe,Completo el quiz del curso Ingenieria_de_Software,70,9.1,iPad,Beatriz,beatriz@iteso.mx,13.0
+camila@iteso.mx,Ingenieria_de_Software,TAREA,2024-10-19T16:00:00Z,11491a5d-f801-5aec-9c2a-5cfb445d01cd,Entrego tarea del curso Ingenieria_de_Software,70,6.3,Linux PC,Beatriz,beatriz@iteso.mx,13.0
+jorge@iteso.mx,Ingenieria_de_Software,QUIZ,2024-10-20T16:00:00Z,6a1948c9-75c1-5a73-b5ea-241095eb2101,Completo el quiz del curso Ingenieria_de_Software,75,7.8,Linux PC,Mario,mario@iteso.mx,14.5
+jorge@iteso.mx,Ingenieria_de_Software,TAREA,2024-10-21T16:00:00Z,894d3a96-1adf-5c94-97c6-ef2138e9fb38,Entrego tarea del curso Ingenieria_de_Software,75,8.3,Chromebook,Mario,mario@iteso.mx,14.5
+diana@iteso.mx,Ingenieria_de_Software,QUIZ,2024-10-22T16:00:00Z,2d5f94e5-5fa4-5414-8c7b-c91668499ac6,Completo el quiz del curso Ingenieria_de_Software,80,7.2,Chromebook,Beatriz,beatriz@iteso.mx,16.0
+diana@iteso.mx,Ingenieria_de_Software,TAREA,2024-10-23T16:00:00Z,f03f55f8-3cf9-5f53-a9f8-3cd2bf3094d1,Entrego tarea del curso Ingenieria_de_Software,80,7.8,Macbook,Beatriz,beatriz@iteso.mx,16.0
+pedro@iteso.mx,Ingenieria_de_Software,QUIZ,2024-10-24T16:00:00Z,1e9b4cf6-5138-51eb-b40a-f51d49e8cfb2,Completo el quiz del curso Ingenieria_de_Software,85,9.4,Macbook,Mario,mario@iteso.mx,17.5
+pedro@iteso.mx,Ingenieria_de_Software,TAREA,2024-10-25T16:00:00Z,16fac88e-2e7c-5ad1-a44d-50207a8ffd0e,Entrego tarea del curso Ingenieria_de_Software,85,6.2,iPhone,Mario,mario@iteso.mx,17.5
+lucia@iteso.mx,Ingenieria_de_Software,QUIZ,2024-10-26T16:00:00Z,f2089756-0a59-564e-829c-7fdcf0be2524,Completo el quiz del curso Ingenieria_de_Software,90,6.6,iPhone,Beatriz,beatriz@iteso.mx,19.0
+lucia@iteso.mx,Ingenieria_de_Software,TAREA,2024-10-27T16:00:00Z,350dbd9a-2c3f-5eb0-8b2b-594ef4623bf1,Entrego tarea del curso Ingenieria_de_Software,90,7.7,Windows Laptop,Beatriz,beatriz@iteso.mx,19.0
+ricardo@iteso.mx,Ingenieria_de_Software,QUIZ,2024-10-28T16:00:00Z,6560cc76-7232-5eba-b248-a93d5c9c8407,Completo el quiz del curso Ingenieria_de_Software,95,6.3,Windows Laptop,Mario,mario@iteso.mx,20.5
+ricardo@iteso.mx,Ingenieria_de_Software,TAREA,2024-10-29T16:00:00Z,fb2a7a16-68b4-554b-b613-a1727a62bd3c,Entrego tarea del curso Ingenieria_de_Software,95,7.7,Android Tablet,Mario,mario@iteso.mx,20.5
+isabel@iteso.mx,Seguridad_Informatica,QUIZ,2024-10-10T16:00:00Z,eaf1c066-7927-5911-9dc8-9f352ad257a4,Completo el quiz del curso Seguridad_Informatica,50,7.5,Macbook,Sandra,sandra@iteso.mx,7.0
+isabel@iteso.mx,Seguridad_Informatica,TAREA,2024-10-11T16:00:00Z,a493cb11-a9af-5b0d-b167-a0c6ba2a32ae,Entrego tarea del curso Seguridad_Informatica,50,7.2,iPhone,Sandra,sandra@iteso.mx,7.0
+andres@iteso.mx,Seguridad_Informatica,QUIZ,2024-10-12T16:00:00Z,73dbf25c-71be-5117-8937-a04d1fcd9d4f,Completo el quiz del curso Seguridad_Informatica,55,9.4,iPhone,Tomas,tomas@iteso.mx,8.5
+andres@iteso.mx,Seguridad_Informatica,TAREA,2024-10-13T16:00:00Z,fd4d89ab-5e6f-5204-9e8d-06ab5756881d,Entrego tarea del curso Seguridad_Informatica,55,7.5,Windows Laptop,Tomas,tomas@iteso.mx,8.5
+valeria@iteso.mx,Seguridad_Informatica,QUIZ,2024-10-14T16:00:00Z,2c5dea8e-89da-5cac-af30-c00ae3b94422,Completo el quiz del curso Seguridad_Informatica,60,9.2,Windows Laptop,Sandra,sandra@iteso.mx,10.0
+valeria@iteso.mx,Seguridad_Informatica,TAREA,2024-10-15T16:00:00Z,07850c1d-065c-5f30-ac8e-72d2993a9bdd,Entrego tarea del curso Seguridad_Informatica,60,6.0,Android Tablet,Sandra,sandra@iteso.mx,10.0
+pablo@iteso.mx,Seguridad_Informatica,QUIZ,2024-10-16T16:00:00Z,618063e8-e197-5dc9-bbcd-4bb65c8a3c06,Completo el quiz del curso Seguridad_Informatica,65,7.0,Android Tablet,Tomas,tomas@iteso.mx,11.5
+pablo@iteso.mx,Seguridad_Informatica,TAREA,2024-10-17T16:00:00Z,1e372cca-e782-575f-8f37-d2df8b5709c0,Entrego tarea del curso Seguridad_Informatica,65,6.9,iPad,Tomas,tomas@iteso.mx,11.5
+camila@iteso.mx,Seguridad_Informatica,QUIZ,2024-10-18T16:00:00Z,f71743b8-7fa6-5366-a36c-e8bd7dac7045,Completo el quiz del curso Seguridad_Informatica,70,7.5,iPad,Sandra,sandra@iteso.mx,13.0
+camila@iteso.mx,Seguridad_Informatica,TAREA,2024-10-19T16:00:00Z,a39baa1c-d217-5d31-a7fa-cefa935cb9ea,Entrego tarea del curso Seguridad_Informatica,70,6.6,Linux PC,Sandra,sandra@iteso.mx,13.0
+jorge@iteso.mx,Seguridad_Informatica,QUIZ,2024-10-20T16:00:00Z,5bfa8946-1914-59fe-b57b-514b0ca54c9c,Completo el quiz del curso Seguridad_Informatica,75,9.2,Linux PC,Tomas,tomas@iteso.mx,14.5
+jorge@iteso.mx,Seguridad_Informatica,TAREA,2024-10-21T16:00:00Z,39d7761f-472f-5c2e-9918-05e11155dcc0,Entrego tarea del curso Seguridad_Informatica,75,7.5,Chromebook,Tomas,tomas@iteso.mx,14.5
+diana@iteso.mx,Seguridad_Informatica,QUIZ,2024-10-22T16:00:00Z,0c882cf7-0820-51a7-a1b8-8029ef99a02e,Completo el quiz del curso Seguridad_Informatica,80,7.9,Chromebook,Sandra,sandra@iteso.mx,16.0
+diana@iteso.mx,Seguridad_Informatica,TAREA,2024-10-23T16:00:00Z,05067ab0-baf8-5783-af89-e984e3910db2,Entrego tarea del curso Seguridad_Informatica,80,9.4,Macbook,Sandra,sandra@iteso.mx,16.0
+pedro@iteso.mx,Seguridad_Informatica,QUIZ,2024-10-24T16:00:00Z,3c134488-c5a0-50ea-b316-91e7fd407c8a,Completo el quiz del curso Seguridad_Informatica,85,6.6,Macbook,Tomas,tomas@iteso.mx,17.5
+pedro@iteso.mx,Seguridad_Informatica,TAREA,2024-10-25T16:00:00Z,04923623-e4e3-5cf8-a55b-6ccff903bbb2,Entrego tarea del curso Seguridad_Informatica,85,9.5,iPhone,Tomas,tomas@iteso.mx,17.5
+lucia@iteso.mx,Seguridad_Informatica,QUIZ,2024-10-26T16:00:00Z,eb00c14a-4391-5206-8019-8adf8899a7fa,Completo el quiz del curso Seguridad_Informatica,90,6.4,iPhone,Sandra,sandra@iteso.mx,19.0
+lucia@iteso.mx,Seguridad_Informatica,TAREA,2024-10-27T16:00:00Z,2c70b25e-cb78-5dc3-a31a-48e754eba606,Entrego tarea del curso Seguridad_Informatica,90,8.8,Windows Laptop,Sandra,sandra@iteso.mx,19.0
+ricardo@iteso.mx,Seguridad_Informatica,QUIZ,2024-10-28T16:00:00Z,0c4ff331-13f1-54f2-842f-7e1c26daa914,Completo el quiz del curso Seguridad_Informatica,95,9.0,Windows Laptop,Tomas,tomas@iteso.mx,20.5
+ricardo@iteso.mx,Seguridad_Informatica,TAREA,2024-10-29T16:00:00Z,e1afd64b-5f56-5c90-8e46-932f8012a3a8,Entrego tarea del curso Seguridad_Informatica,95,8.6,Android Tablet,Tomas,tomas@iteso.mx,20.5
+isabel@iteso.mx,Arquitectura_de_Computadoras,QUIZ,2024-10-10T16:00:00Z,22aac342-920a-5eb1-aaa8-9331d4873240,Completo el quiz del curso Arquitectura_de_Computadoras,50,8.3,Macbook,Veronica,veronica@iteso.mx,7.0
+isabel@iteso.mx,Arquitectura_de_Computadoras,TAREA,2024-10-11T16:00:00Z,72157539-454b-5b1b-881b-51dd1494b481,Entrego tarea del curso Arquitectura_de_Computadoras,50,9.3,iPhone,Veronica,veronica@iteso.mx,7.0
+andres@iteso.mx,Arquitectura_de_Computadoras,QUIZ,2024-10-12T16:00:00Z,5932d71e-270f-5b9a-b166-23f6bb53a095,Completo el quiz del curso Arquitectura_de_Computadoras,55,9.2,iPhone,Daniel,daniel@iteso.mx,8.5
+andres@iteso.mx,Arquitectura_de_Computadoras,TAREA,2024-10-13T16:00:00Z,bc9e4131-c590-52f9-9447-f8cc7fe54d6a,Entrego tarea del curso Arquitectura_de_Computadoras,55,7.1,Windows Laptop,Daniel,daniel@iteso.mx,8.5
+valeria@iteso.mx,Arquitectura_de_Computadoras,QUIZ,2024-10-14T16:00:00Z,6917b542-9437-5f2d-9ce7-747fc6595f24,Completo el quiz del curso Arquitectura_de_Computadoras,60,6.1,Windows Laptop,Veronica,veronica@iteso.mx,10.0
+valeria@iteso.mx,Arquitectura_de_Computadoras,TAREA,2024-10-15T16:00:00Z,389ef1d0-18c4-579e-9419-0f72705fa135,Entrego tarea del curso Arquitectura_de_Computadoras,60,8.8,Android Tablet,Veronica,veronica@iteso.mx,10.0
+pablo@iteso.mx,Arquitectura_de_Computadoras,QUIZ,2024-10-16T16:00:00Z,d3314a7e-596b-581e-8229-0c5f01e4bdcc,Completo el quiz del curso Arquitectura_de_Computadoras,65,6.6,Android Tablet,Daniel,daniel@iteso.mx,11.5
+pablo@iteso.mx,Arquitectura_de_Computadoras,TAREA,2024-10-17T16:00:00Z,06edb479-d1f9-5b1f-85b4-82c2ccaac490,Entrego tarea del curso Arquitectura_de_Computadoras,65,6.6,iPad,Daniel,daniel@iteso.mx,11.5
+camila@iteso.mx,Arquitectura_de_Computadoras,QUIZ,2024-10-18T16:00:00Z,c117da80-7fbd-55a8-a6a4-d8fd5b0920b2,Completo el quiz del curso Arquitectura_de_Computadoras,70,6.9,iPad,Veronica,veronica@iteso.mx,13.0
+camila@iteso.mx,Arquitectura_de_Computadoras,TAREA,2024-10-19T16:00:00Z,6b1ea92d-1615-519b-9d4a-9a67362efd62,Entrego tarea del curso Arquitectura_de_Computadoras,70,9.3,Linux PC,Veronica,veronica@iteso.mx,13.0
+jorge@iteso.mx,Arquitectura_de_Computadoras,QUIZ,2024-10-20T16:00:00Z,44eb1d53-ee1f-5a76-8cb5-68c5317672bb,Completo el quiz del curso Arquitectura_de_Computadoras,75,6.6,Linux PC,Daniel,daniel@iteso.mx,14.5
+jorge@iteso.mx,Arquitectura_de_Computadoras,TAREA,2024-10-21T16:00:00Z,587e60ce-9fa1-54ad-aa87-1a46fc3a9e55,Entrego tarea del curso Arquitectura_de_Computadoras,75,8.2,Chromebook,Daniel,daniel@iteso.mx,14.5
+diana@iteso.mx,Arquitectura_de_Computadoras,QUIZ,2024-10-22T16:00:00Z,6af13685-c68e-5b9b-8c15-dc545480cc4e,Completo el quiz del curso Arquitectura_de_Computadoras,80,9.0,Chromebook,Veronica,veronica@iteso.mx,16.0
+diana@iteso.mx,Arquitectura_de_Computadoras,TAREA,2024-10-23T16:00:00Z,80be3a0a-01c5-56d1-bd74-f6e8fd7d418f,Entrego tarea del curso Arquitectura_de_Computadoras,80,7.5,Macbook,Veronica,veronica@iteso.mx,16.0
+pedro@iteso.mx,Arquitectura_de_Computadoras,QUIZ,2024-10-24T16:00:00Z,67781afb-0b2a-5d24-ad4c-fe1a94aad797,Completo el quiz del curso Arquitectura_de_Computadoras,85,9.0,Macbook,Daniel,daniel@iteso.mx,17.5
+pedro@iteso.mx,Arquitectura_de_Computadoras,TAREA,2024-10-25T16:00:00Z,bb0198ab-dba8-5160-af82-0b42eb676205,Entrego tarea del curso Arquitectura_de_Computadoras,85,7.9,iPhone,Daniel,daniel@iteso.mx,17.5
+lucia@iteso.mx,Arquitectura_de_Computadoras,QUIZ,2024-10-26T16:00:00Z,0ccf8886-a417-570d-b84e-27c44c176f68,Completo el quiz del curso Arquitectura_de_Computadoras,90,6.3,iPhone,Veronica,veronica@iteso.mx,19.0
+lucia@iteso.mx,Arquitectura_de_Computadoras,TAREA,2024-10-27T16:00:00Z,cbf3a3cf-5f37-5ef5-a98b-fc412204b68f,Entrego tarea del curso Arquitectura_de_Computadoras,90,8.5,Windows Laptop,Veronica,veronica@iteso.mx,19.0
+ricardo@iteso.mx,Arquitectura_de_Computadoras,QUIZ,2024-10-28T16:00:00Z,3807fb10-dfe2-5379-b191-5ee97bf85c58,Completo el quiz del curso Arquitectura_de_Computadoras,95,7.2,Windows Laptop,Daniel,daniel@iteso.mx,20.5
+ricardo@iteso.mx,Arquitectura_de_Computadoras,TAREA,2024-10-29T16:00:00Z,249d8ebf-7014-59bb-a58b-28848811f0f6,Entrego tarea del curso Arquitectura_de_Computadoras,95,7.3,Android Tablet,Daniel,daniel@iteso.mx,20.5
+isabel@iteso.mx,Matematicas_Discretas,QUIZ,2024-10-10T16:00:00Z,47d6f03a-4e0d-506d-80a0-15aa256c4240,Completo el quiz del curso Matematicas_Discretas,50,7.9,Macbook,Cecilia,cecilia@iteso.mx,7.0
+isabel@iteso.mx,Matematicas_Discretas,TAREA,2024-10-11T16:00:00Z,9433b17d-f91d-53ac-9a87-b6cc06f1a3c6,Entrego tarea del curso Matematicas_Discretas,50,6.5,iPhone,Cecilia,cecilia@iteso.mx,7.0
+andres@iteso.mx,Matematicas_Discretas,QUIZ,2024-10-12T16:00:00Z,d2a97c1c-9655-50ba-aee6-f8a7bb5edc1f,Completo el quiz del curso Matematicas_Discretas,55,7.1,iPhone,Javier,javier@iteso.mx,8.5
+andres@iteso.mx,Matematicas_Discretas,TAREA,2024-10-13T16:00:00Z,140c47d7-4092-59af-b8b1-d2d8ace85d13,Entrego tarea del curso Matematicas_Discretas,55,9.0,Windows Laptop,Javier,javier@iteso.mx,8.5
+valeria@iteso.mx,Matematicas_Discretas,QUIZ,2024-10-14T16:00:00Z,b86c3fcf-5b97-5ed2-8eef-85367410a783,Completo el quiz del curso Matematicas_Discretas,60,6.7,Windows Laptop,Cecilia,cecilia@iteso.mx,10.0
+valeria@iteso.mx,Matematicas_Discretas,TAREA,2024-10-15T16:00:00Z,d5bae2a3-7e66-552d-8e7c-ab6a246935dc,Entrego tarea del curso Matematicas_Discretas,60,8.9,Android Tablet,Cecilia,cecilia@iteso.mx,10.0
+pablo@iteso.mx,Matematicas_Discretas,QUIZ,2024-10-16T16:00:00Z,3738ccdd-4b44-5dec-860f-3e722184c11b,Completo el quiz del curso Matematicas_Discretas,65,8.2,Android Tablet,Javier,javier@iteso.mx,11.5
+pablo@iteso.mx,Matematicas_Discretas,TAREA,2024-10-17T16:00:00Z,355acab7-150d-57de-8a34-725ca276c926,Entrego tarea del curso Matematicas_Discretas,65,8.6,iPad,Javier,javier@iteso.mx,11.5
+camila@iteso.mx,Matematicas_Discretas,QUIZ,2024-10-18T16:00:00Z,8dd6367b-0f44-5a07-9221-2a1a896abc58,Completo el quiz del curso Matematicas_Discretas,70,6.4,iPad,Cecilia,cecilia@iteso.mx,13.0
+camila@iteso.mx,Matematicas_Discretas,TAREA,2024-10-19T16:00:00Z,36e159c8-8a14-5e4c-9483-f842a09a6a4f,Entrego tarea del curso Matematicas_Discretas,70,7.0,Linux PC,Cecilia,cecilia@iteso.mx,13.0
+jorge@iteso.mx,Matematicas_Discretas,QUIZ,2024-10-20T16:00:00Z,63b53084-377d-5603-a7a4-fcad2d8cd0f0,Completo el quiz del curso Matematicas_Discretas,75,6.5,Linux PC,Javier,javier@iteso.mx,14.5
+jorge@iteso.mx,Matematicas_Discretas,TAREA,2024-10-21T16:00:00Z,3045f72e-f900-51bd-83e9-0504599584fb,Entrego tarea del curso Matematicas_Discretas,75,9.2,Chromebook,Javier,javier@iteso.mx,14.5
+diana@iteso.mx,Matematicas_Discretas,QUIZ,2024-10-22T16:00:00Z,d80bb4f4-b47a-5e6b-b275-999a3d5e3d45,Completo el quiz del curso Matematicas_Discretas,80,8.2,Chromebook,Cecilia,cecilia@iteso.mx,16.0
+diana@iteso.mx,Matematicas_Discretas,TAREA,2024-10-23T16:00:00Z,3e09993d-2014-503a-965c-a20cf4349260,Entrego tarea del curso Matematicas_Discretas,80,7.3,Macbook,Cecilia,cecilia@iteso.mx,16.0
+pedro@iteso.mx,Matematicas_Discretas,QUIZ,2024-10-24T16:00:00Z,89e92888-2d4d-5c6c-b1c8-ff40612c6ac2,Completo el quiz del curso Matematicas_Discretas,85,7.8,Macbook,Javier,javier@iteso.mx,17.5
+pedro@iteso.mx,Matematicas_Discretas,TAREA,2024-10-25T16:00:00Z,a637c496-b281-5837-a0b4-dece1470b5b7,Entrego tarea del curso Matematicas_Discretas,85,8.0,iPhone,Javier,javier@iteso.mx,17.5
+lucia@iteso.mx,Matematicas_Discretas,QUIZ,2024-10-26T16:00:00Z,27b90c99-8c59-5cf0-9e6e-ed6f68549e49,Completo el quiz del curso Matematicas_Discretas,90,8.5,iPhone,Cecilia,cecilia@iteso.mx,19.0
+lucia@iteso.mx,Matematicas_Discretas,TAREA,2024-10-27T16:00:00Z,c4e34bb9-96da-58aa-aaf2-ea1d6536c0f6,Entrego tarea del curso Matematicas_Discretas,90,6.7,Windows Laptop,Cecilia,cecilia@iteso.mx,19.0
+ricardo@iteso.mx,Matematicas_Discretas,QUIZ,2024-10-28T16:00:00Z,5f882151-c57d-55f8-9f37-4be874c3b8ff,Completo el quiz del curso Matematicas_Discretas,95,8.5,Windows Laptop,Javier,javier@iteso.mx,20.5
+ricardo@iteso.mx,Matematicas_Discretas,TAREA,2024-10-29T16:00:00Z,b4cfe565-cc9a-526c-9ff8-ad6e98193664,Entrego tarea del curso Matematicas_Discretas,95,9.1,Android Tablet,Javier,javier@iteso.mx,20.5
+isabel@iteso.mx,Desarrollo_Web,QUIZ,2024-10-10T16:00:00Z,b2882d08-7205-562a-8eff-18b2421c768a,Completo el quiz del curso Desarrollo_Web,50,8.0,Macbook,Nora,nora@iteso.mx,7.0
+isabel@iteso.mx,Desarrollo_Web,TAREA,2024-10-11T16:00:00Z,f89305e3-1dc9-5d24-a321-715591f03738,Entrego tarea del curso Desarrollo_Web,50,7.2,iPhone,Nora,nora@iteso.mx,7.0
+andres@iteso.mx,Desarrollo_Web,QUIZ,2024-10-12T16:00:00Z,2e1d5ae7-69b3-5dbb-b72b-6ae79fa91bf4,Completo el quiz del curso Desarrollo_Web,55,6.2,iPhone,Felipe,felipe@iteso.mx,8.5
+andres@iteso.mx,Desarrollo_Web,TAREA,2024-10-13T16:00:00Z,a1e190b2-fe18-5962-8c7d-4a36b61fe157,Entrego tarea del curso Desarrollo_Web,55,6.1,Windows Laptop,Felipe,felipe@iteso.mx,8.5
+valeria@iteso.mx,Desarrollo_Web,QUIZ,2024-10-14T16:00:00Z,20b97fc5-0950-5734-b5ce-0d3cf3cf9395,Completo el quiz del curso Desarrollo_Web,60,6.6,Windows Laptop,Nora,nora@iteso.mx,10.0
+valeria@iteso.mx,Desarrollo_Web,TAREA,2024-10-15T16:00:00Z,26718caa-2e4e-5615-aebf-2eae5139f582,Entrego tarea del curso Desarrollo_Web,60,6.9,Android Tablet,Nora,nora@iteso.mx,10.0
+pablo@iteso.mx,Desarrollo_Web,QUIZ,2024-10-16T16:00:00Z,c4c06e87-065e-5c81-a8e2-657fd9f61152,Completo el quiz del curso Desarrollo_Web,65,7.4,Android Tablet,Felipe,felipe@iteso.mx,11.5
+pablo@iteso.mx,Desarrollo_Web,TAREA,2024-10-17T16:00:00Z,e89057be-f41a-5edf-a4ef-8373c0dbcafa,Entrego tarea del curso Desarrollo_Web,65,9.1,iPad,Felipe,felipe@iteso.mx,11.5
+camila@iteso.mx,Desarrollo_Web,QUIZ,2024-10-18T16:00:00Z,b8905f6f-995e-5b6d-8795-505f9afb6d1b,Completo el quiz del curso Desarrollo_Web,70,7.1,iPad,Nora,nora@iteso.mx,13.0
+camila@iteso.mx,Desarrollo_Web,TAREA,2024-10-19T16:00:00Z,5d1d1c5c-ece8-537d-b938-fc1db3503bb4,Entrego tarea del curso Desarrollo_Web,70,8.2,Linux PC,Nora,nora@iteso.mx,13.0
+jorge@iteso.mx,Desarrollo_Web,QUIZ,2024-10-20T16:00:00Z,452b1122-8f7a-540e-b31e-a703d710c675,Completo el quiz del curso Desarrollo_Web,75,8.3,Linux PC,Felipe,felipe@iteso.mx,14.5
+jorge@iteso.mx,Desarrollo_Web,TAREA,2024-10-21T16:00:00Z,c3c374df-3169-5fa2-8fb7-ce7c9f394e9c,Entrego tarea del curso Desarrollo_Web,75,7.4,Chromebook,Felipe,felipe@iteso.mx,14.5
+diana@iteso.mx,Desarrollo_Web,QUIZ,2024-10-22T16:00:00Z,f0467e6c-f0c9-585e-a677-685e0773fcd8,Completo el quiz del curso Desarrollo_Web,80,6.6,Chromebook,Nora,nora@iteso.mx,16.0
+diana@iteso.mx,Desarrollo_Web,TAREA,2024-10-23T16:00:00Z,348c6332-3fdf-57db-8d06-5da84c971cd8,Entrego tarea del curso Desarrollo_Web,80,9.0,Macbook,Nora,nora@iteso.mx,16.0
+pedro@iteso.mx,Desarrollo_Web,QUIZ,2024-10-24T16:00:00Z,82d84dac-c536-564f-8e9e-99ba6c32ba36,Completo el quiz del curso Desarrollo_Web,85,7.5,Macbook,Felipe,felipe@iteso.mx,17.5
+pedro@iteso.mx,Desarrollo_Web,TAREA,2024-10-25T16:00:00Z,980a957f-ad05-5b9b-98b2-b7e34a3b9921,Entrego tarea del curso Desarrollo_Web,85,6.0,iPhone,Felipe,felipe@iteso.mx,17.5
+lucia@iteso.mx,Desarrollo_Web,QUIZ,2024-10-26T16:00:00Z,457f3e98-1f89-5f76-9963-1ed8d177d1b9,Completo el quiz del curso Desarrollo_Web,90,7.8,iPhone,Nora,nora@iteso.mx,19.0
+lucia@iteso.mx,Desarrollo_Web,TAREA,2024-10-27T16:00:00Z,cf1d7331-9cb8-5163-bbfd-8a9d6e14a98d,Entrego tarea del curso Desarrollo_Web,90,6.8,Windows Laptop,Nora,nora@iteso.mx,19.0
+ricardo@iteso.mx,Desarrollo_Web,QUIZ,2024-10-28T16:00:00Z,e1fccbfc-e48f-5c60-abca-17a6dab5feb6,Completo el quiz del curso Desarrollo_Web,95,8.0,Windows Laptop,Felipe,felipe@iteso.mx,20.5
+ricardo@iteso.mx,Desarrollo_Web,TAREA,2024-10-29T16:00:00Z,9dd4a781-adf6-5611-85d1-b5450b098196,Entrego tarea del curso Desarrollo_Web,95,7.3,Android Tablet,Felipe,felipe@iteso.mx,20.5
