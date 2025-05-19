@@ -43,7 +43,7 @@ def set_schema(client):
     creadoPor: uid @reverse .
     usuario: uid @reverse .
     instructor: uid @reverse .
-    cursos: [uid] @reverse .   # Añadimos la definición del predicado cursos
+    cursos: [uid] @reverse .  
     """
     client.alter(pydgraph.Operation(schema=schema))
 
