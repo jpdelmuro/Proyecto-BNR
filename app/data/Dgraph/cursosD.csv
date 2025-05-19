@@ -8,12 +8,22 @@ uid,titulo,categoria,creadoPor
 0x16,Proyectos Agiles,Gestion,0x26
 0x17,Visualizacion de Datos,Analitica,0x27
 0x18,Sistemas Operativos,Sistemas,0x30
+0x18,Sistemas Operativos,Sistemas,0x40
 0x19,Bases de Datos,Bases de Datos,0x31
+0x19,Bases de Datos,Bases de Datos,0x41
 0x20,Redes de Computadoras,Redes,0x32
+0x20,Redes de Computadoras,Redes,0x42
 0x21,Programacion Avanzada,Programacion,0x33
+0x21,Programacion Avanzada,Programacion,0x43
 0x22,Inteligencia Artificial,IA,0x34
+0x22,Inteligencia Artificial,IA,0x44
 0x23,Ingenieria de Software,Ingenieria,0x35
+0x23,Ingenieria de Software,Ingenieria,0x45
 0x24,Seguridad Informatica,Seguridad,0x36
+0x24,Seguridad Informatica,Seguridad,0x46
 0x25,Arquitectura de Computadoras,Arquitectura,0x37
+0x25,Arquitectura de Computadoras,Arquitectura,0x47
 0x26,Matematicas Discretas,Matematicas,0x38
+0x26,Matematicas Discretas,Matematicas,0x48
 0x27,Desarrollo Web,Desarrollo,0x39
+0x27,Desarrollo Web,Desarrollo,0x49

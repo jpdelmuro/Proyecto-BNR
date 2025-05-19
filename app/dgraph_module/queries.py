@@ -5,6 +5,24 @@ def get_dgraph_client():
     stub = pydgraph.DgraphClientStub("localhost:9080")
     return pydgraph.DgraphClient(stub), stub
 
+def query_amigos(nombre):
+    query = """
+    query q($name: string) {
+      usuario(func: eq(nombre, $name)) {
+        nombre
+        amigos {
+          nombre
+        }
+      }
+    }
+    """
+    res = query_runner_raw(query, {"$name": nombre})
+    print("\n👥 Lista de amigos:")
+    for u in res.get("usuario", []):
+        for amigo in u.get("amigos", []):
+            print(f"- {amigo['nombre']}")
+
+
 def query_recomendaciones_por_likes(nombre):
     query = """
     query q($name: string) {
@@ -141,6 +159,24 @@ def query_sugerencia_amigos_por_cursos(nombre):
         for curso in usuario.get("completado", []):
             print(f"- Curso en común: {curso['titulo']} ➤ posible amigo: {usuario['nombre']}")
 
+def query_ranking_instructores_likeados():
+    query = """
+    {
+      var(func: type(Instructor)) {
+        likes as count(~instructor @filter(eq(tipo, "like")))
+      }
+
+      ranking_instructores(func: type(Instructor), orderdesc: val(likes)) {
+        nombre
+        total_likes: val(likes)
+      }
+    }
+    """
+    res = query_runner_raw(query, {})
+    print("\n📊 Ranking de instructores más likeados:")
+    for inst in res.get("ranking_instructores", []):
+        print(f"- {inst['nombre']}: {inst['total_likes']} likes")
+
 def query_runner_raw(query, variables):
     client, stub = get_dgraph_client()
     try:
@@ -157,25 +193,31 @@ def menu_consultas_dgraph():
         print("""
 === CONSULTAS DGRAPH ===
 
-1. Recomendaciones por profesor (likes a instructores)
-2. Recomendaciones por amigos (cursos que ellos completaron)
-3. Ruta de aprendizaje (categoría de cursos completados)
-4. Recomendación de instructores que amigos han likeado
-5. Sugerencia de nuevos amigos por cursos similares
+1. Ver amigos de un usuario
+2. Recomendaciones por profesor (likes a instructores)
+3. Recomendaciones por amigos (cursos que ellos completaron)
+4. Ruta de aprendizaje (categoría de cursos completados)
+5. Recomendación de instructores que amigos han likeado
+6. Sugerencia de nuevos amigos por cursos similares
+7. Ranking de instructores (en base a likes)
 0. Volver al menú principal
         """)
         opcion = input("Seleccione una opción: ").strip()
 
         if opcion == "1":
-            query_recomendaciones_por_likes(input("Nombre del usuario: "))
+          query_amigos(input("Nombre del usuario: "))
         elif opcion == "2":
-            query_cursos_amigos(input("Nombre del usuario: "))
+            query_recomendaciones_por_likes(input("Nombre del usuario: "))
         elif opcion == "3":
-            query_ruta_aprendizaje(input("Nombre del usuario: "))
+            query_cursos_amigos(input("Nombre del usuario: "))
         elif opcion == "4":
-            query_recomendacion_instructores_amigos(input("Nombre del usuario: "))
+            query_ruta_aprendizaje(input("Nombre del usuario: "))
         elif opcion == "5":
+            query_recomendacion_instructores_amigos(input("Nombre del usuario: "))
+        elif opcion == "6":
             query_sugerencia_amigos_por_cursos(input("Nombre del usuario: "))
+        elif opcion == "7":
+            query_ranking_instructores_likeados()
         elif opcion == "0":
             break
         else:
