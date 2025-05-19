@@ -48,7 +48,7 @@ def set_schema(client):
 def drop_all(client):
     client.alter(pydgraph.Operation(drop_all=True))
 
-def load_usuarios(file_path):
+def load_usuarios(client, file_path):
     txn = client.txn()
     try:
         data = []
@@ -66,7 +66,7 @@ def load_usuarios(file_path):
     finally:
         txn.discard()
 
-def add_usuario_relaciones(file_path, usuarios_uid, cursos_uid):
+def add_usuario_relaciones(client, file_path, usuarios_uid, cursos_uid):
     txn = client.txn()
     try:
         with open(file_path, 'r') as file:
@@ -83,7 +83,7 @@ def add_usuario_relaciones(file_path, usuarios_uid, cursos_uid):
     finally:
         txn.discard()
 
-def load_instructores(file_path):
+def load_instructores(client, file_path):
     txn = client.txn()
     try:
         data = []
@@ -101,7 +101,7 @@ def load_instructores(file_path):
     finally:
         txn.discard()
 
-def load_cursos(file_path, instructores_uid):
+def load_cursos(client, file_path, instructores_uid):
     txn = client.txn()
     try:
         data = []
@@ -123,7 +123,7 @@ def load_cursos(file_path, instructores_uid):
     finally:
         txn.discard()
 
-def load_interacciones(file_path, usuarios, instructores):
+def load_interacciones(client, file_path, usuarios, instructores):
     txn = client.txn()
     try:
         with open(file_path, 'r') as file:
@@ -149,11 +149,11 @@ def load_dgraph_data(folder):
     drop_all(client)
     set_schema(client)
 
-    usuarios_uid = load_usuarios(os.path.join(folder, "usuariosD.csv"))
-    instructores_uid = load_instructores(os.path.join(folder, "instructoresD.csv"))
-    cursos_uid = load_cursos(os.path.join(folder, "cursosD.csv"), instructores_uid)
+    usuarios_uid = load_usuarios(client, os.path.join(folder, "usuariosD.csv"))
+    instructores_uid = load_instructores(client, os.path.join(folder, "instructoresD.csv"))
+    cursos_uid = load_cursos(client, os.path.join(folder, "cursosD.csv"), instructores_uid)
 
-    add_usuario_relaciones(os.path.join(folder, "usuariosD.csv"), usuarios_uid, cursos_uid)
-    load_interacciones(os.path.join(folder, "interaccionesD.csv"), usuarios_uid, instructores_uid)
+    add_usuario_relaciones(client, os.path.join(folder, "usuariosD.csv"), usuarios_uid, cursos_uid)
+    load_interacciones(client, os.path.join(folder, "interaccionesD.csv"), usuarios_uid, instructores_uid)
 
     print("✓ Datos de Dgraph cargados correctamente.")
