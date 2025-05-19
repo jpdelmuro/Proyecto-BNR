@@ -16,7 +16,7 @@ def set_schema(client):
 
     type Instructor {
         nombre
-        cursos            # Añadimos la propiedad cursos al tipo Instructor
+        cursos           
     }
 
     type Curso {
