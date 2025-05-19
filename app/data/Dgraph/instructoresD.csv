@@ -1,9 +1,25 @@
-nombre,cursos
-Anmol Khatri,Diseño de Bases de Datos
-Carlos Lopez,Sistemas Distribuidos
-Carlos Torres,Optimizacion de Consultas SQL
-Diana Gomez,Machine Learning Básico
-Fernanda Rios,Visualizacion de Datos con Tableau
-Julio Ramirez,Administracion de Proyectos Agiles
-Laura Mendez,Fundamentos de Ciberseguridad
-Luis Gatica,Introducción a Python
+uid,nombre
+0x24,Carlos Torres
+0x25,Laura Mendez
+0x26,Julio Ramirez
+0x27,Fernanda Rios
+0x30,Jose
+0x31,Paty
+0x32,Ana
+0x33,Lucia
+0x34,Raquel
+0x35,Beatriz
+0x36,Sandra
+0x37,Veronica
+0x38,Cecilia
+0x39,Nora
+0x40,Miguel
+0x41,Luis
+0x42,Carlos
+0x43,Eduardo
+0x44,Hugo
+0x45,Mario
+0x46,Tomas
+0x47,Daniel
+0x48,Javier
+0x49,Felipe

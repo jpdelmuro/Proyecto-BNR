@@ -38,27 +38,30 @@ def query_cursos_amigos(nombre):
         completado {
           u as uid
         }
+      }
+
+      usuario(func: eq(nombre, $name)) {
         amigos {
           nombre
-          completado {
-            uid
+          completado @filter(NOT uid(u)) {
             titulo
             categoria
           }
         }
       }
-
-      recomendaciones(func: uid(u)) {
-        uid
-      }
     }
     """
     res = query_runner_raw(query, {"$name": nombre})
     print("\n👥 Cursos completados por tus amigos (que tú aún no has completado):")
-    for amigo in res.get("usuario", []):
-        for a in amigo.get("amigos", []):
-            for c in a.get("completado", []):
-                print(f"- {a['nombre']} completó ➤ {c['titulo']} ({c['categoria']})")
+
+    for usuario in res.get("usuario", []):
+        for amigo in usuario.get("amigos", []):
+            cursos = amigo.get("completado", [])
+            if cursos:
+                print(f"- {amigo['nombre']} completó:")
+                for curso in cursos:
+                    print(f"   ➤ {curso['titulo']} ({curso['categoria']})")
+
 
 def query_ruta_aprendizaje(nombre):
     query = """

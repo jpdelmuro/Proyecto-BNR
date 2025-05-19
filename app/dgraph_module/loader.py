@@ -16,6 +16,7 @@ def set_schema(client):
 
     type Instructor {
         nombre
+        cursos            # Añadimos la propiedad cursos al tipo Instructor
     }
 
     type Curso {
@@ -42,6 +43,7 @@ def set_schema(client):
     creadoPor: uid @reverse .
     usuario: uid @reverse .
     instructor: uid @reverse .
+    cursos: [uid] @reverse .   # Añadimos la definición del predicado cursos
     """
     client.alter(pydgraph.Operation(schema=schema))
 
@@ -52,32 +54,30 @@ def load_usuarios(client, file_path):
     txn = client.txn()
     try:
         data = []
-        with open(file_path, 'r') as file:
+        with open(file_path, 'r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
                 data.append({
-                    'uid': '_:' + row['nombre'],
+                    'uid': row['uid'].strip(),
                     'dgraph.type': 'Usuario',
                     'nombre': row['nombre']
                 })
         response = txn.mutate(set_obj=data)
         txn.commit()
-        return response.uids
     finally:
         txn.discard()
 
-def add_usuario_relaciones(client, file_path, usuarios_uid, cursos_uid):
+def add_usuario_relaciones(client, file_path):
     txn = client.txn()
     try:
-        with open(file_path, 'r') as file:
+        with open(file_path, 'r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                uid = usuarios_uid[row['nombre']]
-                data = {'uid': uid}
+                data = {'uid': row['uid'].strip()}
                 if row.get('amigos'):
-                    data['amigos'] = [{'uid': usuarios_uid[am.strip()]} for am in row['amigos'].split(',') if am.strip() in usuarios_uid]
+                    data['amigos'] = [{'uid': uid.strip()} for uid in row['amigos'].split(',') if uid.strip()]
                 if row.get('completado'):
-                    data['completado'] = [{'uid': cursos_uid[c.strip()]} for c in row['completado'].split(',') if c.strip() in cursos_uid]
+                    data['completado'] = [{'uid': uid.strip()} for uid in row['completado'].split(',') if uid.strip()]
                 txn.mutate(set_obj=data)
         txn.commit()
     finally:
@@ -87,58 +87,81 @@ def load_instructores(client, file_path):
     txn = client.txn()
     try:
         data = []
-        with open(file_path, 'r') as file:
+        with open(file_path, 'r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
                 data.append({
-                    'uid': '_:' + row['nombre'],
+                    'uid': row['uid'].strip(),
                     'dgraph.type': 'Instructor',
                     'nombre': row['nombre']
                 })
         response = txn.mutate(set_obj=data)
         txn.commit()
-        return response.uids
     finally:
         txn.discard()
 
-def load_cursos(client, file_path, instructores_uid):
+def load_cursos(client, file_path):
     txn = client.txn()
     try:
         data = []
-        with open(file_path, 'r') as file:
+        with open(file_path, 'r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
                 curso = {
-                    'uid': '_:' + row['titulo'],
+                    'uid': row['uid'].strip(),
                     'dgraph.type': 'Curso',
                     'titulo': row['titulo'],
-                    'categoria': row['categoria']
+                    'categoria': row['categoria'],
+                    'creadoPor': { 'uid': row['creadoPor'].strip() }
                 }
-                if row.get('creadoPor') and row['creadoPor'] in instructores_uid:
-                    curso['creadoPor'] = { 'uid': instructores_uid[row['creadoPor']] }
                 data.append(curso)
         response = txn.mutate(set_obj=data)
         txn.commit()
-        return response.uids
     finally:
         txn.discard()
 
-
-def load_interacciones(client, file_path, usuarios, instructores):
+# Añadimos esta nueva función para establecer relaciones bidireccionales
+def add_instructor_curso_relaciones(client, file_path):
     txn = client.txn()
     try:
-        with open(file_path, 'r') as file:
+        # Primero, creamos un diccionario para mapear instructores a sus cursos
+        instructor_to_cursos = {}
+        
+        with open(file_path, 'r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
             for row in reader:
-                if row['instructor'] not in instructores:
-                    continue
+                instructor_uid = row['creadoPor'].strip()
+                curso_uid = row['uid'].strip()
+                
+                if instructor_uid not in instructor_to_cursos:
+                    instructor_to_cursos[instructor_uid] = []
+                instructor_to_cursos[instructor_uid].append(curso_uid)
+        
+        # Luego, actualizamos cada instructor con sus cursos
+        for instructor_uid, cursos_uids in instructor_to_cursos.items():
+            instructor_data = {
+                'uid': instructor_uid,
+                'cursos': [{'uid': curso_uid} for curso_uid in cursos_uids]
+            }
+            txn.mutate(set_obj=instructor_data)
+            
+        txn.commit()
+    finally:
+        txn.discard()
+
+def load_interacciones(client, file_path):
+    txn = client.txn()
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            reader = csv.DictReader(file)
+            for idx, row in enumerate(reader):
                 interaccion = {
-                    'uid': '_:interaccion_' + row['usuario'] + '_' + row['instructor'],
+                    'uid': f'_:interaccion_{idx}',
                     'dgraph.type': 'Interaccion',
                     'tipo': row['tipo'],
                     'fecha': row['fecha'],
-                    'usuario': {'uid': usuarios[row['usuario']]},
-                    'instructor': {'uid': instructores[row['instructor']]}
+                    'usuario': {'uid': row['usuario'].strip()},
+                    'instructor': {'uid': row['instructor'].strip()}
                 }
                 txn.mutate(set_obj=interaccion)
         txn.commit()
@@ -150,11 +173,12 @@ def load_dgraph_data(folder):
     drop_all(client)
     set_schema(client)
 
-    usuarios_uid = load_usuarios(client, os.path.join(folder, "usuariosD.csv"))
-    instructores_uid = load_instructores(client, os.path.join(folder, "instructoresD.csv"))
-    cursos_uid = load_cursos(client, os.path.join(folder, "cursosD.csv"), instructores_uid)
-
-    add_usuario_relaciones(client, os.path.join(folder, "usuariosD.csv"), usuarios_uid, cursos_uid)
-    load_interacciones(client, os.path.join(folder, "interaccionesD.csv"), usuarios_uid, instructores_uid)
+    load_usuarios(client, os.path.join(folder, "usuariosD.csv"))
+    load_instructores(client, os.path.join(folder, "instructoresD.csv"))
+    load_cursos(client, os.path.join(folder, "cursosD.csv"))
+    add_usuario_relaciones(client, os.path.join(folder, "usuariosD.csv"))
+    # Añadimos la nueva llamada a función
+    add_instructor_curso_relaciones(client, os.path.join(folder, "cursosD.csv"))
+    load_interacciones(client, os.path.join(folder, "interaccionesD.csv"))
 
     print("✓ Datos de Dgraph cargados correctamente.")
