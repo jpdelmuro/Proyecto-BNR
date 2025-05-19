@@ -1,21 +1,21 @@
 user_id,name,email,password,courses_list,created_at
-i001,Carlos Ramirez,carlos@iteso.mx,ContrasenaCarlos,Sistemas_Operativos,2024-01-20T09:30:00Z
-i002,Laura Torres,laura@iteso.mx,ContrasenaLaura,Sistemas_Operativos,2024-01-22T09:30:00Z
-i003,Jose Medina,jose@iteso.mx,ContrasenaJose,Bases_de_Datos,2024-02-10T11:00:00Z
-i004,Sofia Rios,sofia@iteso.mx,ContrasenaSofia,Bases_de_Datos,2024-02-15T11:00:00Z
-i005,Miguel Lara,miguel@iteso.mx,ContrasenaMiguel,Redes_de_Computadoras,2024-03-01T08:45:00Z
-i006,Ana Lopez,ana@iteso.mx,ContrasenaAna,Redes_de_Computadoras,2024-03-05T08:45:00Z
-i007,Juan Perez,juan@iteso.mx,ContrasenaJuan,Programacion_Avanzada,2024-03-15T10:00:00Z
-i008,Paola Martinez,paola@iteso.mx,ContrasenaPaola,Programacion_Avanzada,2024-03-18T10:00:00Z
-i009,Andres Gutierrez,andres@iteso.mx,ContrasenaAndres,Inteligencia_Artificial,2024-04-01T09:00:00Z
-i010,Veronica Sanchez,veronica@iteso.mx,ContrasenaVeronica,Inteligencia_Artificial,2024-04-03T09:00:00Z
-i011,Cecilia Herrera,cecilia@iteso.mx,ContrasenaCecilia,Ingenieria_de_Software,2024-04-15T09:30:00Z
-i012,Felipe Morales,felipe@iteso.mx,ContrasenaFelipe,Ingenieria_de_Software,2024-04-17T09:30:00Z
-i013,Nora Castillo,nora@iteso.mx,ContrasenaNora,Seguridad_Informática,2024-05-01T08:00:00Z
-i014,Ruben Diaz,ruben@iteso.mx,ContrasenaRuben,Seguridad_Informática,2024-05-03T08:00:00Z
-i015,Emilio Vargas,emilio@iteso.mx,ContrasenaEmilio,Arquitectura_de_Computadoras,2024-05-15T10:15:00Z
-i016,Diana Flores,diana@iteso.mx,ContrasenaDiana,Arquitectura_de_Computadoras,2024-05-18T10:15:00Z
-i017,Tomas Alvarez,tomas@iteso.mx,ContrasenaTomas,Matematicas_Discretas,2024-06-01T11:00:00Z
-i018,Angela Ruiz,angela@iteso.mx,ContrasenaAngela,Matematicas_Discretas,2024-06-03T11:00:00Z
-i019,Martin Lopez,martin@iteso.mx,ContrasenaMartin,Desarrollo_Web,2024-06-15T12:00:00Z
-i020,Beatriz Castillo,beatriz@iteso.mx,ContrasenaBeatriz,Desarrollo_Web,2024-06-17T12:00:00Z
+i001,Jose,jose@iteso.mx,ContrasenaJose,Sistemas_Operativos,2024-01-20T09:30:00Z
+i002,Miguel,miguel@iteso.mx,ContrasenaMiguel,Sistemas_Operativos,2024-01-20T10:00:00Z
+i003,Paty,paty@iteso.mx,ContrasenaPaty,Bases_de_Datos,2024-01-20T10:30:00Z
+i004,Luis,luis@iteso.mx,ContrasenaLuis,Bases_de_Datos,2024-01-20T11:00:00Z
+i005,Ana,ana@iteso.mx,ContrasenaAna,Redes_de_Computadoras,2024-01-20T11:30:00Z
+i006,Carlos,carlos@iteso.mx,ContrasenaCarlos,Redes_de_Computadoras,2024-01-20T12:00:00Z
+i007,Lucia,lucia@iteso.mx,ContrasenaLucia,Programacion_Avanzada,2024-01-20T12:30:00Z
+i008,Eduardo,eduardo@iteso.mx,ContrasenaEduardo,Programacion_Avanzada,2024-01-20T13:00:00Z
+i009,Raquel,raquel@iteso.mx,ContrasenaRaquel,Inteligencia_Artificial,2024-01-20T13:30:00Z
+i010,Hugo,hugo@iteso.mx,ContrasenaHugo,Inteligencia_Artificial,2024-01-20T14:00:00Z
+i011,Beatriz,beatriz@iteso.mx,ContrasenaBeatriz,Ingenieria_de_Software,2024-01-20T14:30:00Z
+i012,Mario,mario@iteso.mx,ContrasenaMario,Ingenieria_de_Software,2024-01-20T15:00:00Z
+i013,Sandra,sandra@iteso.mx,ContrasenaSandra,Seguridad_Informática,2024-01-20T15:30:00Z
+i014,Tomas,tomas@iteso.mx,ContrasenaTomas,Seguridad_Informática,2024-01-20T16:00:00Z
+i015,Veronica,veronica@iteso.mx,ContrasenaVeronica,Arquitectura_de_Computadoras,2024-01-20T16:30:00Z
+i016,Daniel,daniel@iteso.mx,ContrasenaDaniel,Arquitectura_de_Computadoras,2024-01-20T17:00:00Z
+i017,Cecilia,cecilia@iteso.mx,ContrasenaCecilia,Matematicas_Discretas,2024-01-20T17:30:00Z
+i018,Javier,javier@iteso.mx,ContrasenaJavier,Matematicas_Discretas,2024-01-20T18:00:00Z
+i019,Nora,nora@iteso.mx,ContrasenaNora,Desarrollo_Web,2024-01-20T18:30:00Z
+i020,Felipe,felipe@iteso.mx,ContrasenaFelipe,Desarrollo_Web,2024-01-20T19:00:00Z
