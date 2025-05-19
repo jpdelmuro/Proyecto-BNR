@@ -14,12 +14,11 @@ from cassandra_module.app import main as consultas_cassandra  # <- CORRECTO
 def mostrar_menu():
     print("\n=== MENÚ PRINCIPAL ===")
     print("1. Cargar datos en todas las bases")
-    print("2. Consultar usuario")
-    print("3. Sincronizar usuarios entre bases")
-    print("4. Consultas MongoDB")
-    print("5. Consultas Cassandra")
-    print("6. Consultas Dgraph")
-    print("7. Salir")
+    print("2. Sincronizar usuarios entre bases")
+    print("3. Gestion de usuario MongoDB")
+    print("4. Actividad de usuario Cassandra")
+    print("5. Relacion de usuario Dgraph")
+    print("6. Salir")
 
 def cargar_datos():
     print("\nCargando datos en Cassandra...")
@@ -98,19 +97,17 @@ def main():
         if opcion == "1":
             cargar_datos()
         elif opcion == "2":
-            consultar_usuario()
-        elif opcion == "3":
             sincronizar_usuarios()
-        elif opcion == "4":
+        elif opcion == "3":
             mongo_client = MongoClient("mongodb://localhost:27017")
             db = mongo_client["ProyectoMongoPython"]
             menu_consultas_mongo(db)
-        elif opcion == "5":
+        elif opcion == "4":
             consultas_cassandra()
-        elif opcion == "6":
+        elif opcion == "5":
             from dgraph_module.queries import menu_consultas_dgraph
             menu_consultas_dgraph()
-        elif opcion == "7":
+        elif opcion == "6":
             print("\nSaliendo del programa. ¡Hasta luego!")
             sys.exit(0)
         else:

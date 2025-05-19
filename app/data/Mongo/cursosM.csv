@@ -1,6 +1,11 @@
 course_id,title,description,teacher_id,lessons,created_at,rating,category
-c001,Bases de datos no relacionales,"Curso básico para aprender MongoDB, Cassandra y Dgraph",i001,"l001;l002",2024-03-01T08:00:00Z,4.7,Bases de Datos
-c002,Desarrollo WEB,"Conceptos avanzados de HTML, CSS, JS",i001,"l003;l004",2024-04-05T10:30:00Z,4.5,Programación
-c003,Mineria de datos,"Manipulación de datos con Pandas y NumPy.",i002,"l005;l006",2024-02-20T11:00:00Z,4.8,Ciencia de Datos
-c004,Fundamentos de Redes,"Aprende cómo funciona internet.",i002,"l007;l008",2024-01-15T09:45:00Z,4.2,Redes
-c005,Ingles VIII,"Taller de el lenguaje inglés",i003,"l009;l010",2024-03-22T13:15:00Z,4.9,Lenguas
+Sistemas_Operativos,Sistemas Operativos,Fundamentos y administración de sistemas operativos,i001,"l001;l002",2024-01-10T08:00:00Z,4.8,Ingeniería en Sistemas
+Bases_de_Datos,Bases de Datos,Principios fundamentales y lenguajes de consulta,i003,"l003;l004",2024-01-11T08:00:00Z,4.7,Ingeniería en Sistemas
+Redes_de_Computadoras,Redes de Computadoras,protocolos y seguridad en redes,i005,l005;l006,2024-01-12T08:00:00Z,4.6,Ingeniería en Sistemas
+Programacion_Avanzada,Programacion Avanzada,Patrones de diseño y optimización de código,i007,"l007;l008",2024-01-13T08:00:00Z,4.9,Ingeniería en Software
+Inteligencia_Artificial,Inteligencia Artificial,Conceptos de IA y aprendizaje automático,i009,"l009;l010",2024-01-14T08:00:00Z,4.7,Ingeniería en Software
+Ingenieria_de_Software,Ingenieria de Software,Ciclo de vida del software y metodologías ágiles,i011,"l011;l012",2024-01-15T08:00:00Z,4.8,Ingeniería en Software
+Seguridad_Informática,Seguridad Informatica,hacking ético y medidas de seguridad,i013,"l013;l014",2024-01-16T08:00:00Z,4.6,Ingeniería en Seguridad
+Arquitectura_de_Computadoras,Arquitectura de Computadoras,Componentes físicos y paralelismo,i015,"l015;l016",2024-01-17T08:00:00Z,4.7,Ingeniería en Hardware
+Matematicas_Discretas,Matematicas Discretas,Lógica matemática y teoría de grafos,i017,"l017;l018",2024-01-18T08:00:00Z,4.7,Matemáticas
+Desarrollo_Web,Desarrollo Web,estilos y programación web moderna,i019,"l019;l020",2024-01-19T08:00:00Z,4.9,Ingeniería en Software
