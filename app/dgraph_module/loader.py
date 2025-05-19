@@ -120,11 +120,9 @@ def load_cursos(client, file_path):
     finally:
         txn.discard()
 
-# Añadimos esta nueva función para establecer relaciones bidireccionales
 def add_instructor_curso_relaciones(client, file_path):
     txn = client.txn()
     try:
-        # Primero, creamos un diccionario para mapear instructores a sus cursos
         instructor_to_cursos = {}
         
         with open(file_path, 'r', encoding='utf-8') as file:
@@ -136,8 +134,7 @@ def add_instructor_curso_relaciones(client, file_path):
                 if instructor_uid not in instructor_to_cursos:
                     instructor_to_cursos[instructor_uid] = []
                 instructor_to_cursos[instructor_uid].append(curso_uid)
-        
-        # Luego, actualizamos cada instructor con sus cursos
+
         for instructor_uid, cursos_uids in instructor_to_cursos.items():
             instructor_data = {
                 'uid': instructor_uid,
@@ -177,7 +174,6 @@ def load_dgraph_data(folder):
     load_instructores(client, os.path.join(folder, "instructoresD.csv"))
     load_cursos(client, os.path.join(folder, "cursosD.csv"))
     add_usuario_relaciones(client, os.path.join(folder, "usuariosD.csv"))
-    # Añadimos la nueva llamada a función
     add_instructor_curso_relaciones(client, os.path.join(folder, "cursosD.csv"))
     load_interacciones(client, os.path.join(folder, "interaccionesD.csv"))
 
