@@ -33,7 +33,7 @@ def set_schema(client):
 
     nombre: string @index(exact) .
     titulo: string @index(term, fulltext) .
-    categoria: string @index(trigram) .
+    categoria: string @index(hash) .
     tipo: string @index(hash) .
     fecha: datetime .
 
@@ -122,6 +122,7 @@ def load_cursos(client, file_path, instructores_uid):
         return response.uids
     finally:
         txn.discard()
+
 
 def load_interacciones(client, file_path, usuarios, instructores):
     txn = client.txn()

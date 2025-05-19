@@ -1,6 +1,9 @@
 titulo,categoria,creadoPor
-Administracion de Proyectos,"Tipo de empresas,Organizaciones",
-Algoritmos,Programacion,Luis Gatica
-Bases de Datos NoSQL,"Bases de Datos",Anmol Khatri
-Bases de Datos SQL,"Bases de Datos",Diana Gomez
-PostgreSQL Avanzado,"Bases de Datos",Anmol Khatri
+Introduccion a Python,Programacion,Luis Gatica
+Diseño de Bases de Datos,Bases de Datos,Anmol Khatri
+Machine Learning Basico,Inteligencia Artificial,Diana Gomez
+Sistemas Distribuidos,Arquitectura,Carlos Lopez
+Optimizacion de Consultas SQL,Bases de Datos,Carlos Torres
+Fundamentos de Ciberseguridad,Seguridad Informatica,Laura Mendez
+Administracion de Proyectos Agiles,Gestion,Julio Ramirez
+Visualizacion de Datos con Tableau,Analitica,Fernanda Rios

@@ -9,7 +9,7 @@ def query_recomendaciones_por_likes(nombre):
     query = """
     query q($name: string) {
       usuario(func: eq(nombre, $name)) {
-        liked: ~usuario @filter(eq(tipo, \"like\")) {
+        liked: ~usuario @filter(eq(tipo, "like")) {
           instructor {
             nombre
             cursos {
@@ -21,7 +21,15 @@ def query_recomendaciones_por_likes(nombre):
       }
     }
     """
-    return query_runner(query, {"$name": nombre})
+    res = query_runner_raw(query, {"$name": nombre})
+    print("\nInstructores likeados y sus cursos:")
+    for entry in res.get("usuario", []):
+        for like in entry.get("liked", []):
+            inst = like.get("instructor")
+            if inst:
+                print(f"\n👨‍🏫 {inst['nombre']}")
+                for curso in inst.get("cursos", []):
+                    print(f"   ➤ {curso['titulo']} ({curso['categoria']})")
 
 def query_cursos_amigos(nombre):
     query = """
@@ -31,17 +39,26 @@ def query_cursos_amigos(nombre):
           u as uid
         }
         amigos {
-          cursos_amigos as completado
+          nombre
+          completado {
+            uid
+            titulo
+            categoria
+          }
         }
       }
 
-      recomendaciones(func: uid(cursos_amigos)) @filter(NOT uid(u)) {
-        titulo
-        categoria
+      recomendaciones(func: uid(u)) {
+        uid
       }
     }
     """
-    return query_runner(query, {"$name": nombre})
+    res = query_runner_raw(query, {"$name": nombre})
+    print("\n👥 Cursos completados por tus amigos (que tú aún no has completado):")
+    for amigo in res.get("usuario", []):
+        for a in amigo.get("amigos", []):
+            for c in a.get("completado", []):
+                print(f"- {a['nombre']} completó ➤ {c['titulo']} ({c['categoria']})")
 
 def query_ruta_aprendizaje(nombre):
     query = """
@@ -58,14 +75,24 @@ def query_ruta_aprendizaje(nombre):
       }
     }
     """
-    return query_runner(query, {"$name": nombre})
+    res = query_runner_raw(query, {"$name": nombre})
+    print("\nRuta de aprendizaje sugerida:")
+    categorias = {}
+    for curso in res.get("recomendaciones", []):
+        cat = curso["categoria"]
+        categorias.setdefault(cat, []).append(curso["titulo"])
+    for cat, cursos in categorias.items():
+        print(f"\n📂 {cat}")
+        for c in cursos:
+            print(f"   ↳ {c}")
 
 def query_recomendacion_instructores_amigos(nombre):
     query = """
     query q($name: string) {
       usuario(func: eq(nombre, $name)) {
         amigos {
-          ~usuario @filter(eq(tipo, \"like\")) {
+          nombre
+          ~usuario @filter(eq(tipo, "like")) {
             instructor {
               nombre
               cursos {
@@ -77,7 +104,16 @@ def query_recomendacion_instructores_amigos(nombre):
       }
     }
     """
-    return query_runner(query, {"$name": nombre})
+    res = query_runner_raw(query, {"$name": nombre})
+    print("\nInstructores likeados por tus amigos:")
+    for u in res.get("usuario", []):
+        for amigo in u.get("amigos", []):
+            for like in amigo.get("~usuario", []):
+                inst = like.get("instructor")
+                if inst:
+                    print(f"- {amigo['nombre']} likeó al instructor {inst['nombre']}:")
+                    for curso in inst.get("cursos", []):
+                        print(f"   ➤ {curso['titulo']}")
 
 def query_sugerencia_amigos_por_cursos(nombre):
     query = """
@@ -90,19 +126,26 @@ def query_sugerencia_amigos_por_cursos(nombre):
 
       recomendacion(func: type(Usuario)) @filter(uid(cursos_comunes) AND NOT eq(nombre, $name)) {
         nombre
+        completado {
+          titulo
+        }
       }
     }
     """
-    return query_runner(query, {"$name": nombre})
+    res = query_runner_raw(query, {"$name": nombre})
+    print("\nSugerencias de nuevos amigos (por cursos en común):")
+    for usuario in res.get("recomendacion", []):
+        for curso in usuario.get("completado", []):
+            print(f"- Curso en común: {curso['titulo']} ➤ posible amigo: {usuario['nombre']}")
 
-
-def query_runner(query, variables):
+def query_runner_raw(query, variables):
     client, stub = get_dgraph_client()
     try:
         res = client.txn(read_only=True).query(query, variables=variables)
-        print(json.dumps(json.loads(res.json), indent=2))
+        return json.loads(res.json)
     except Exception as e:
         print(f"Error en consulta Dgraph: {e}")
+        return {}
     finally:
         stub.close()
 
@@ -119,7 +162,6 @@ def menu_consultas_dgraph():
 0. Volver al menú principal
         """)
         opcion = input("Seleccione una opción: ").strip()
-
 
         if opcion == "1":
             query_recomendaciones_por_likes(input("Nombre del usuario: "))

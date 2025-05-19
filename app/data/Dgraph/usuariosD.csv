@@ -1,5 +1,4 @@
 nombre,amigos,inscritoEn,completado
-Juan Pablo,"Ikram Zaldivar,Sebastian Macias","Administración de Proyectos","Algoritmos"
-Ikram Zaldivar,"Juan Pablo","Bases de Datos NoSQL","Bases de Datos SQL,Modelado No Relacional"
-Sebastian Macias,"Juan Pablo","Algoritmos","Bases de Datos SQL"
-
+Juan Pablo,"Ikram Zaldivar,Sebastian Macias","Administracion de Proyectos","Introduccion a Python,Machine Learning Basico"
+Ikram Zaldivar,"Juan Pablo","Bases de Datos NoSQL","Diseño de Bases de Datos,Optimizacion de Consultas SQL"
+Sebastian Macias,"Juan Pablo","Algoritmos","Sistemas Distribuidos,Optimizacion de Consultas SQL"
