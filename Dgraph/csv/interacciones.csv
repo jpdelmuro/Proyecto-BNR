@@ -1,24 +1,7 @@
-tipo,contenido,fecha,leccion,usuario,instructor
-like,,2025-03-26T07:16:05Z,Tipo de empresas,Juan Pablo,
-comentario,Comentario de Ikram Zaldivar en Organizaciones,2025-03-28T07:16:05Z,Organizaciones,Ikram Zaldivar,
-comentario,Comentario de Sebastian Macias en Transacciones,2025-04-12T07:16:05Z,Transacciones,Sebastian Macias,
-like,,2025-04-13T07:16:05Z,Dgraph,Ikram Zaldivar,
-comentario,Comentario de Ikram Zaldivar en Dgraph,2025-04-11T07:16:05Z,Dgraph,Ikram Zaldivar,
-like,,2025-04-01T07:16:05Z,Organizaciones,Juan Pablo,
-comentario,Comentario de Sebastian Macias en Organizaciones,2025-04-12T07:16:05Z,Organizaciones,Sebastian Macias,
-like,,2025-04-09T07:16:05Z,Tipo de empresas,Sebastian Macias,
-comentario,Comentario de Ikram Zaldivar en Queries,2025-04-13T07:16:05Z,Queries,Ikram Zaldivar,
-comentario,Comentario de Juan Pablo en Cassandra,2025-04-15T07:16:05Z,Cassandra,Juan Pablo,
-comentario,Comentario de Ikram Zaldivar en Cassandra,2025-04-14T07:16:05Z,Cassandra,Ikram Zaldivar,
-like,,2025-03-29T07:16:05Z,MongoDB,Sebastian Macias,
-like,,2025-04-10T07:16:05Z,Cassandra,Juan Pablo,
-like,,2025-03-26T07:16:05Z,Introduccion a Python,Sebastian Macias,
-like,,2025-03-25T07:16:05Z,Dgraph,Ikram Zaldivar,
-comentario,Comentario de Ikram Zaldivar en Introduccion a Python,2025-04-14T07:16:05Z,Introduccion a Python,Ikram Zaldivar,
-like,,2024-04-01T10:00:00Z,Indices,Ikram,
-like,,2025-04-10T09:00:00Z,,Ikram Zaldivar,Anmol Khatri
-like,,2025-04-11T10:30:00Z,,Juan Pablo,Carlos López
-like,,2025-04-11T14:00:00Z,,Sebastian Macias,Diana Gomez
-like,,2025-04-12T08:15:00Z,,Ikram Zaldivar,Diana Gomez
-like,,2025-04-13T13:20:00Z,,Sebastian Macias,Anmol Khatri
-like,,2025-04-13T15:45:00Z,,Juan Pablo,Anmol Khatri
+tipo,fecha,usuario,instructor
+like,2025-04-10T09:00:00Z,Ikram Zaldivar,Anmol Khatri
+like,2025-04-11T10:30:00Z,Juan Pablo,Carlos López
+like,2025-04-11T14:00:00Z,Sebastian Macias,Diana Gomez
+like,2025-04-12T08:15:00Z,Ikram Zaldivar,Diana Gomez
+like,2025-04-13T13:20:00Z,Sebastian Macias,Anmol Khatri
+like,2025-04-13T15:45:00Z,Juan Pablo,Anmol Khatri
