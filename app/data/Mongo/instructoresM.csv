@@ -1,6 +1,21 @@
 user_id,name,email,password,courses_list,created_at
-i001,Carlos Ramirez,carlos@gmail.com,ContrasenaCarlos,"c001;c002",2024-01-20T09:30:00Z
-i002,Laura Torres,laura@gmail.com,ContrasenaLaura,"c003;c004",2024-02-15T11:00:00Z
-i003,Jose Medina,jose@gmail.com,ContrasenaJose,c005,2024-03-10T08:45:00Z
-i004,Sofia Rios,sofia@gmail.com,ContrasenaSofia,,2024-03-28T13:15:00Z
-i005,Miguel Lara,miguel@gmail.com,ContrasenaMiguel,,2024-04-01T16:00:00Z
+i001,Jose,jose@iteso.mx,ContrasenaJose,Sistemas_Operativos,2024-01-20T09:30:00Z
+i002,Miguel,miguel@iteso.mx,ContrasenaMiguel,Sistemas_Operativos,2024-01-20T10:00:00Z
+i003,Paty,paty@iteso.mx,ContrasenaPaty,Bases_de_Datos,2024-01-20T10:30:00Z
+i004,Luis,luis@iteso.mx,ContrasenaLuis,Bases_de_Datos,2024-01-20T11:00:00Z
+i005,Ana,ana@iteso.mx,ContrasenaAna,Redes_de_Computadoras,2024-01-20T11:30:00Z
+i006,Carlos,carlos@iteso.mx,ContrasenaCarlos,Redes_de_Computadoras,2024-01-20T12:00:00Z
+i007,Lucia,lucia@iteso.mx,ContrasenaLucia,Programacion_Avanzada,2024-01-20T12:30:00Z
+i008,Eduardo,eduardo@iteso.mx,ContrasenaEduardo,Programacion_Avanzada,2024-01-20T13:00:00Z
+i009,Raquel,raquel@iteso.mx,ContrasenaRaquel,Inteligencia_Artificial,2024-01-20T13:30:00Z
+i010,Hugo,hugo@iteso.mx,ContrasenaHugo,Inteligencia_Artificial,2024-01-20T14:00:00Z
+i011,Beatriz,beatriz@iteso.mx,ContrasenaBeatriz,Ingenieria_de_Software,2024-01-20T14:30:00Z
+i012,Mario,mario@iteso.mx,ContrasenaMario,Ingenieria_de_Software,2024-01-20T15:00:00Z
+i013,Sandra,sandra@iteso.mx,ContrasenaSandra,Seguridad_Informática,2024-01-20T15:30:00Z
+i014,Tomas,tomas@iteso.mx,ContrasenaTomas,Seguridad_Informática,2024-01-20T16:00:00Z
+i015,Veronica,veronica@iteso.mx,ContrasenaVeronica,Arquitectura_de_Computadoras,2024-01-20T16:30:00Z
+i016,Daniel,daniel@iteso.mx,ContrasenaDaniel,Arquitectura_de_Computadoras,2024-01-20T17:00:00Z
+i017,Cecilia,cecilia@iteso.mx,ContrasenaCecilia,Matematicas_Discretas,2024-01-20T17:30:00Z
+i018,Javier,javier@iteso.mx,ContrasenaJavier,Matematicas_Discretas,2024-01-20T18:00:00Z
+i019,Nora,nora@iteso.mx,ContrasenaNora,Desarrollo_Web,2024-01-20T18:30:00Z
+i020,Felipe,felipe@iteso.mx,ContrasenaFelipe,Desarrollo_Web,2024-01-20T19:00:00Z
