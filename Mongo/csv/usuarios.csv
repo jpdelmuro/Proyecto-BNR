@@ -1,6 +1,21 @@
-user_id,name,email,password,courses_enrolled,completed_course_id,score,created_at
-u001,Juan Pablo Del Muro,juan@gmail.com,ContrasenaJuan,c002,c001,10,2024-03-01T10:00:00Z
-u002,Luisa Ikram Zaldivar,Luisa@gmail.com,ContrasenaIkram,c003,c002,10,2024-04-01T12:00:00Z
-u003,Sebastian Macias Macias,Sebastian@gmail.com,ContrasenaSebastian,c003,c001,9.5,2024-03-15T14:20:00Z
-u004,Maria Diaz,maria@gmail.com,ContrasenaMaria,c004,,,2024-05-01T09:00:00Z
-u005,Pedro Sanchez,pedro@gmail.com,ContrasenaPedro,c004,c003,6.0,2024-02-28T18:30:00Z
+user_id,name,email,password,courses_enrolled,completed_course_ids,score,created_at
+u001,Michael Johnson,mike@iteso.mx,Pass123$,Sistemas_Operativos,SOP-001,6.0,2023-08-15T09:30:00Z
+u002,Anna Smith,anna@iteso.mx,SecureAnn4!,Sistemas_Operativos,SOP-001,6.0,2023-08-16T10:45:00Z
+u003,Li Wang,li@iteso.mx,LiPass2023!,Sistemas_Operativos,SOP-001,6.0,2023-08-17T08:15:00Z
+u004,Carlos Rodríguez,carlos@iteso.mx,Car1osR*,Sistemas_Operativos,SOP-001,6.0,2023-08-18T14:20:00Z
+u005,María González,maria@iteso.mx,M@riaG2023,Sistemas_Operativos,SOP-001,6.0,2023-08-19T11:05:00Z
+u006,Luis Hernández,luis@iteso.mx,Lu1sH3rn&,Sistemas_Operativos,SOP-001,6.0,2023-08-20T09:10:00Z
+u007,Fernanda Torres,fernanda@iteso.mx,F3rnanD@!,Sistemas_Operativos,SOP-001,6.0,2023-08-21T16:30:00Z
+u008,Diego Martínez,diego@iteso.mx,D1eg0M@rt,Sistemas_Operativos,SOP-001,6.0,2023-08-22T13:45:00Z
+u009,Sofía Vargas,sofia@iteso.mx,S0f14V#rg,Sistemas_Operativos,SOP-001,6.0,2023-08-23T10:20:00Z
+u010,Juan Pérez,juan@iteso.mx,Ju@nP3r3z,Sistemas_Operativos,SOP-001,6.0,2023-08-24T15:15:00Z
+u011,Isabel Ramírez,isabel@iteso.mx,Is@b3l2023,Ingenieria_de_Software,ING-001,6.0,2023-08-25T08:40:00Z
+u012,Andrés Castillo,andres@iteso.mx,AnDr3s!C,Ingenieria_de_Software,ING-001,6.0,2023-08-26T12:30:00Z
+u013,Valeria Mendoza,valeria@iteso.mx,V@l3r14M!,Ingenieria_de_Software,ING-001,6.0,2023-08-27T09:50:00Z
+u014,Pablo Sánchez,pablo@iteso.mx,P@bl0S@nch,Ingenieria_de_Software,ING-001,6.0,2023-08-28T14:05:00Z
+u015,Camila Ortega,camila@iteso.mx,C@m1l40rt,Ingenieria_de_Software,ING-001,6.0,2023-08-29T11:25:00Z
+u016,Jorge Jiménez,jorge@iteso.mx,J0rg3J1m!,Ingenieria_de_Software,ING-001,6.0,2023-08-30T16:10:00Z
+u017,Diana Morales,diana@iteso.mx,D14n@M0r@,Ingenieria_de_Software,ING-001,6.0,2023-08-31T10:35:00Z
+u018,Pedro Flores,pedro@iteso.mx,P3dr0Fl0r!,Ingenieria_de_Software,ING-001,6.0,2023-09-01T13:20:00Z
+u019,Lucía Vega,lucia@iteso.mx,Luc14V3g@$,Ingenieria_de_Software,ING-001,6.0,2023-09-02T09:15:00Z
+u020,Ricardo Ríos,ricardo@iteso.mx,R1c@rd0R10s,Ingenieria_de_Software,ING-001,6.0,2023-09-03T15:40:00Z
