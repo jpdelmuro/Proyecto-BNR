@@ -1,21 +1,5 @@
 nombre,amigos,inscritoEn,completado
-Michael Johnson,Anna Smith,Li Wang,Carlos Rodríguez,María González,Sistemas_Operativos,SOP-001
-Anna Smith,Michael Johnson,Li Wang,Carlos Rodríguez,María González,Sistemas_Operativos,SOP-001
-Li Wang,Michael Johnson,Anna Smith,Carlos Rodríguez,María González,Sistemas_Operativos,SOP-001
-Carlos Rodríguez,Michael Johnson,Anna Smith,Li Wang,María González,Sistemas_Operativos,SOP-001
-María González,Michael Johnson,Anna Smith,Li Wang,Carlos Rodríguez,Sistemas_Operativos,SOP-001
-Luis Hernández,Fernanda Torres,Diego Martínez,Sofía Vargas,Juan Pérez,Sistemas_Operativos,SOP-001
-Fernanda Torres,Luis Hernández,Diego Martínez,Sofía Vargas,Juan Pérez,Sistemas_Operativos,SOP-001
-Diego Martínez,Luis Hernández,Fernanda Torres,Sofía Vargas,Juan Pérez,Sistemas_Operativos,SOP-001
-Sofía Vargas,Luis Hernández,Fernanda Torres,Diego Martínez,Juan Pérez,Sistemas_Operativos,SOP-001
-Juan Pérez,Luis Hernández,Fernanda Torres,Diego Martínez,Sofía Vargas,Sistemas_Operativos,SOP-001
-Isabel Ramírez,Andrés Castillo,Valeria Mendoza,Pablo Sánchez,Camila Ortega,Ingenieria_de_Software,ING-001
-Andrés Castillo,Isabel Ramírez,Valeria Mendoza,Pablo Sánchez,Camila Ortega,Ingenieria_de_Software,ING-001
-Valeria Mendoza,Isabel Ramírez,Andrés Castillo,Pablo Sánchez,Camila Ortega,Ingenieria_de_Software,ING-001
-Pablo Sánchez,Isabel Ramírez,Andrés Castillo,Valeria Mendoza,Camila Ortega,Ingenieria_de_Software,ING-001
-Camila Ortega,Isabel Ramírez,Andrés Castillo,Valeria Mendoza,Pablo Sánchez,Ingenieria_de_Software,ING-001
-Jorge Jiménez,Diana Morales,Pedro Flores,Lucía Vega,Ricardo Ríos,Ingenieria_de_Software,ING-001
-Diana Morales,Jorge Jiménez,Pedro Flores,Lucía Vega,Ricardo Ríos,Ingenieria_de_Software,ING-001
-Pedro Flores,Jorge Jiménez,Diana Morales,Lucía Vega,Ricardo Ríos,Ingenieria_de_Software,ING-001
-Lucía Vega,Jorge Jiménez,Diana Morales,Pedro Flores,Ricardo Ríos,Ingenieria_de_Software,ING-001
-Ricardo Ríos,Jorge Jiménez,Diana Morales,Pedro Flores,Lucía Vega,Ingenieria_de_Software,ING-001
+Juan Pablo,"Ikram Zaldivar,Sebastian Macias","Administración de Proyectos","Algoritmos"
+Ikram Zaldivar,"Juan Pablo","Bases de Datos NoSQL","Bases de Datos SQL,Modelado No Relacional"
+Sebastian Macias,"Juan Pablo","Algoritmos","Bases de Datos SQL"
+
