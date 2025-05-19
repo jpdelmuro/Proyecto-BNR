@@ -1,21 +1,5 @@
 nombre,cursos
-Jose,Sistemas_Operativos
-Miguel,Sistemas_Operativos
-Paty,Bases_de_Datos
-Luis,Bases_de_Datos
-Ana,Redes_de_Computadoras
-Carlos,Redes_de_Computadoras
-Lucia,Programacion_Avanzada
-Eduardo,Programacion_Avanzada
-Raquel,Inteligencia_Artificial
-Hugo,Inteligencia_Artificial
-Beatriz,Ingenieria_de_Software
-Mario,Ingenieria_de_Software
-Sandra,Seguridad_Informática
-Tomas,Seguridad_Informática
-Veronica,Arquitectura_de_Computadoras
-Daniel,Arquitectura_de_Computadoras
-Cecilia,Matematicas_Discretas
-Javier,Matematicas_Discretas
-Nora,Desarrollo_Web
-Felipe,Desarrollo_Web
+Carlos Torres,"Administracion de Proyectos,Calidad de Software"
+Anmol Khatri,"Bases de Datos NoSQL,PostgreSQL Avanzado,Modelado No Relacional"
+Luis Gatica,"Algoritmos,Estructuras de Datos"
+Diana Gomez,"Bases de Datos SQL"
