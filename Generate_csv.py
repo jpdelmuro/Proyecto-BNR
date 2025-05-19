@@ -61,9 +61,9 @@ base_time = datetime(2024, 10, 10, 8, 0, 0)
 
 for course in courses:
     for student_idx, student in enumerate(course_students[course]):
-        num_activities = 2  # ← Ahora cada estudiante solo tendrá 2 actividades
-        for i in range(num_activities):  # ← Cambio aquí, limitando a 2 actividades
-            activity = activity_types[i % len(activity_types)]  # Selecciona actividades de la lista
+        num_activities = 2
+        for i in range(num_activities):
+            activity = activity_types[i % len(activity_types)]
             email, name = student
             timestamp = base_time + timedelta(days=student_idx*2 + i, hours=8, minutes=0)
             activity_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f"{email}-{course}-{activity}-{i}"))
@@ -80,6 +80,7 @@ for course in courses:
                 progress, grade, device, teacher_name, teacher_email, round(teacher_avg, 1)
             ])
 
+# Ruta del csv 
 output_path = r"C:\Users\sebas\OneDrive\Documentos\estructurada\NoSQL\proyecto\ultimo.csv"
 with open(output_path, "w", newline='', encoding='utf-8') as f:
     writer = csv.writer(f)
