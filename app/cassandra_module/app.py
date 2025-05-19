@@ -22,7 +22,7 @@ REPLICATION_FACTOR = os.getenv('CASSANDRA_REPLICATION_FACTOR', '1')
 
 def print_menu():
     mm_options = {
-        0: "Poblar datos de prueba",
+       # 0: "Poblar datos de prueba",
         1: "Ver actividades de estudiante",
         2: "ver progreso de estudiante",
         3: "Ver notificaciones del sistema",
