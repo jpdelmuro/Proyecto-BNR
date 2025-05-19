@@ -1,5 +1,5 @@
 nombre,amigos,inscritoEn,completado
-Juan Pablo,"Ikram Zaldivar,Sebastian Macias",Administración de Proyectos, Algoritmos
-Ikram Zaldivar,Juan Pablo,Bases de Datos NoSQL,"Bases de Datos SQL,Modelado No Relacional"
-Sebastian Macias,Juan Pablo,Algoritmos,Bases de Datos SQL
+Juan Pablo,"Ikram Zaldivar,Sebastian Macias","Administración de Proyectos","Algoritmos"
+Ikram Zaldivar,"Juan Pablo","Bases de Datos NoSQL","Bases de Datos SQL,Modelado No Relacional"
+Sebastian Macias,"Juan Pablo","Algoritmos","Bases de Datos SQL"
 

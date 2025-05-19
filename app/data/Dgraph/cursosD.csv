@@ -1,8 +1,6 @@
-titulo,categoria,lecciones,creadoPor
-Administracion de Proyectos,"Tipo de empresas,Organizaciones",Carlos Torres,
-Algoritmos,Programacion,Introducción a Python,Luis Gatica
-Bases de Datos NoSQL,Bases de Datos,"Cassandra,MongoDB,Dgraph",Anmol Khatri
-Bases de Datos SQL,Bases de Datos,"Queries,Transacciones",Diana Gomez
-PostgreSQL Avanzado,Bases de Datos,"Indices,Stored Procedures",Anmol Khatri
-Modelado No Relacional,Bases de Datos,"Documentos,Escalabilidad",Anmol Khatri
-Estructuras de Datos,Programacion,"Arboles, Listas",Luis Gatica
+titulo,categoria,creadoPor
+Administracion de Proyectos,"Tipo de empresas,Organizaciones",
+Algoritmos,Programacion,Luis Gatica
+Bases de Datos NoSQL,"Bases de Datos",Anmol Khatri
+Bases de Datos SQL,"Bases de Datos",Diana Gomez
+PostgreSQL Avanzado,"Bases de Datos",Anmol Khatri
