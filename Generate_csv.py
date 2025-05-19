@@ -1,5 +1,4 @@
 import csv
-import random
 from datetime import datetime, timedelta
 import uuid
 
@@ -10,17 +9,14 @@ first_names = ["Mike", "Anna", "Li", "Carlos", "Maria", "Luis", "Fernanda", "Die
                "Ruben", "Paola", "Martin", "Teresa", "Francisco", "Laura", "Manuel", "Viviana", 
                "Tomas", "Daniela", "Oscar", "Marina", "Ivan", "Rocio", "Alfredo", "Beatriz"]
 
-# Crear lista de estudiantes
-random.shuffle(first_names)
 students = [(f"{name.lower()}@iteso.mx", name) for name in first_names]
 
-# 10 cursos
 courses = [
-    "math_101", "ethics_201", "environment_301", "physics_102", "history_202",
-    "biology_303", "literature_101", "philosophy_204", "art_105", "programming_110"
+    "Sistemas_Operativos", "Bases_de_Datos", "Redes_de_Computadoras", "Programacion_Avanzada",
+    "Inteligencia_Artificial", "Ingenieria_de_Software", "Seguridad_Informatica", "Arquitectura_de_Computadoras",
+    "Matematicas_Discretas", "Desarrollo_Web"
 ]
 
-# 20 instructores
 instructor_names = [
     "Jose", "Miguel", "Paty", "Luis", "Ana", "Carlos", "Lucia", "Eduardo", "Raquel", "Hugo",
     "Beatriz", "Mario", "Sandra", "Tomas", "Veronica", "Daniel", "Cecilia", "Javier", "Nora", "Felipe"
@@ -30,63 +26,62 @@ instructors = [(name, f"{name.lower()}@iteso.mx") for name in instructor_names]
 activity_types = ["QUIZ", "TAREA", "FORO", "LECTURA", "VIDEO", "PROYECTO", "EVALUACION"]
 devices = ["Macbook", "iPhone", "Windows Laptop", "Android Tablet", "iPad", "Linux PC", "Chromebook"]
 descriptions = {
-    "QUIZ": "Completó el quiz",
-    "TAREA": "Entregó tarea",
+    "QUIZ": "Completo el quiz",
+    "TAREA": "Entrego tarea",
     "FORO": "Participó en foro",
-    "LECTURA": "Leyó el material",
+    "LECTURA": "Leyo el material",
     "VIDEO": "Vio el video completo",
-    "PROYECTO": "Subió proyecto final",
-    "EVALUACION": "Presentó evaluación final"
+    "PROYECTO": "Subio proyecto final",
+    "EVALUACION": "Presento evaluación final"
 }
 
-# Asignar 4 estudiantes a cada curso
+# --- Definir dos grupos de alumnos ---
+group_a_students = students[:10]   # primeros 10 alumnos para primeros 5 cursos
+group_b_students = students[10:20] # siguientes 10 alumnos para últimos 5 cursos
+
+# --- Asignar alumnos según grupos ---
 course_students = {}
-student_idx = 0
-for course in courses:
-    course_students[course] = []
-    # Asignar 4 estudiantes a este curso
-    for _ in range(4):
-        if student_idx < len(students):
-            course_students[course].append(students[student_idx])
-            student_idx += 1
-        else:
-            # Si no hay suficientes estudiantes, volver a usar algunos
-            course_students[course].append(random.choice(students))
+for i, course in enumerate(courses):
+    if i < 5:
+        course_students[course] = group_a_students
+    else:
+        course_students[course] = group_b_students
 
-# Asignar 2 maestros a cada curso
+# --- Asignar 2 instructores por curso sin repetir ---
 course_instructors = {}
+start_idx = 0
 for course in courses:
-    course_instructors[course] = random.sample(instructors, 2)
+    course_instructors[course] = instructors[start_idx:start_idx+2]
+    start_idx += 2
 
-# Generar 5 actividades por estudiante en cada curso
+fixed_activities = activity_types[:5]
+
 rows = []
 base_time = datetime(2024, 10, 10, 8, 0, 0)
 
 for course in courses:
-    for student in course_students[course]:
-        # Obtener actividades aleatorias para este estudiante (5 actividades)
-        activities = random.sample(activity_types, 5) if len(activity_types) >= 5 else random.choices(activity_types, k=5)
-        
-        for activity in activities:
+    for student_idx, student in enumerate(course_students[course]):
+        num_activities = 2
+        for i in range(num_activities):
+            activity = activity_types[i % len(activity_types)]
             email, name = student
-            timestamp = base_time + timedelta(days=random.randint(0, 30), hours=random.randint(0, 23), minutes=random.randint(0, 59))
-            activity_id = str(uuid.uuid4())
+            timestamp = base_time + timedelta(days=student_idx*2 + i, hours=8, minutes=0)
+            activity_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f"{email}-{course}-{activity}-{i}"))
             detalles = f"{descriptions[activity]} del curso {course}"
-            progress = random.randint(50, 100)
-            grade = round(random.uniform(6.0, 10.0), 1)
-            device = random.choice(devices)
-            
-            # Seleccionar uno de los dos maestros asignados al curso
-            teacher_name, teacher_email = random.choice(course_instructors[course])
-            teacher_avg = round(random.uniform(7.0, 10.0), 1)
-            
+            progress = 50 + (student_idx % 10) * 5
+            grade = 6.0 + i * 0.8
+            device = devices[(student_idx + i) % len(devices)]
+
+            teacher_name, teacher_email = course_instructors[course][student_idx % 2]
+            teacher_avg = 7.0 + (student_idx * 1.5)
+
             rows.append([
                 email, course, activity, timestamp.isoformat() + "Z", activity_id, detalles,
-                progress, grade, device, teacher_name, teacher_email, teacher_avg
+                progress, grade, device, teacher_name, teacher_email, round(teacher_avg, 1)
             ])
 
-# Guardar en CSV
-output_path = r"C:\Users\sebas\OneDrive\Documentos\estructurada\NoSQL\proyecto\output_structured.csv"
+# Ruta del csv 
+output_path = r"C:\Users\sebas\OneDrive\Documentos\estructurada\NoSQL\proyecto\ultimo.csv"
 with open(output_path, "w", newline='', encoding='utf-8') as f:
     writer = csv.writer(f)
     writer.writerow(["user_email", "course_id", "tipo_actividad", "timestamp", "activity_id", "detalles",

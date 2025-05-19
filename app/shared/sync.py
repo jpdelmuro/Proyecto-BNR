@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 from cassandra.cluster import Cluster
-from cassandra.policies import RoundRobinPolicy  # ✅ Agregado
+from cassandra.policies import RoundRobinPolicy 
 import pydgraph
 from datetime import datetime
 
@@ -17,8 +17,8 @@ def get_mongo_users():
 def insert_users_to_cassandra(users):
     cluster = Cluster(
         contact_points=["127.0.0.1"],
-        load_balancing_policy=RoundRobinPolicy(),  # ✅ Previene warning
-        protocol_version=5                         # ✅ Previene downgrade
+        load_balancing_policy=RoundRobinPolicy(),
+        protocol_version=5
     )
     session = cluster.connect("plataforma_online")
 
