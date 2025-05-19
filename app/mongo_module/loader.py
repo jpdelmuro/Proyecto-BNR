@@ -43,6 +43,9 @@ def load_mongo_data(csv_dir):
             })
         usuarios.append(doc)
     db.usuarios.insert_many(usuarios)
+    db.usuarios.create_index({"email": 1})
+    db.usuarios.create_index({"name": 1})
+
 
     # === CURSOS ===
     cursos_data = load_csv_data(os.path.join(csv_dir, "cursosM.csv"))
@@ -82,6 +85,8 @@ def load_mongo_data(csv_dir):
             })
         lecciones.append(doc)
     db.lecciones.insert_many(lecciones)
+    db.lecciones.create_index({"course_id": 1})
+
 
     # === INSTRUCTORES ===
     instructores_data = load_csv_data(os.path.join(csv_dir, "instructoresM.csv"))
@@ -96,5 +101,7 @@ def load_mongo_data(csv_dir):
             "created_at": datetime.fromisoformat(row["created_at"].replace("Z", "+00:00"))
         })
     db.instructores.insert_many(instructores)
+    db.instructores.create_index({"name": 1})
+    db.instructores.create_index({"email": 1})
 
     print("Datos de MongoDB cargados correctamente.")
